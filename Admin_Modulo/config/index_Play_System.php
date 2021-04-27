@@ -237,39 +237,6 @@ function modif2b(){
 	$dat3 = "\tMODIFICADO Y ACTUALIZADO ".$filename.PHP_EOL;
 }
 
-function tcl(){
-	
-	global $db;
-	global $db_name;
-	
-	$vname = $_SESSION['clave'].$_SESSION['ref']."_".date('Y');
-	$vname = "`".$vname."`";
-	
-	$tcl = "CREATE TABLE IF NOT EXISTS `$db_name`.$vname (
-  `id` int(4) NOT NULL auto_increment,
-  `ref` varchar(20) collate utf8_spanish2_ci NOT NULL,
-  `Nombre` varchar(25) collate utf8_spanish2_ci NOT NULL,
-  `Apellidos` varchar(25) collate utf8_spanish2_ci NOT NULL,
-  `din` varchar(10) collate utf8_spanish2_ci NOT NULL,
-  `tin` time NOT NULL,
-  `dout` varchar(10) collate utf8_spanish2_ci NULL,
-  `tout` time NULL,
-  `ttot` time NULL,
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ";
-		
-	if(mysqli_query($db , $tcl)){
-		
-					global $dat4;
-					$dat4 = "\t* OK TABLA ADMIN ".$vname.PHP_EOL;
-			
-				} else {
-					
-					global $dat4;
-					$dat4 = "\t* NO OK TABLA ADMIN. ".mysqli_error($db).PHP_EOL;
-					
-					}
-}
 					
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -291,7 +258,6 @@ function ayear(){
 		modif();
 		modif2();
 		modif2b();
-		tcl();
 		global $dat1;	global $dat2;	global $dat3;	global $dat4;
 		global $datos;
 		$datos = $dat1.$dat2.$dat3.$dat4.PHP_EOL;
