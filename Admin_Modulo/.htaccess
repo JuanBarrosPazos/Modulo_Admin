@@ -1,0 +1,18 @@
+# MODIFICA HORA SERVIDOR
+php_value date.timezone "Europe/Madrid"
+
+# NO OCULTA Notice: Undefined & Warning: mysqli_connect
+# php_flag display_starup_errors off
+
+# NO OCULTA Notice: Undefined variable:
+# php_flag html_errors off 
+
+# OK OCULTA errores
+ php_flag display_errors off
+
+# OK OCULTA ERRORES MENOS Notice
+
+#     php_value error_reporting 2
+#	  php_value error_reporting 7
+#     php_flag display_errors On
+#	  php_flag display_errors 1

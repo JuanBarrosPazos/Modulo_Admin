@@ -1,0 +1,330 @@
+body {
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #343434;
+}
+
+h1 {
+	color: #FFFFFF;
+	float: left;
+	margin-left: 16px;
+	font-style: italic;
+	margin-top: 4px;
+	width: 560px;
+	/*font-size: 24px;*/
+	text-align: left;
+}
+
+table {
+	border: 1px solid #CCC;
+	margin-bottom: 12px;
+}
+
+tr {
+	margin: 0px;
+	padding: 0px;
+}
+td {
+	margin: 0px;
+	padding: 4px;
+}
+th {
+	padding: 6px;
+	margin: 0px;
+	text-align: center;
+	font-size: 14px;
+	font-style: normal;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+}
+
+input {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12px;
+	padding-bottom: 2px;
+	padding-top: 3px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+a {
+	color:#CCC;
+	text-decoration:none;
+	font-family: "Times New Roman";
+}
+
+a:hover {
+	color:#FF9900;
+	text-decoration:none;
+	font-family: "Times New Roman";
+}
+
+a:visited {
+	color:#93D7BF;
+	text-decoration:none;
+	font-family: "Times New Roman";
+}
+
+a:visited:hover {
+	color:#55BF9A;
+	text-decoration:none;
+	font-family: "Times New Roman";
+}
+
+a  img {
+	border: 1px solid #CCC;
+}
+
+a:hover  img {
+	border: 1px solid #FF9900;
+}
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* FLOTANTE ERRORES FORMULARIO */
+.errors{
+	background-color: #343434;
+	position: fixed;
+	top: 32.8%;
+	left: 1.6%;
+	margin-left: -180px;
+	z-index:999;
+	width: 25.0%;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #CCC;
+
+}
+
+.MenuVertical {
+	position: fixed;
+	top: 2.4%;
+	left: 1.0%;
+	margin-left: -180px;
+	z-index:999;
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+}
+.MenuBarVertical {
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size: 12px;
+}
+
+.errorsimg{
+	background-color: #343434;
+	position: fixed;
+	top: 6.9%;
+	left: 3.4%;
+	/*margin-left: -80px;*/
+	z-index:999;
+	width: 91.0%;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #CCC;
+
+}
+
+.errorsindex{
+	background-color: #343434;
+	position: fixed;
+	top: 18.0%;
+	/*bottom: 12.0%;*/
+	left: 12.0%;
+	margin-left: -180px;
+	z-index:999;
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid #CCC;
+
+}
+
+.errorscam{
+	background-color: #343434;
+	position: fixed;
+	top: 18.0%;
+	/*bottom: 12.0%;*/
+	left: 12.0%;
+	margin-left: -180px;
+	z-index:999;
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid #CCC;
+}
+
+/* FLOTANTE VISITAS INDEX ENTRADA */
+.visitas{
+	/*
+	position: fixed;
+	top: 16.0%;
+	left: 82.0%;
+	margin-left: -180px;
+	z-index:999;
+	*/
+	margin: 0px;
+	padding: 0px;
+}
+
+ /* BORDES TABLAS DE RESULTADOS. */
+.BorderInf {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+}
+.BorderSup {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCC;
+}
+.BorderInfDch {
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+}
+.BorderDch {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCC;
+}
+
+.limpiar {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+#head {
+	float: none;
+	width: 98%;
+	margin-top: 0.5%;
+	height: auto;
+	margin-bottom: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	/*border: medium double #CCC;*/
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #CCC;
+	font-style: italic;
+	font-weight: normal;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+}
+
+#Conte {
+	height: 90%;
+	max-width: 98vw;
+	min-width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 0.5%;
+}
+
+#Caja2Admin {
+	float: left;
+	width: 99%;
+	color: #FFFFFF;
+	text-align: left;
+	height: auto;
+}
+
+#Caja2Admin a {
+	color: #CCC;
+	text-decoration: none;
+}
+
+#Caja2Admin a:hover {
+	color: #CF810D;
+	text-decoration: none;
+}
+
+#Caja2Admin .MenuBarVertical
+{
+	text-align: left;
+}
+
+#Caja2Admin .MenuBarVertical a:hover
+{
+	color: #FFFFFF;
+}
+
+.MenuBarVertical a:hover
+{
+	color: #000;
+}
+
+#TitTut a {
+	color: #666;
+	text-decoration: none;
+}
+
+#TitTut a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+#mensaje {
+	margin-top: 6px;
+}
+
+#footer  {
+	height: 3.25%;
+	width: 98%;
+	margin-top: 4px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 4px;
+	font-family: "Times New Roman", Times, serif;
+	/*font-size: 12px;*/
+	font-style: normal;
+	text-align: center;
+	color: #CCC;
+	/*border: medium double #CCC;*/
+	padding-top: 4px;
+	padding-right: 0px;
+	padding-bottom: 4px;
+	padding-left: 0px;
+
+	/*position: fixed;
+	bottom: 1.6%;
+	left: 0.0%;
+	z-index:999;
+	*/
+}
+
+#footer  a  {
+	color: #333333;
+	text-decoration: none;
+}
+
+#footer  a:hover  {
+	color: #CCC;
+	text-decoration: none;
+}
+
+
+/* Creado por Juan Barros Pazos 2019 */

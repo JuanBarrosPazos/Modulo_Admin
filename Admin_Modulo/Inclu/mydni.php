@@ -1,0 +1,1 @@
+<?php $_SESSION['mydni'] = 55555555; ?>
