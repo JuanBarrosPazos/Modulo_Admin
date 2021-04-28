@@ -78,7 +78,7 @@ function process_form(){
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-function show_form($errors=''){
+function show_form($errors=[]){
 	
 	if(isset($_POST['oculto'])){
 		$defaults = $_POST;
@@ -159,11 +159,10 @@ function show_form($errors=''){
 	
 	function master_index(){
 		
+		require '../'.$_SESSION['menu'].'/rutainclu.php';
+		require '../'.$_SESSION['menu'].'/Master_Index.php';
 		
-				require '../'.$_SESSION['menu'].'/Master_Index_nemp.php';
-		
-		
-				} 
+	} 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 

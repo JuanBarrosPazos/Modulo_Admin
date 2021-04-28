@@ -480,9 +480,10 @@ function Feedback(){
 	
 	function master_index(){
 		
-				require '../Inclu/Master_Index_Admin.php';
+		require '../'.$_SESSION['menu'].'/rutaadmin.php';
+		require '../'.$_SESSION['menu'].'/Master_Index.php';
 		
-				} 
+	} 
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

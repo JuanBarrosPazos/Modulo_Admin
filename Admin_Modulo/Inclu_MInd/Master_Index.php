@@ -1,5 +1,6 @@
 ﻿<?php
-	require 'Inclu/mydni.php';
+
+	require $rutaindex.'Inclu/mydni.php';
 	//require 'Inclu/error_hidden.php';
 	global $db_name;
 
@@ -10,7 +11,7 @@
 												}else{	global $niv;
 														$niv = 'Administrador';
 														}
-	require 'Inclu_MInd/Master_Index_Header.php';
+	require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
 	
 	print("
 	<!--
@@ -37,13 +38,13 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 			</a>
 				<ul class='nav-flyout'>
 					<li>
-						<a href='Inclu/cnemp.php'>
+						<a href='".$rutainclu."cnemp.php'>
 							<i class='ic ico22'></i>Nª EMPLEADOS
 						</a>
 					</li>
 					<li>
 						<a href='#'>
-							<i class='ic ico22'></i>BACKUP BBDD
+							<i class='ic ico22'></i>OTRO LINK
 						</a>
 					</li>
 					<li>
@@ -73,37 +74,37 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Admin_Ver.php'>
+					<a href='".$rutaadmin."Admin_Ver.php'>
 						<i class='ic ico15b'></i>CONSULTAR
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Admin_Crear.php'>
+					<a href='".$rutaadmin."Admin_Crear.php'>
 						<i class='ic ico14b'></i>CREAR
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Admin_Modificar_01.php'>
+					<a href='".$rutaadmin."Admin_Modificar_01.php'>
 						<i class='ic ico02b'></i>MODIFICAR
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Admin_Borrar_01.php'>
+					<a href='".$rutaadmin."Admin_Borrar_01.php'>
 						<i class='ic ico19b'></i>DAR DE BAJA
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Feedback_Ver.php'>
+					<a href='".$rutaadmin."Feedback_Ver.php'>
 						<i class='ic ico19b'></i>VER BAJAS
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Feedback_Admin_Recuperar_01.php'>
+					<a href='".$rutaadmin."Feedback_Admin_Recuperar_01.php'>
 						<i class='ic ico19b'></i>RECUPER. BAJAS
 					</a>
 				</li>
 				<li>
-					<a href='Admin/Feedback_Admin_Borrar_01.php'>
+					<a href='".$rutaadmin."Feedback_Admin_Borrar_01.php'>
 						<i class='ic ico19b'></i>BORRAR BAJAS
 					</a>
 				</li>
@@ -115,8 +116,8 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 		</li>
 	
 		<li>
-			<a href='#'><i class='ic ico12'>
-				</i> <span>FICHAR IN / OUT</span>
+			<a href='#'>
+			<i class='ic ico12'></i><span>CATEGORIA 1</span>
 			</a>
 			<ul class='nav-flyout'>
 				<li>
@@ -126,27 +127,27 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico13b'></i>FICHAR YO
+						<i class='ic ico13b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico15b'></i>CONSULTA YO
+						<i class='ic ico15b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico02b'></i>FICHAR TODOS
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico02b'></i>FICHAR OTR
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico15b'></i>CONSULTA OTR
+						<i class='ic ico15b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -157,8 +158,8 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 		</li>
 	
 		<li>
-			<a href='#'><i class='ic ico19'>
-				</i> <span>REGISTROS IN / OUT</span>
+			<a href='#'>
+				<i class='ic ico19'></i><span>CATEGORIA 2</span>
 			</a>
 			<ul class='nav-flyout'>
 				<li>
@@ -168,27 +169,27 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico19b'></i>MODIF. OUT
+						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico19b'></i>MODIF. ERROR
+						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico19b'></i>BORRA REG.
+						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico19b'></i>RECUPERA REG.
+						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico19b'></i>ELIMINA REG.
+						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -200,7 +201,7 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 	
 		<li>
 			<a href='#'>
-				<i class='ic ico10'></i><span>BALANCES</span>
+				<i class='ic ico10'></i><span>CATEGORIA 3</span>
 			</a>
 			<ul class='nav-flyout'>
 				<li>
@@ -210,12 +211,12 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico10b'></i>MIS BALANCES
+						<i class='ic ico10b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico10b'></i>OTROS USERS
+						<i class='ic ico10b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -227,7 +228,7 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 	
 		<li>
 			<a href='#'>
-				<i class='ic ico02'></i><span>RESPALDO DATOS</span>
+				<i class='ic ico02'></i><span>CATEGORIA 4</span>
 			</a>
 			<ul class='nav-flyout'>
 				<li>
@@ -237,17 +238,17 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico02b'></i>HORARIOS .TXT
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico02b'></i>TABLAS BBDD
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico02b'></i>SYSTEM .LOG
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -258,7 +259,8 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 		</li>
 	
 		<li>
-			<a href='#'><i class='ic ico20'></i> <span>QR CODES</span></a>
+			<a href='#'>
+				<i class='ic ico20'></i><span>CATEGORIA 5</span></a>
 			<ul class='nav-flyout'>
 				<li>
 					<a href='#' style='background-color: #343434;padding-bottom: 141px;'>
@@ -267,12 +269,12 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico20b'></i>QR GENERADOR
+						<i class='ic ico20b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico20b'></i>QR SCANNER
+						<i class='ic ico20b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -283,14 +285,14 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 		</li>
 	
 		<li>
-			<a href='Mail_Php/index.php' target='_blank'>
+			<a href='".$rutaindex."Mail_Php/index.php' target='_blank'>
 				<i class='ic ico16'></i>NOTIFICACIONES
 			</a>
 		</li>
 	
 	<li>
 		<a href='#'>
-			<form name='cerrar' action='Admin/mcgexit.php' method='post'>
+			<form name='cerrar' action='".$rutaadmin."mcgexit.php' method='post'>
 				<i class='ic ico01'></i>
 		<input type='submit' value='CLOSE SESSION'  style='margin-top:-2px; margin-left:6px;' />
 		<input type='hidden' name='cerrar' value=1 />
@@ -340,20 +342,20 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 
 ");
 
-require 'Inclu_MInd/Master_Index_Header.php';
+require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
 
 print("<nav class='sidebar-nav'>
 		<ul>
 	
 		<li>
-			<a href='Admin/Admin_Modificar_01.php'>
+			<a href='".$rutaadmin."Admin_Modificar_01.php'>
 				<i class='ic ico02b'></i>MODIFICAR DATOS
 			</a>
 		</li>
 	
 	<li>
 		<a href='#'>
-			<i class='ic ico12'></i> <span>FICHAR IN / OUT</span>
+			<i class='ic ico12'></i><span>CATEGORIA 1</span>
 		</a>
 			<ul class='nav-flyout'>
 				<li>
@@ -363,22 +365,22 @@ print("<nav class='sidebar-nav'>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico13b'></i>FICHAR YO
+						<i class='ic ico13b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico15b'></i>CONSULTA YO
+						<i class='ic ico15b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico02b'></i>FICHAR OTR
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico15b'></i>CONSULTA OTR
+						<i class='ic ico15b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -389,14 +391,14 @@ print("<nav class='sidebar-nav'>
 		</li>
 	
 		<li>
-			<a href='Mail_Php/index.php' target='_blank'>
+			<a href='".$rutaindex."Mail_Php/index.php' target='_blank'>
 				<i class='ic ico16'></i>NOTIFICACIONES
 			</a>
 		</li>
 	
 		<li>
 			<a href='#'>
-				<form name='cerrar' action='Admin/mcgexit.php' method='post'>
+				<form name='cerrar' action='".$rutaadmin."mcgexit.php' method='post'>
 					<i class='ic ico01'></i>
 			<input type='submit' value='CLOSE SESSION'  style='margin-top:-2px; margin-left:6px;' />
 			<input type='hidden' name='cerrar' value=1 />
@@ -447,20 +449,20 @@ print("<nav class='sidebar-nav'>
 
 ");
 
-require 'Inclu_MInd/Master_Index_Header.php';
+require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
 
 print("<nav class='sidebar-nav'>
 		<ul>
 	
 	<li>
-		<a href='Admin/Admin_Modificar_01.php'>
+		<a href='".$rutaadmin."Admin_Modificar_01.php'>
 			<i class='ic ico02b'></i>MODIFICAR DATOS
 		</a>
 	</li>
 	
 	<li>
 		<a href='#'>
-			<i class='ic ico12'></i><span>FICHAR IN / OUT</span>
+			<i class='ic ico12'></i><span>CATEGORIA 1</span>
 		</a>
 			<ul class='nav-flyout'>
 				<li>
@@ -470,12 +472,12 @@ print("<nav class='sidebar-nav'>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico13b'></i>FICHAR YO
+						<i class='ic ico13b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
-						<i class='ic ico15b'></i>CONSULTA YO
+						<i class='ic ico15b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
@@ -486,14 +488,14 @@ print("<nav class='sidebar-nav'>
 		</li>
 	
 		<li>
-			<a href='Mail_Php/index.php' target='_blank'>
+			<a href='".$rutaindex."Mail_Php/index.php' target='_blank'>
 				<i class='ic ico16'></i>NOTIFICACIONES
 			</a>
 		</li>
 	
 		<li>
 			<a href='#'>
-				<form name='cerrar' action='Admin/mcgexit.php' method='post'>
+				<form name='cerrar' action='".$rutaadmin."mcgexit.php' method='post'>
 					<i class='ic ico01'></i>
 			<input type='submit' value='CLOSE SESSION'  style='margin-top:-2px; margin-left:6px;' />
 			<input type='hidden' name='cerrar' value=1 />

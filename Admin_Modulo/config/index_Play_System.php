@@ -1153,8 +1153,8 @@ function ver_todo(){
 				 ////////////////////				  ///////////////////
 
 	function master_index(){
-
-		require $_SESSION['menu'].'/Master_Index_00.php';
+		require $_SESSION['menu'].'/rutaindex.php';
+		require $_SESSION['menu'].'/Master_Index.php';
 		
 				} 
 

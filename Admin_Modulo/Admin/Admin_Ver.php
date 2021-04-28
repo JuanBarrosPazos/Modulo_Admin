@@ -193,9 +193,10 @@ function ver_todo(){
 	
 	function master_index(){
 		
-				require '../'.$_SESSION['menu'].'/Master_Index_Admin.php';
+		require '../'.$_SESSION['menu'].'/rutaadmin.php';
+		require '../'.$_SESSION['menu'].'/Master_Index.php';
 		
-				} 
+	} 
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

@@ -881,7 +881,7 @@ function ayear(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-function show_form($errors=''){
+function show_form($errors=[]){
 	
 	/* Se pasan los valores por defecto y se devuelven los que ha escrito el usuario. */
 	

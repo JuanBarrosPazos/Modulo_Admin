@@ -154,7 +154,7 @@ $sql =  "SELECT * FROM `$db_name`.$table_name_a WHERE `Email` = '$_POST[Email]' 
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-function show_form($errors=''){
+function show_form($errors=[]){
 	
 	global $sql;
 	global $q;
@@ -544,9 +544,10 @@ function process_form(){
 	
 	function master_index(){
 		
-		require '../'.$_SESSION['menu'].'/Master_Index_Admin.php';
-				
-			} 
+		require '../'.$_SESSION['menu'].'/rutaadmin.php';
+		require '../'.$_SESSION['menu'].'/Master_Index.php';
+		
+	} 
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
