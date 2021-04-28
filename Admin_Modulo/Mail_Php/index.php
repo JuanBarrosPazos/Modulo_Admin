@@ -212,7 +212,7 @@ function MM_validateForm() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-function show_form($errors=''){
+function show_form($errors=[]){
 	
 	if(isset($_POST['oculto'])){
 				$defaults = $_POST;

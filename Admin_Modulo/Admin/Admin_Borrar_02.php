@@ -207,17 +207,28 @@ function process_form(){
 						.$_POST['visitadmin'].
 					"</td>
 				</tr>
+				<tr>
+						<form name='closewindow' action='Admin_Borrar_01.php'>
+					<td colspan=3 align='right' class='BorderSup'>
+							<input type='submit' value='ADMIN DAR DE BAJA VOLVER' />
+							<input type='hidden' name='volver' value=1 />
+					</td>
+						</form>
+				</tr>
 			</table>");	
 
 	global $db;
 	global $db_name;
+
+	global $table_name_a;
+	$table_name_a = "`".$_SESSION['clave']."admin`";
 	
 	global $nombre;
 	global $apellido;
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
 
-	$sql = "DELETE FROM `$db_name`.`admin` WHERE `admin`.`id` = '$_POST[id]' LIMIT 1 ";
+	$sql = "DELETE FROM `$db_name`.$table_name_a WHERE $table_name_a.`id` = '$_POST[id]' LIMIT 1 ";
 
 	if(mysqli_query($db, $sql)){
 			//print("* ");
@@ -256,7 +267,8 @@ function show_form(){
 								'Tlf2' => $_POST['Tlf2'],
 								'lastin' => $_POST['lastin'],
 								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin']);
+								'visitadmin' => $_POST['visitadmin'],
+								'myqr' => $_POST['myqr']);
 							}
 
 	if($_POST['borrar']){
@@ -277,7 +289,8 @@ function show_form(){
 								'Tlf2' => $_POST['Tlf2'],
 								'lastin' => $_POST['lastin'],
 								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin']);
+								'visitadmin' => $_POST['visitadmin'],
+								'myqr' => $_POST['myqr']);
 							}
 								   
 	print("<table align='center' style=\"margin-top:10px\">
@@ -305,6 +318,7 @@ function show_form(){
 				<input name='lastin' type='hidden' value='".$defaults['lastin']."' />					
 				<input name='lastout' type='hidden' value='".$defaults['lastout']."' />					
 				<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />
+				<input name='myqr' type='hidden' value='".$defaults['myqr']."' />
 		<tr>
 			<td width=120px>	
 					Nivel:
@@ -460,8 +474,11 @@ function Feedback(){
 	$dbf = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 	if (!$dbf){ die ("Es imposible conectar con la bbdd ".$db_name."</br>".mysqli_connect_error());
 				}
-			
-	$sqlf = "INSERT INTO `$db_name`.`feedback` (`ref`, `Nivel`, `Nombre`, `Apellidos`, `myimg`, `doc`, `dni`, `ldni`, `Email`, `Usuario`, `Password`, `Direccion`, `Tlf1`, `Tlf2`, `borrado`, `lastin`, `lastout`, `visitadmin`) VALUES ('$_POST[ref]', '$_POST[Nivel]', '$_POST[Nombre]', '$_POST[Apellidos]', '$_POST[myimg]', '$_POST[doc]', '$_POST[dni]', '$_POST[ldni]', '$_POST[Email]', '$_POST[Usuario]', '$_POST[Password]', '$_POST[Direccion]', '$_POST[Tlf1]', '$_POST[Tlf2]', '$FBaja', '$_POST[lastin]', '$_POST[lastout]', '$_POST[visitadmin]', '$_POST[myqr]')";
+	
+	global $table_name_a;
+	$table_name_a = "`".$_SESSION['clave']."feedback`";
+
+	$sqlf = "INSERT INTO `$db_name`.$table_name_a (`ref`, `Nivel`, `Nombre`, `Apellidos`, `myimg`, `doc`, `dni`, `ldni`, `Email`, `Usuario`, `Password`, `Direccion`, `Tlf1`, `Tlf2`,`lastin`, `lastout`, `visitadmin`, `borrado`, `myqr` ) VALUES ('$_POST[ref]', '$_POST[Nivel]', '$_POST[Nombre]', '$_POST[Apellidos]', '$_POST[myimg]', '$_POST[doc]', '$_POST[dni]', '$_POST[ldni]', '$_POST[Email]', '$_POST[Usuario]', '$_POST[Password]', '$_POST[Direccion]', '$_POST[Tlf1]', '$_POST[Tlf2]', '$_POST[lastin]', '$_POST[lastout]', '$_POST[visitadmin]', '$FBaja', '$_POST[myqr]')";
 	
 	if(mysqli_query($dbf, $sqlf)){
 			//print("FOK.");

@@ -105,7 +105,7 @@ function process_form(){
 	global $formulariof;
 	$formulariof = "<td colspan=5 class='BorderInf'>&nbsp;</td>
 					<td colspan=2 align='right' class='BorderInf'>
-						<input type='submit' value='BORRAR ESTOS DATOS' />
+						<input type='submit' value='DAR DE BAJA TEMPORAL' />
 					</td>
 						<input type='hidden' name='oculto2' value=1 />
 				</form>";
@@ -139,7 +139,7 @@ function show_form($errors=''){
 						} else {}
 
 	global $titulo;
-	$titulo = "CONSULTA BORRAR USUARIOS";
+	$titulo = "CONSULTA DAR DE BAJA USUARIOS";
 
 	require 'Inc_Show_Form_01.php';
 	
@@ -192,7 +192,7 @@ function ver_todo(){
 	global $formulariof;
 	$formulariof = "<td colspan=5 class='BorderInf'>&nbsp;</td>
 					<td colspan=2 align='right' class='BorderInf'>
-						<input type='submit' value='BORRAR ESTOS DATOS' />
+						<input type='submit' value='DAR DE BAJA TEMPORAL' />
 					</td>
 						<input type='hidden' name='oculto2' value=1 />
 				</form>";

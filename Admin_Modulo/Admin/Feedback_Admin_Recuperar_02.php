@@ -192,6 +192,14 @@ function process_form(){
 						.$_POST['visitadmin'].
 					"</td>
 				</tr>
+				<tr>
+						<form name='closewindow' action='Feedback_Admin_Recuperar_01.php'>
+					<td colspan=3 align='right' class='BorderSup'>
+							<input type='submit' value='FEEDBACK RECUPERAR VOLVER' />
+							<input type='hidden' name='volver' value=1 />
+					</td>
+						</form>
+				</tr>
 			</table>";	
 		
 	global $db;
@@ -205,7 +213,7 @@ function process_form(){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	$sqlc = "INSERT INTO `$db_name`.$table_name_a SET `ref` = '$_POST[ref]', `Nivel` = '$_POST[Nivel]', `Nombre` = '$_POST[Nombre]', `Apellidos` = '$_POST[Apellidos]', `myimg` = '$_POST[myimg]', `doc` = '$_POST[doc]', `dni` = '$_POST[dni]', `ldni` = '$_POST[ldni]', `Email` = '$_POST[Email]', `Usuario` = '$_POST[Usuario]', `Password` = '$_POST[Password]', `Direccion` = '$_POST[Direccion]', `Tlf1` = '$_POST[Tlf1]', `Tlf2` = '$_POST[Tlf2]', `lastin` = '$_POST[lastin]', `lastout` = '$_POST[lastout]', `visitadmin` = '$_POST[visitadmin]' ";
+	$sqlc = "INSERT INTO `$db_name`.$table_name_a SET `ref` = '$_POST[ref]', `Nivel` = '$_POST[Nivel]', `Nombre` = '$_POST[Nombre]', `Apellidos` = '$_POST[Apellidos]', `myimg` = '$_POST[myimg]', `doc` = '$_POST[doc]', `dni` = '$_POST[dni]', `ldni` = '$_POST[ldni]', `Email` = '$_POST[Email]', `Usuario` = '$_POST[Usuario]', `Password` = '$_POST[Password]', `Direccion` = '$_POST[Direccion]', `Tlf1` = '$_POST[Tlf1]', `Tlf2` = '$_POST[Tlf2]', `lastin` = '$_POST[lastin]', `lastout` = '$_POST[lastout]', `visitadmin` = '$_POST[visitadmin]', `myqr` = '$_POST[myqr]' ";
 
 	if(mysqli_query($db, $sqlc)){
 							print( $tabla );
@@ -272,7 +280,8 @@ function show_form(){
 									'Tlf2' => $_POST['Tlf2'],
 									'lastin' => $_POST['lastin'],
 									'lastout' => $_POST['lastout'],
-									'visitadmin' => $_POST['visitadmin'] );
+									'visitadmin' => $_POST['visitadmin'],
+									'myqr' => $_POST['myqr']);
 							}
 	
 	print("<table align='center'>
@@ -286,6 +295,7 @@ function show_form(){
 			
 		<input name='id' type='hidden' value='".$defaults['id']."' />					
 		<input name='myimg' type='hidden' value='".$defaults['myimg']."' />	
+		<input name='myqr' type='hidden' value='".$defaults['myqr']."' />	
 		
 				<tr>
 					<td width=120px>	

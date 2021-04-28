@@ -135,7 +135,8 @@
 	<input name='lastin' type='hidden' value='".$rowb['lastin']."' />
 	<input name='lastout' type='hidden' value='".$rowb['lastout']."' />
 	<input name='visitadmin' type='hidden' value='".$rowb['visitadmin']."' />
-                                     
+	<input name='myqr' type='hidden' value='".$rowb['myqr']."' />
+	
         ".$formulariofi."</tr>");
                     
 	 }  // FIN DEL WHILE

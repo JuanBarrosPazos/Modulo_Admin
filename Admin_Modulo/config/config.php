@@ -229,16 +229,6 @@ function deldirua(){
 											rmdir ($carpeta2);
 											} else {}
 
-				$carpeta3 = "../Users/".$rown['ref']."/mrficha";
-				if(file_exists($carpeta3)){ $dir3 = $carpeta3."/";
-											$handle3 = opendir($dir3);
-											while ($file3 = readdir($handle3))
-													{if (is_file($dir3.$file3))
-														{unlink($dir3.$file3);}
-													}
-											rmdir ($carpeta3);
-											} else {}
-
 		} // FIN DEL WHILE
 
 	} // SE CUMPLE EL QUERY

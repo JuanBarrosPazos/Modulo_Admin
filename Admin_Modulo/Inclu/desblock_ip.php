@@ -139,7 +139,7 @@ $sql =  "SELECT * FROM `$db_name`.$table_name_a WHERE `Email` = '$_POST[Email]' 
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-function show_form($errors=''){
+function show_form($errors=[]){
 	
 	global $sql;
 	global $q;

@@ -196,6 +196,14 @@ function process_form(){
 						.$_POST['visitadmin'].
 					"</td>
 				</tr>
+				<tr>
+					<td colspan=3 align='right' class='BorderSup'>
+						<form name='closewindow' action='Feedback_Admin_Borrar_01.php'>
+							<input type='submit' value='FEEDBACK BORRAR' />
+							<input type='hidden' name='volver' value=1 />
+						</form>
+					</td>
+				</tr>
 			</table>";	
 
 	global $db_name;
@@ -246,31 +254,6 @@ function process_form(){
 									$dd2 = "\t- BORRADA: ".$carpeta2."/ \n";
 									} else {print("");}
 
-	$carpeta3 = "../Users/".$refnorm."/grafics";
-	if(file_exists($carpeta3)){ $dir3 = $carpeta3."/";
-								  $handle3 = opendir($dir3);
-								  while ($file3 = readdir($handle3))
-										 {if (is_file($dir3.$file3))
-											 {unlink($dir3.$file3);}
-										}
-								rmdir (	$carpeta3);
-								global $dd3;
-								$dd3 = "\t- BORRADA: ".$carpeta3."/ \n";
-								} else {print("");}
-	
-	$carpeta4 = "../Users/".$refnorm."/mrficha";
-	if(file_exists($carpeta4)){ $dir4 = $carpeta4."/";
-								  $handle4 = opendir($dir4);
-								  while ($file4 = readdir($handle4))
-										 {if (is_file($dir4.$file4))
-											 {unlink($dir4.$file4);}
-										}
-								rmdir (	$carpeta4);
-								global $dd4;
-								$dd4 = "\t- BORRADA: ".$carpeta4."/ \n";
-								} else {print("");}
-
-
 	/*************	BORRAMOS TODAS LAS TABLAS DEL USUARIO 	***************/
 
 	/* Se busca las tablas en la base de datos */
@@ -319,7 +302,7 @@ print("<font color='#FF0000'>293 Se ha producido un error: </font></br>".mysqli_
 
 		// SE GRABAN LOS DATOS EN LOG DEL ADMIN
 		global $deletet2;
-		$deletet1 = $dd1.$dd2.$dd4."\n";
+		$deletet1 = $dd1.$dd2."\n";
 		global $deletet;
 		$deletet = $deletet1.$deletet2;
 		

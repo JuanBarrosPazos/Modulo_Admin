@@ -247,7 +247,7 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 				</tr>
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
-						<form name='closewindow' action='Admin_Crear.php'  \">
+						<form name='closewindow' action='Admin_Crear.php'>
 							<input type='submit' value='VOLVER A ADMIN CREAR' />
 							<input type='hidden' name='volver' value=1 />
 						</form>
@@ -371,48 +371,6 @@ function crear_tablas(){
 		$data3 = "\t* NO OK DIRECTORIO ".$carpetalog."\n";
 		}
 	
-// CREA EL DIRECTORIO RESUMEN FICHAR MES.
-
-	$vn1 = "mrficha";
-	$carpetamrf = "../Users/".$trf."/".$vn1;
-	if (!file_exists($carpetamrf)) {
-		mkdir($carpetamrf, 0777, true);
-		$data5a = "\t* OK DIRECTORIO ".$carpetamrf."\n";
-		}
-		else{print("* NO OK DIRECTORIO ".$carpetamrf."\n");
-		$data5a = "\t* NO OK DIRECTORIO ".$carpetamrf."\n";
-		}
-	
-	/************** CREAMOS LA TABLA CONTROL USUARIO ***************/
-
-	$vname1 = $_SESSION['clave'].$trf."_".date('Y');
-	$vname1 = "`".$vname1."`";
-	
-	$tcl = "CREATE TABLE `$db_name`.$vname1 (
-  `id` int(4) NOT NULL auto_increment,
-  `ref` varchar(20) collate utf8_spanish2_ci NOT NULL,
-  `Nombre` varchar(25) collate utf8_spanish2_ci NOT NULL,
-  `Apellidos` varchar(25) collate utf8_spanish2_ci NOT NULL,
-  `din` varchar(10) collate utf8_spanish2_ci NOT NULL,
-  `tin` time NOT NULL,
-  `dout` varchar(10) collate utf8_spanish2_ci NULL,
-  `tout` time NULL,
-  `ttot` time NULL,
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1 ";
-		
-	if(mysqli_query($db , $tcl)){
-		
-					global $data5;
-					$data5 = "\t* OK TABLA FICHAR ".$vname1.".\n";
-			
-				} else {
-					
-					global $data5;
-					$data5 = "\t* NO OK TABLA FICHAR. ".mysqli_error($db)." \n";
-					
-					}
-
 	/************	PASAMOS LOS PARAMETROS A .LOG	*****************/
 	
 	$datein = date('Y-m-d/H:i:s');
@@ -422,7 +380,7 @@ function crear_tablas(){
 
 	$logdocu = $_SESSION['ref'];
 	$logdate = date('Y_m_d');
-	$logtext = PHP_EOL."- NUEVO USUARIO CREADAS BBDD TABLAS Y DIRECTORIOS. ".$datein.PHP_EOL." ".$dbconecterror.$data1.$data2.$data3.$data5.$data5a.PHP_EOL;
+	$logtext = PHP_EOL."- NUEVO USUARIO CREADAS BBDD TABLAS Y DIRECTORIOS. ".$datein.PHP_EOL." ".$dbconecterror.$data1.$data2.$data3.PHP_EOL;
 	$filename = $dir."/".$logdate."_".$logdocu.".log";
 	$log = fopen($filename, 'ab+');
 	fwrite($log, $logtext);
