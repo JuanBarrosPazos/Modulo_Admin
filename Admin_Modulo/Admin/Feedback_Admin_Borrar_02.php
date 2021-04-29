@@ -198,7 +198,7 @@ function process_form(){
 				</tr>
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
-						<form name='closewindow' action='Feedback_Admin_Borrar_01.php'>
+						<form name='closewindow' action='Feedback_Ver.php'>
 							<input type='submit' value='USER BAJAS ELIMINAR VOLVER' />
 							<input type='hidden' name='volver' value=1 />
 						</form>
@@ -419,8 +419,8 @@ function show_form(){
 				</tr>
 				<tr>
 					<th colspan=3 class='BorderInf' style=\"text-align:right\">
-							<a href='Feedback_Admin_Borrar_01.php' >
-													CANCELAR
+							<a href='Feedback_Ver.php' >
+													CANCELAR Y VOLVER
 							</a>
 						</font>
 					</th>

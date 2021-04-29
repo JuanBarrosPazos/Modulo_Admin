@@ -199,7 +199,7 @@ function process_form(){
 				</tr>
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
-						<form name='closewindow' action='Admin_Modificar_01.php'>
+						<form name='closewindow' action='Admin_Ver.php'>
 							<input type='submit' value='VOLVER A ADMIN MODIFICAR' />
 							<input type='hidden' name='volver' value=1 />
 						</form>

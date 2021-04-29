@@ -13,20 +13,21 @@ session_start();
 				 ////////////////////				  ///////////////////
 
 if (($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
-									master_index();
-									ver_todo();
-									info();
+ 					
+					master_index();
+					ver_todo();
+					info();
 								}
 
 elseif ($_SESSION['Nivel'] == 'admin'){
 
-				master_index();
+					master_index();
 
 					if(isset($_POST['todo'])){ show_form();							
 										ver_todo();
 										info();
 										}
-								
+										
 								elseif(isset($_POST['oculto'])){
 										if($form_errors = validate_form()){
 											show_form($form_errors);
@@ -34,23 +35,20 @@ elseif ($_SESSION['Nivel'] == 'admin'){
 													process_form();
 													info();
 													}
-												}
-								else {
-										show_form();
-										}
-			} else { require '../Inclu/table_permisos.php'; }
+									} else { show_form(); }
+					} else { require '../Inclu/table_permisos.php'; }
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-	function validate_form(){
+function validate_form(){
+	
+	require 'Inc_Show_Form_01_Val.php';
 		
-		require 'Inc_Show_Form_01_Val.php';
-		
-		return $errors;
+	return $errors;
 
-		} 
+		}
 		
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -66,17 +64,18 @@ function process_form(){
 	$apellido = $_POST['Apellidos'];
 	
 	show_form();
-		
-	$nom = "%".$_POST['Nombre']."%";
-	$ape = "%".$_POST['Apellidos']."%";
 
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
+
+	$nom = "%".$_POST['Nombre']."%";
+	$ape = "%".$_POST['Apellidos']."%";
 
 	if (strlen(trim($_POST['Apellidos'])) == 0){$ape = $nom;}
 	if (strlen(trim($_POST['Nombre'])) == 0){ $nom = $ape;}
 	
 	//$orden = $_POST['Orden'];
+	//$doc = $_POST['doc'];
 		
 	if (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
 	$sqlb =  "SELECT * FROM $table_name_a WHERE `Nombre` LIKE '$nom' OR `Apellidos` LIKE '$ape'  ORDER BY `Nombre` ASC  ";
@@ -86,34 +85,51 @@ function process_form(){
 	$sqlb =  "SELECT * FROM $table_name_a WHERE  `dni` <> '$_SESSION[mydni]' AND  `Nombre` LIKE '$nom' OR `dni` <> '$_SESSION[mydni]' AND `Apellidos` LIKE '$ape' ORDER BY `Nombre` ASC  ";
 	$qb = mysqli_query($db, $sqlb);
 				}
-//	$sqlc =  "SELECT * FROM $table_name_a WHERE `Nombre` LIKE '$nom' OR `Apellidos` LIKE '$ape' ORDER BY `Nombre` ASC ";
-//	$qc = mysqli_query($db, $sqlc);
 	
 			////////////////////		**********  		////////////////////
 
 	global $twhile;
-	$twhile = "FILTRO USUARIOS CONSULTA";
+	$twhile = "FILTRO USUARIOS MODIFICAR";
+	
+	global $formularioh;
+	$formularioh = "<form name='modifica' action='Admin_Modificar_02.php' method='POST'>";
+						
+	global $formulariof;
+	$formulariof = "<td align='right' colspan=3 class='BorderInf'></td>
+					<td colspan=2 align='center' class='BorderInfDch'>
+						<input type='submit' value='MODIFICAR ESTOS DATOS' />
+						<input type='hidden' name='oculto2' value=1 />
+				</form>
+					</td>";
+		
+	global $formulariohi;
+	$formulariohi = "<td colspan=2 align='center' class='BorderInf'>
+	<form name='modifica_img' action='Admin_Modificar_img.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup',  'width=540px,height=470px')\">";
 
-	require 'Inc_While_Form.php';
+	global $formulariofi;
+	$formulariofi = "<input type='submit' value='MODIFICAR IMAGEN' />
+					 <input type='hidden' name='oculto2' value=1 />
+						</form>
+					</td>";
 
 	require 'Inc_While_Total.php';
-
+		
 			////////////////////		**********  		////////////////////
-
-	} // FIN FUNCTION
+				
+	}
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
 function show_form($errors=''){
-
+	
 	global $titulo;
-	$titulo = "GESTION USUARIOS";
+	$titulo = "CONSULTA MODIFICAR USUARIOS";
 
 	require 'Inc_Show_Form_01.php';
-	
-	}	
+
+}	
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -128,34 +144,53 @@ function ver_todo(){
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
 	if (($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
-			$ref = $_SESSION['ref'];
-			$sqlb =  "SELECT * FROM $table_name_a WHERE `ref` = '$ref'";
-			$qb = mysqli_query($db, $sqlb);
-		}
+				$ref = $_SESSION['ref'];
+				$sqlb =  "SELECT * FROM $table_name_a WHERE `ref` = '$ref'";
+				$qb = mysqli_query($db, $sqlb);
+	}
 	
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
 				$orden = $_POST['Orden'];
 				$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";
 				$qb = mysqli_query($db, $sqlb);
-			}
+				}
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] != $_SESSION['mydni'])){ 
 				$orden = $_POST['Orden'];
 				$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";
 				$qb = mysqli_query($db, $sqlb);
-			}
-
-			////////////////////		**********  		////////////////////
-
-	global $twhile;
-	$twhile = "TODOS USUARIOS CONSULTA";
+				}
 	
-	require 'Inc_While_Form.php';
+			////////////////////		**********  		////////////////////
+	
+	global $twhile;
+	$twhile = "TODOS USUARIOS MODIFICAR";
+	
+	global $formularioh;
+	$formularioh = "<form name='modifica' action='Admin_Modificar_02.php' method='POST'>";
+	
+	global $formulariof;
+	$formulariof = "<td align='right' colspan=3 class='BorderInf'></td>
+					<td colspan=2 align='center' class='BorderInfDch'>
+						<input type='submit' value='MODIFICAR ESTOS DATOS' />
+						<input type='hidden' name='oculto2' value=1 />
+				</form>
+					</td>";
+
+	global $formulariohi;
+	$formulariohi = "<td colspan=2 align='center' class='BorderInf'>
+	<form name='modifica_img' action='Admin_Modificar_img.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup',  'width=540px,height=470px')\">";
+
+	global $formulariofi;
+	$formulariofi = "<input type='submit' value='MODIFICAR IMAGEN' />
+					 <input type='hidden' name='oculto2' value=1 />
+						</form>
+					</td>";
 
 	require 'Inc_While_Total.php';
 
 			////////////////////		**********  		////////////////////
 		
-	} // FIN FUNCTION
+	}
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -180,19 +215,21 @@ function info(){
 	
 	$orden = isset($_POST['Orden']);
 	
-	if (isset($_POST['todo'])){$nombre = "TODOS LOS USUARIOS ".$orden;};	
+	if (isset($_POST['todo'])){$nombre = "TODOS LOS USUARIOS. OREDEN: ".$orden;
+						$apellido ="";	}	
 
+	$rf = isset($_POST['ref']);
 	if (($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){	
 										$nombre = $_SESSION['Nombre'];
 										$apellido = $_SESSION['Apellidos'];}
-	
+		
 	$ActionTime = date('H:i:s');
 
 	global $dir;
 	$dir = "../Users/".$_SESSION['ref']."/log";
 	
 	global $text;
-	$text = PHP_EOL."- ADMIN VER ".$ActionTime.PHP_EOL."\t Filtro => ".$nombre." ".$apellido;
+	$text = PHP_EOL."- USER MODIFICAR BUSCAR ".$ActionTime.PHP_EOL."\t Filtro => ".$nombre." ".$apellido;
 
 	$logdocu = $_SESSION['ref'];
 	$logdate = date('Y_m_d');
@@ -209,7 +246,7 @@ function info(){
 				 ////////////////////				  ///////////////////
 
 	require '../Inclu/Admin_Inclu_02.php';
-	
+
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////

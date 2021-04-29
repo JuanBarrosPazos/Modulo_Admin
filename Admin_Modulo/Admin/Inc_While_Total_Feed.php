@@ -63,8 +63,6 @@
     global $formulariof;
 	global $formulariohi;
 	global $formulariofi;
-	global $formulariohe;
-	global $formulariofe;
 
 	print (	"<tr align='center'>
 
@@ -117,12 +115,8 @@
 
 		require 'rowbtotal.php';
 
-		print($formulariofi.$formulariohe);
+		print($formulariofi."</tr>");
 
-		require 'rowbtotal.php';
-
-		print($formulariofe."</tr>");
-                    
 	 }  // FIN DEL WHILE
 
 	    print("</table>");

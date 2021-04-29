@@ -84,28 +84,28 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 					</a>
 				</li>
 				<li>
-					<a href='".$rutaadmin."Admin_Modificar_01.php'>
-						<i class='ic ico02b'></i>MODIFICAR
-					</a>
-				</li>
-				<li>
-					<a href='".$rutaadmin."Admin_Borrar_01.php'>
-						<i class='ic ico19b'></i>DAR DE BAJA
-					</a>
-				</li>
-				<li>
 					<a href='".$rutaadmin."Feedback_Ver.php'>
 						<i class='ic ico19b'></i>VER BAJAS
 					</a>
 				</li>
 				<li>
-					<a href='".$rutaadmin."Feedback_Admin_Recuperar_01.php'>
-						<i class='ic ico19b'></i>RECUPER. BAJAS
+					<a href='#'>
+						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
-					<a href='".$rutaadmin."Feedback_Admin_Borrar_01.php'>
-						<i class='ic ico19b'></i>BORRAR BAJAS
+					<a href='#'>
+						<i class='ic ico19b'></i>OTRO LINK
+					</a>
+				</li>
+				<li>
+					<a href='#'>
+						<i class='ic ico19b'></i>OTRO LINK
+					</a>
+				</li>
+				<li>
+					<a href='#'>
+						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>

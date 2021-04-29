@@ -208,7 +208,7 @@ function process_form(){
 					"</td>
 				</tr>
 				<tr>
-						<form name='closewindow' action='Admin_Borrar_01.php'>
+						<form name='closewindow' action='Admin_Ver.php'>
 					<td colspan=3 align='right' class='BorderSup'>
 							<input type='submit' value='ADMIN DAR DE BAJA VOLVER' />
 							<input type='hidden' name='volver' value=1 />

@@ -1,11 +1,12 @@
 <?php
 
 	global $formularioh;
-	$formularioh = "<form style=\"display:inline-block;\" name='modifica' action='Admin_Modificar_02.php' method='POST'>";
+	$formularioh = "<td colspan=7 align='center' class='BorderInf'>
+				<form style=\"display:inline-block;\" name='modifica' action='Admin_Modificar_02.php' method='POST'>";
 
 	global $formulariof;
-	$formulariof = "<td colspan=7 align='center' class='BorderInf'>
-						<input type='submit' value='MODIFICAR' />
+	$formulariof = "
+						<input type='submit' value='MODIFICAR DATOS' />
 						<input type='hidden' name='oculto2' value=1 />
 				</form>";
 
@@ -21,7 +22,7 @@
 	$formulariohi = "<form style=\"display:inline-block;\" name='borra' action='Admin_Borrar_02.php' method='POST'>";
 
 	global $formulariofi;
-	$formulariofi = "<input type='submit' value='BORRAR DATOS' />
+	$formulariofi = "<input type='submit' value='DAR DE BAJA' />
 						<input type='hidden' name='oculto2' value=1 />
 				</form>";
 

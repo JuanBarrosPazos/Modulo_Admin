@@ -193,9 +193,9 @@ function process_form(){
 					"</td>
 				</tr>
 				<tr>
-						<form name='closewindow' action='Feedback_Admin_Recuperar_01.php'>
+						<form name='closewindow' action='Feedback_Ver.php'>
 					<td colspan=3 align='right' class='BorderSup'>
-							<input type='submit' value='FEEDBACK RECUPERAR VOLVER' />
+							<input type='submit' value='VOLVER' />
 							<input type='hidden' name='volver' value=1 />
 					</td>
 						</form>
@@ -289,6 +289,14 @@ function show_form(){
 					<td colspan=3 class='BorderInf' align='center'>
 						DATOS DEL USER A RECUPERAR.
 					</td>
+				</tr>
+				<tr>
+					<th colspan=3 class='BorderInf' style=\"text-align:right\">
+							<a href='Feedback_Ver.php' >
+													CANCELAR Y VOLVER
+							</a>
+						</font>
+					</th>
 				</tr>
 				
 		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>
