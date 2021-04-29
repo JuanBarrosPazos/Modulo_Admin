@@ -199,7 +199,7 @@ function process_form(){
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
 						<form name='closewindow' action='Feedback_Admin_Borrar_01.php'>
-							<input type='submit' value='FEEDBACK BORRAR' />
+							<input type='submit' value='USER BAJAS ELIMINAR VOLVER' />
 							<input type='hidden' name='volver' value=1 />
 						</form>
 					</td>

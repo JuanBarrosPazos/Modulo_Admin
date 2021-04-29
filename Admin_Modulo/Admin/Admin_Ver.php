@@ -94,22 +94,7 @@ function process_form(){
 	global $twhile;
 	$twhile = "FILTRO USUARIOS CONSULTA";
 
-	global $formularioh;
-	$formularioh = "<form name='ver' action='Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=580px')\">";
-
-	global $formulariof;
-	$formulariof = "<td colspan=5 class='BorderInf'>&nbsp;</td>
-					<td colspan=2 align='center' class='BorderInf'>
-						<input type='submit' value='VER DETALLES' />
-						<input type='hidden' name='oculto2' value=1 />
-					</td>
-				</form>";
-
-	global $formulariohi;
-	$formulariohi = "";
-
-	global $formulariofi;
-	$formulariofi = "";
+	require 'Inc_While_Form.php';
 
 	require 'Inc_While_Total.php';
 
@@ -124,7 +109,7 @@ function process_form(){
 function show_form($errors=''){
 
 	global $titulo;
-	$titulo = "CONSULTA USUARIOS";
+	$titulo = "GESTION USUARIOS";
 
 	require 'Inc_Show_Form_01.php';
 	
@@ -164,22 +149,7 @@ function ver_todo(){
 	global $twhile;
 	$twhile = "TODOS USUARIOS CONSULTA";
 	
-	global $formularioh;
-	$formularioh = "<form name='ver' action='Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=580px')\">";
-
-	global $formulariof;
-	$formulariof = "<td colspan=5 class='BorderInf'>&nbsp;</td>
-					<td colspan=2 align='center' class='BorderInf'>
-						<input type='submit' value='VER DETALLES' />
-						<input type='hidden' name='oculto2' value=1 />
-					</td>
-				</form>";
-				
-	global $formulariohi;
-	$formulariohi = "";
-
-	global $formulariofi;
-	$formulariofi = "";
+	require 'Inc_While_Form.php';
 
 	require 'Inc_While_Total.php';
 

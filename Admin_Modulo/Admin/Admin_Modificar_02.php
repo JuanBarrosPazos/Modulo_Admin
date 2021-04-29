@@ -376,9 +376,16 @@ function show_form($errors=[]){
 	print("<table align='center' border=0>
 				<tr>
 					<th colspan=2 class='BorderInf'>
-			<img src='../Users/".$_SESSION['refcl']."/img_admin/".$_POST['myimg']."' height='44px' width='33px' />
+		<img src='../Users/".$_SESSION['refcl']."/img_admin/".$_POST['myimg']."' height='44px' width='33px' />
 						</br>INTRODUZCA LOS NUEVOS DATOS EN EL FORMULARIO.
 					</th>
+				</tr>
+				<tr>
+					<td colspan=2 class='BorderInf' style=\"text-align:right\">
+							<a href='Admin_Ver.php' >
+													CANCELAR Y VOLVER
+							</a>
+					</td>
 				</tr>
 				
 		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>

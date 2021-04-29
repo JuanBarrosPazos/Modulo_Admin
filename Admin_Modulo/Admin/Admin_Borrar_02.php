@@ -305,10 +305,9 @@ function show_form(){
 				</tr>
 				<tr>
 					<td colspan=3 class='BorderInf' style=\"text-align:right\">
-							<a href='Admin_Borrar_01.php' >
-													CANCELAR
+							<a href='Admin_Ver.php' >
+													CANCELAR Y VOLVER
 							</a>
-						</font>
 					</td>
 				</tr>
 				
