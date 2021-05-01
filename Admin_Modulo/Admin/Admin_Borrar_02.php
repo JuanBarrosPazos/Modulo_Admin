@@ -267,8 +267,7 @@ function show_form(){
 								'Tlf2' => $_POST['Tlf2'],
 								'lastin' => $_POST['lastin'],
 								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin'],
-								'myqr' => $_POST['myqr']);
+								'visitadmin' => $_POST['visitadmin']);
 							}
 
 	if($_POST['borrar']){
@@ -289,8 +288,7 @@ function show_form(){
 								'Tlf2' => $_POST['Tlf2'],
 								'lastin' => $_POST['lastin'],
 								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin'],
-								'myqr' => $_POST['myqr']);
+								'visitadmin' => $_POST['visitadmin']);
 							}
 								   
 	print("<table align='center' style=\"margin-top:10px\">
@@ -317,7 +315,6 @@ function show_form(){
 				<input name='lastin' type='hidden' value='".$defaults['lastin']."' />					
 				<input name='lastout' type='hidden' value='".$defaults['lastout']."' />					
 				<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />
-				<input name='myqr' type='hidden' value='".$defaults['myqr']."' />
 		<tr>
 			<td width=120px>	
 					Nivel:
@@ -477,7 +474,7 @@ function Feedback(){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."feedback`";
 
-	$sqlf = "INSERT INTO `$db_name`.$table_name_a (`ref`, `Nivel`, `Nombre`, `Apellidos`, `myimg`, `doc`, `dni`, `ldni`, `Email`, `Usuario`, `Password`, `Direccion`, `Tlf1`, `Tlf2`,`lastin`, `lastout`, `visitadmin`, `borrado`, `myqr` ) VALUES ('$_POST[ref]', '$_POST[Nivel]', '$_POST[Nombre]', '$_POST[Apellidos]', '$_POST[myimg]', '$_POST[doc]', '$_POST[dni]', '$_POST[ldni]', '$_POST[Email]', '$_POST[Usuario]', '$_POST[Password]', '$_POST[Direccion]', '$_POST[Tlf1]', '$_POST[Tlf2]', '$_POST[lastin]', '$_POST[lastout]', '$_POST[visitadmin]', '$FBaja', '$_POST[myqr]')";
+	$sqlf = "INSERT INTO `$db_name`.$table_name_a (`ref`, `Nivel`, `Nombre`, `Apellidos`, `myimg`, `doc`, `dni`, `ldni`, `Email`, `Usuario`, `Password`, `Direccion`, `Tlf1`, `Tlf2`,`lastin`, `lastout`, `visitadmin`, `borrado` ) VALUES ('$_POST[ref]', '$_POST[Nivel]', '$_POST[Nombre]', '$_POST[Apellidos]', '$_POST[myimg]', '$_POST[doc]', '$_POST[dni]', '$_POST[ldni]', '$_POST[Email]', '$_POST[Usuario]', '$_POST[Password]', '$_POST[Direccion]', '$_POST[Tlf1]', '$_POST[Tlf2]', '$_POST[lastin]', '$_POST[lastout]', '$_POST[visitadmin]', '$FBaja')";
 	
 	if(mysqli_query($dbf, $sqlf)){
 			//print("FOK.");

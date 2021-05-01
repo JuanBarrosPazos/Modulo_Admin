@@ -655,7 +655,6 @@ function process_form(){
   `lastin` varchar(20) collate utf8_spanish2_ci NOT NULL default '0',
   `lastout` varchar(20) collate utf8_spanish2_ci NOT NULL default '0',
   `visitadmin` varchar(4) collate utf8_spanish2_ci NOT NULL default '0',
-  `myqr` varchar(30) collate utf8_spanish2_ci NOT NULL default 'untitled.png',
   UNIQUE KEY `id` (`id`),
   UNIQUE KEY `ref` (`ref`),
   UNIQUE KEY `dni` (`dni`),
@@ -697,7 +696,6 @@ function process_form(){
 		`lastout` varchar(20) collate utf8_spanish2_ci NOT NULL default '0',
 		`visitadmin` varchar(4) collate utf8_spanish2_ci NOT NULL default '0',
 		`borrado` varchar(22) collate utf8_spanish2_ci NOT NULL default '0',
-		`myqr` varchar(30) collate utf8_spanish2_ci NOT NULL default 'untitled.png',
 
 		UNIQUE KEY `id` (`id`),
 		UNIQUE KEY `ref` (`ref`),
