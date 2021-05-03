@@ -2,7 +2,7 @@
 session_start();
 
 	//require '../Inclu/error_hidden.php';
-	require '../Inclu/Admin_Inclu_01a.php';
+	require '../Inclu/Admin_Inclu_head.php';
 	require '../Inclu/mydni.php';
 	require '../Inclu/nemp.php';
 	require '../Conections/conection.php';
@@ -694,7 +694,7 @@ function show_form($errors=[]){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-		require '../Inclu/Admin_Inclu_02.php';
+		require '../Inclu/Admin_Inclu_footer.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

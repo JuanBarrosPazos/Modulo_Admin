@@ -2,7 +2,7 @@
 session_start();
 
 	//require '../Inclu/error_hidden.php';
-	require '../Inclu/Admin_Inclu_01b.php';
+	require '../Inclu/Admin_Inclu_head.php';
 	require '../Inclu/mydni.php';
 
 	require '../Conections/conection.php';
@@ -569,7 +569,7 @@ $text = PHP_EOL."- ADMIN BORRAR SELECCIONADO ".$ActionTime.PHP_EOL."\t ID:".$_PO
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 	
-	require '../Inclu/Admin_Inclu_02.php';
+	require '../Inclu/Admin_Inclu_footer.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

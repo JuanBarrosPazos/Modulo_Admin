@@ -2,7 +2,7 @@
 session_start();
 
 	//require '../Inclu/error_hidden.php';
-	require 'Admin_Inclu_01b.php';
+	require 'Admin_Inclu_head.php';
 	require 'mydni.php';
 	require 'nemp.php';
 	require '../Conections/conection.php';
@@ -166,7 +166,7 @@ function show_form($errors=[]){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-	require '../Inclu/Admin_Inclu_02.php';
+	require '../Inclu/Admin_Inclu_footer.php';
 		
 /* Creado por Juan Barros Pazos 2020 */
 ?>

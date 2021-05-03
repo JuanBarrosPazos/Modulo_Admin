@@ -2,7 +2,7 @@
 session_start();
 
 	//require '../Inclu/error_hidden.php';
-	require '../Inclu/Admin_Inclu_01b.php';
+	require '../Inclu/Admin_Inclu_head.php';
 
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
@@ -184,7 +184,7 @@ function info(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 	
-	require '../Inclu/Admin_Inclu_02.php';
+	require '../Inclu/Admin_Inclu_footer.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

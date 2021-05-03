@@ -1,7 +1,7 @@
 <?php
 
 	require 'Inclu/error_hidden.php';
-	require 'Inclu/Admin_Inclu_01b2.php';
+	require 'Inclu/Admin_Inclu_headb.php';
 	require 'Inclu/my_bbdd_clave.php';
 
 				   ////////////////////				   ////////////////////
@@ -13,10 +13,8 @@
 						deldirua();
 						deldirub();
 						deldiruc();
-						//deltablesb();
 						rewrite();
 						config_one();
-						//inittot();
 			 			show_form();
 		}
 
@@ -334,49 +332,6 @@ print("<font color='#FF0000'>300 Se ha producido un error: </font></br>".mysqli_
 
 }
 
-/*	SE DESHABILITA ESTA FUNCIÓN deltablesb() AL TENER TODOS LA MISMA CLAVE	*/
-function deltablesb(){
-
-	require 'Conections/conection.php';
-	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
-
-	require 'Inclu/my_bbdd_clave.php';
-
-	/*************	BORRAMOS LAS TABLAS DEL SISTEMA 	***************/
-
-	global $table_name_a;
-	$table_name_a = "`".$_SESSION['clave']."admin`";
-
-	global $sqlt1;
-	$sqlt1 = "DROP TABLE `$db_name`.$table_name_a ";
-	if(mysqli_query($db, $sqlt1)){
-		} else {
-			print ("<font color='#FF0000'>*** </font></br> ".mysqli_error($db).".</br>");
-					}
-
-	global $table_name_b;
-	$table_name_b = "`".$_SESSION['clave']."ipcontrol`";
-
-	global $sqlt2;
-	$sqlt2 = "DROP TABLE `$db_name`.$table_name_b ";
-	if(mysqli_query($db, $sqlt2)){
-		} else {
-			print ("<font color='#FF0000'>*** </font></br> ".mysqli_error($db).".</br>");
-					}
-
-	global $table_name_c;
-	$table_name_c = "`".$_SESSION['clave']."visitasadmin`";
-
-	global $sqlt3;
-	$sqlt3 = "DROP TABLE `$db_name`.$table_name_c ";
-	if(mysqli_query($db, $sqlt3)){
-		} else {
-			print ("<font color='#FF0000'>*** </font></br> ".mysqli_error($db).".</br>");
-					}
-	}
-/*	SE DESHABILITA ESTA FUNCIÓN deltablesb() AL TENER TODOS LA MISMA CLAVE	*/
-
-
 function rewrite(){
 
 /*	unlink("Conections/conection.php");*/
@@ -409,92 +364,8 @@ function rewrite(){
 
 function validate_form(){
 	
-	$errors = array();
+	require 'config/validate_Init_System.php';
 	
-	if(strlen(trim($_POST['host'])) == 0){
-		$errors [] = "HOST: <font color='#FF0000'>CAMPO OBLIGATORIO</font>";
-		}
-	
-	elseif (strlen(trim($_POST['host'])) < 4){
-		$errors [] = "HOST: <font color='#FF0000'>MAS DE 3 CARACTERES</font>";
-		}
-		
-	elseif (!preg_match('/^[^@´`\'áéíóú#$&%<>:"·\(\)=\[\]\{\};,:\*\s]+$/',$_POST['host'])){
-		$errors [] = "HOST: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-		
-	elseif (!preg_match('/^[a-z A-Z 0-9 !¡?¿\._]+$/',$_POST['host'])){
-		$errors [] = "HOST: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-
-	
-	if(strlen(trim($_POST['user'])) == 0){
-		$errors [] = "USER: <font color='#FF0000'>CAMPO OBLIGATORIO</font>";
-		}
-	
-	elseif (strlen(trim($_POST['user'])) < 4){
-		$errors [] = "USER: <font color='#FF0000'>MAS DE 3 CARACTERES</font>";
-		}
-		
-	elseif (!preg_match('/^[^@´`\'áéíóú#$&%<>:"·\(\)=\[\]\{\};,:\*\s]+$/',$_POST['user'])){
-		$errors [] = "USER: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-		
-	elseif (!preg_match('/^[a-z A-Z 0-9 !¡?¿\._]+$/',$_POST['user'])){
-		$errors [] = "USER: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-
-	
-	if(strlen(trim($_POST['pass'])) == 0){
-		$errors [] = "PASS: <font color='#FF0000'>CAMPO OBLIGATORIO</font>";
-		}
-	
-	elseif (strlen(trim($_POST['pass'])) < 4){
-		$errors [] = "PASS: <font color='#FF0000'>MAS DE 3 CARACTERES</font>";
-		}
-		
-	elseif (!preg_match('/^[^@´`\'áéíóú#$&%<>:"·\(\)=\[\]\{\};,:\*\s]+$/',$_POST['pass'])){
-		$errors [] = "PASS: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-		
-	elseif (!preg_match('/^[a-z A-Z 0-9 !¡?¿\._]+$/',$_POST['pass'])){
-		$errors [] = "PASS: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-
-	
-	if(strlen(trim($_POST['name'])) == 0){
-		$errors [] = "NAME: <font color='#FF0000'>CAMPO OBLIGATORIO</font>";
-		}
-	
-	elseif (strlen(trim($_POST['name'])) < 4){
-		$errors [] = "NAME: <font color='#FF0000'>MAS DE 3 CARACTERES</font>";
-		}
-		
-	elseif (!preg_match('/^[^@´`\'áéíóú#$&%<>:"·\(\)=\[\]\{\};,:\*\s]+$/',$_POST['name'])){
-		$errors [] = "NAME: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-		
-	elseif (!preg_match('/^[a-z 0-9 !¡?¿\._]+$/',$_POST['name'])){
-		$errors [] = "NAME: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-
-
-	if(strlen(trim($_POST['clave'])) == 0){
-		$errors [] = "CLAVE: <font color='#FF0000'>CAMPO OBLIGATORIO</font>";
-		}
-	
-	elseif (strlen(trim($_POST['clave'])) < 3){
-		$errors [] = "CLAVE: <font color='#FF0000'>MAS DE 2 CARACTERES</font>";
-		}
-		
-	elseif (!preg_match('/^[^@´`\'áéíóú#$&%<>:"·\(\)=\[\]\{\};, !¡?¿\._:\*\s]+$/',$_POST['clave'])){
-		$errors [] = "CLAVE: <font color='#FF0000'>CARACTERES NO VALIDOS</font>";
-		}
-		
-	elseif (!preg_match('/^[a-z 0-9]+$/',$_POST['clave'])){
-		$errors [] = "CLAVE: <font color='#FF0000'>MINUSCULAS Y NUMEROS</font>";
-		}
-
 	return $errors;
 
 		} 
@@ -971,7 +842,7 @@ function show_form($errors=[]){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-	require 'Inclu/Admin_Inclu_02.php';
+	require 'Inclu/Admin_Inclu_footer.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

@@ -2,7 +2,7 @@
 //session_start();
 
 	//require 'error_hidden.php';
-	require 'Admin_Inclu_01b.php';
+	require 'Admin_Inclu_head.php';
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
 	require 'my_bbdd_clave.php';
@@ -362,7 +362,7 @@ function desbloqueo(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 	
-	require 'Admin_Inclu_02.php';
+	require 'Admin_Inclu_footer.php';
 
 					   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
