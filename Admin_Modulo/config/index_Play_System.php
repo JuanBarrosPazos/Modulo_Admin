@@ -30,7 +30,7 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	$sql =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]'";
+	$sql =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]' AND `Pass` = '$_POST[Password]'";
 	$q = mysqli_query($db, $sql);
 	global $row;
 	$row = mysqli_fetch_assoc($q);
@@ -50,6 +50,7 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 	$_SESSION['Email'] = $row['Email'];
 	$_SESSION['Usuario'] = $row['Usuario'];
 	$_SESSION['Password'] = $row['Password'];
+	$_SESSION['Pass'] = $row['Pass'];
 	$_SESSION['Direccion'] = $row['Direccion'];
 	$_SESSION['Tlf1'] = $row['Tlf1'];
 	$_SESSION['Tlf2'] = $row['Tlf2'];
@@ -566,7 +567,7 @@ function validate_form(){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	$sqlp =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]'";
+	$sqlp =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]' ";
 	$qp = mysqli_query($db, $sqlp);
 	$rn = mysqli_fetch_assoc($qp);
 	$count = mysqli_num_rows($qp);
@@ -576,8 +577,8 @@ function validate_form(){
 	global $hash;
 	global $row;
 	$hash = $row['Password'];
-	echo $row['Password']."<br>";
-	echo $hash;
+	//echo $row['Password']."<br>";
+	//echo $hash;
 
 	$errors = array();
 	
@@ -600,9 +601,13 @@ function validate_form(){
 			}
 
 		elseif(!password_verify($_POST['Password'], $hash)){
-			$errors [] = "Password incorrecto.";
+			//$errors [] = "Password incorrecto.";
 			//$errors [] = "USER ACCES ERROR";
-
+			if(trim($_POST['Password'] != $row['Pass'])){
+				$errors [] = "Password incorrecto.";
+				//$errors [] = "USER ACCES ERROR";
+				} else {}
+	
 			}
 		
 		elseif ($rn['Nivel'] == 'close'){

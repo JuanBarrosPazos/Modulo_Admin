@@ -1,5 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
+# Admin_Modulo_V08_Con_password_hash
 
 ## DESCRIPCION GENERAL:
 - Creación de las tablas necesarias en la bbdd

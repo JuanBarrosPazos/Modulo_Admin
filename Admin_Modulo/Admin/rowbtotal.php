@@ -12,6 +12,7 @@
             <input name='Email' type='hidden' value='".$rowb['Email']."' />
             <input name='Usuario' type='hidden' value='".$rowb['Usuario']."' />
             <input name='Password' type='hidden' value='".$rowb['Password']."' />						
+            <input name='Pass' type='hidden' value='".$rowb['Pass']."' />						
             <input name='Direccion' type='hidden' value='".$rowb['Direccion']."' />
             <input name='Tlf1' type='hidden' value='".$rowb['Tlf1']."' />
             <input name='Tlf2' type='hidden' value='".$rowb['Tlf2']."' />
