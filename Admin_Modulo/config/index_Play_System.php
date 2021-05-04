@@ -30,7 +30,7 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	$sql =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]' AND `Password` = '$_POST[Password]'";
+	$sql =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]'";
 	$q = mysqli_query($db, $sql);
 	global $row;
 	$row = mysqli_fetch_assoc($q);
@@ -75,7 +75,6 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 		if(isset($_POST['oculto'])){
 			if($form_errors = validate_form()){
 								suma_denegado();
-								show_form2();
 								if($_SESSION['showf'] == 69){table_desblock();}
 								else{show_form($form_errors);
 									 show_visit();}
@@ -90,20 +89,18 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 									 
 			}	// FIN POST OCULTO
 	
-	elseif (isset($_POST['cancel'])) {	show_form2();
+	elseif (isset($_POST['cancel'])) {	
 								if($_SESSION['showf'] == 69){table_desblock();}
 								else{show_form(@$form_errors);
 									 show_visit();}
 							  }
 
 	elseif (isset($_GET['salir'])) { salir();
-									 show_form2();
 									 show_form();
 									 session_destroy();
 									}
 
-	else {	show_form2();
-			if($_SESSION['showf'] == 69){table_desblock();}
+	else {	if($_SESSION['showf'] == 69){table_desblock();}
 			else{show_form(@$form_errors);
 				 show_visit();}
 			suma_visit();
@@ -569,34 +566,43 @@ function validate_form(){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	$sqlp =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]' AND `Password` = '$_POST[Password]'";
+	$sqlp =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]'";
 	$qp = mysqli_query($db, $sqlp);
 	$rn = mysqli_fetch_assoc($qp);
-	
+	$count = mysqli_num_rows($qp);
+
+	global $password;
+	$password = $_POST['Password'] ;
+	global $hash;
+	global $row;
+	$hash = $row['Password'];
+	echo $row['Password']."<br>";
+	echo $hash;
+
 	$errors = array();
 	
 		global $sql;
 		global $q;
-		global $row;
 		
 		if (strlen(trim($_POST['Usuario'])) == 0){
-			//$errors [] = "Usuario: Campo obligatorio.";
-			$errors [] = "USER ACCES ERROR";
+			$errors [] = "Usuario: Campo obligatorio.";
+			//$errors [] = "USER ACCES ERROR";
 			}
 
 		elseif (strlen(trim($_POST['Password'])) == 0){
-			//$errors [] = "Password: Campo Obligatorio:";
-			$errors [] = "USER ACCES ERROR";
+			$errors [] = "Password: Campo Obligatorio:";
+			//$errors [] = "USER ACCES ERROR";
 			}
 
-		elseif(trim($_POST['Usuario'] != $row['Usuario'])){
-			//$errors [] = "Nombre o Password incorrecto.";
-			$errors [] = "USER ACCES ERROR";
+		elseif($count < 1){
+			$errors [] = "Nombre incorrecto.";
+			//$errors [] = "USER ACCES ERROR";
 			}
 
-		elseif(trim($_POST['Password'] != $row['Password'])){
-			//$errors [] = "Nombre o Password incorrecto.";
-			$errors [] = "USER ACCES ERROR";
+		elseif(!password_verify($_POST['Password'], $hash)){
+			$errors [] = "Password incorrecto.";
+			//$errors [] = "USER ACCES ERROR";
+
 			}
 		
 		elseif ($rn['Nivel'] == 'close'){
@@ -776,41 +782,6 @@ function show_ficha(){
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
-
-function show_form2($errorsp=''){
-	
-	if(isset($_POST['pin'])){
-		$defaults = $_POST;
-		} else {$defaults = array ('pin' => '');}
-	
-	if ($errorsp){
-		print("	<table align='center'>
-					<tr>
-						<td style='text-align:center'>
-							<!--
-							<font color='#FF0000'>* SOLUCIONE ESTOS ERRORES:</font><br/>
-							-->
-							<font color='#FF0000'>ERROR ACCESO PIN</font>
-						</td>
-					</tr>
-					<!--
-					<tr>
-						<td style='text-align:left'>
-					-->");
-			
-		/*
-		for($a=0; $c=count($errorsp), $a<$c; $a++){
-			print("<font color='#FF0000'>**</font>  ".$errorsp [$a]."<br/>");
-			}
-		*/
-		print("<!--</td>
-				  </tr>-->
-	<embed src='audi/pin_error.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
-	</embed>
-		</table>");
-		}
-	
-	}
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
