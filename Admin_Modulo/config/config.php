@@ -870,5 +870,5 @@ function show_form($errors=[]){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

@@ -368,5 +368,5 @@ function desbloqueo(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-/* Creado por Juan Barros Pazos 2019 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

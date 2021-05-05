@@ -139,7 +139,7 @@ function process_form(){
 						Password:
 					</td>
 					<td colspan=2>"
-						.$_POST['Password'].
+						.$_POST['Pass'].
 					"</td>
 				</tr>
 				
@@ -199,7 +199,7 @@ function process_form(){
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
 						<form name='closewindow' action='Feedback_Ver.php'>
-							<input type='submit' value='USER BAJAS ELIMINAR VOLVER' />
+							<input type='submit' value='ADMIN BAJAS VOLVER' />
 							<input type='hidden' name='volver' value=1 />
 						</form>
 					</td>
@@ -377,6 +377,7 @@ function show_form(){
 									'Email' => $_POST['Email'],
 									'Usuario' => $_POST['Usuario'],
 									'Password' => $_POST['Password'],
+									'Pass' => $_POST['Pass'],
 									'Direccion' => $_POST['Direccion'],
 									'Tlf1' => $_POST['Tlf1'],
 									'Tlf2' => $_POST['Tlf2'],
@@ -397,6 +398,7 @@ function show_form(){
 									'Email' => $_POST['Email'],
 									'Usuario' => $_POST['Usuario'],
 									'Password' => $_POST['Password'],
+									'Pass' => $_POST['Pass'],
 									'Direccion' => $_POST['Direccion'],
 									'Tlf1' => $_POST['Tlf1'],
 									'Tlf2' => $_POST['Tlf2'],
@@ -433,6 +435,7 @@ function show_form(){
 		<input name='lastin' type='hidden' value='".$defaults['lastin']."' />					
 		<input name='lastout' type='hidden' value='".$defaults['lastout']."' />					
 		<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />					
+		<input type='hidden' name='Password' value='".$defaults['Password']."' />
 	
 				<tr>
 					<td width=120px>	
@@ -531,8 +534,8 @@ function show_form(){
 						Password:
 					</td>
 					<td colspan='2'>
-						".$defaults['Password']."
-		<input type='hidden' name='Password' value='".$defaults['Password']."' />
+						".$defaults['Pass']."
+		<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
 					</td>
 				</tr>
 
@@ -610,7 +613,7 @@ function info_02(){
 global $ddr;
 global $deletet;	
 global $text;
-$text = PHP_EOL."- USER BAJAS BORRARDO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Password'];
+$text = PHP_EOL."- USER BAJAS BORRARDO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
 
 		$logdocu = $_SESSION['ref'];
 		$logdate = date('Y_m_d');
@@ -645,7 +648,7 @@ function info_01(){
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
 global $text;
-$text = PHP_EOL."- USER BAJAS BORRAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Password'];
+$text = PHP_EOL."- USER BAJAS BORRAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
 
 		$logdocu = $_SESSION['ref'];
 		$logdate = date('Y_m_d');
@@ -667,5 +670,5 @@ $text = PHP_EOL."- USER BAJAS BORRAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nomb
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

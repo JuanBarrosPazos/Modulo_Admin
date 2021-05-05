@@ -742,5 +742,5 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 
 /* La función devuelve el array errors. */
 	
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

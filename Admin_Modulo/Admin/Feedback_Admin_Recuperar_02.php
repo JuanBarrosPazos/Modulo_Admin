@@ -135,7 +135,7 @@ function process_form(){
 						Password:
 					</td>
 					<td colspan=2>"
-						.$_POST['Password'].
+						.$_POST['Pass'].
 					"</td>
 				</tr>
 				
@@ -195,7 +195,7 @@ function process_form(){
 				<tr>
 						<form name='closewindow' action='Feedback_Ver.php'>
 					<td colspan=3 align='right' class='BorderSup'>
-							<input type='submit' value='VOLVER' />
+							<input type='submit' value='GESTION BAJAS VOLVER' />
 							<input type='hidden' name='volver' value=1 />
 					</td>
 						</form>
@@ -275,6 +275,7 @@ function show_form(){
 									'Usuario2' => $_POST['Usuario'],
 									'Password' => $_POST['Password'],
 									'Password2' => $_POST['Password'],
+									'Pass' => $_POST['Pass'],
 									'Direccion' => $_POST['Direccion'],
 									'Tlf1' => $_POST['Tlf1'],
 									'Tlf2' => $_POST['Tlf2'],
@@ -302,7 +303,8 @@ function show_form(){
 			
 		<input name='id' type='hidden' value='".$defaults['id']."' />					
 		<input name='myimg' type='hidden' value='".$defaults['myimg']."' />	
-		
+		<input type='hidden' name='Password' value='".$defaults['Password']."' />
+
 				<tr>
 					<td width=120px>	
 						<font color='#FF0000'>*</font>
@@ -411,8 +413,8 @@ function show_form(){
 						Password:
 					</td>
 					<td colspan=2>
-						".$defaults['Password']."
-						<input type='hidden' name='Password' value='".$defaults['Password']."' />
+						".$defaults['Pass']."
+						<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
 					</td>
 				</tr>
 
@@ -524,7 +526,7 @@ function info_02(){
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
 global $text;
-$text = PHP_EOL."- ADMIN FEEDBACK RECUPERADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Password'];
+$text = PHP_EOL."- ADMIN FEEDBACK RECUPERADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
 
 	$logdocu = $_SESSION['ref'];
 	$logdate = date('Y_m_d');
@@ -559,7 +561,7 @@ function info_01(){
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
 global $text;
-$text = PHP_EOL."- ADMIN FEEDBACK RECUPERAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Password'];
+$text = PHP_EOL."- ADMIN FEEDBACK RECUPERAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
 
 	$logdocu = $_SESSION['ref'];
 	$logdate = date('Y_m_d');
@@ -581,5 +583,5 @@ $text = PHP_EOL."- ADMIN FEEDBACK RECUPERAR SELECCIONADO ".$ActionTime.PHP_EOL."
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

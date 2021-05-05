@@ -139,7 +139,7 @@ function process_form(){
 						Password:
 					</td>
 					<td colspan='2'>"
-						.$_POST['Password'].
+						.$_POST['Pass'].
 					"</td>
 				</tr>
 				
@@ -250,5 +250,5 @@ function info(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

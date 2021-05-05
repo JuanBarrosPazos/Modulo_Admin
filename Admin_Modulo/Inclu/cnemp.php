@@ -168,5 +168,5 @@ function show_form($errors=[]){
 
 	require '../Inclu/Admin_Inclu_footer.php';
 		
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

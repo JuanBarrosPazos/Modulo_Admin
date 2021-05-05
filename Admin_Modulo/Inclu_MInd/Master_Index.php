@@ -75,17 +75,17 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</li>
 				<li>
 					<a href='".$rutaadmin."Admin_Ver.php'>
-						<i class='ic ico15b'></i>CONSULTAR
+						<i class='ic ico15b'></i>GESTION ADMIN
 					</a>
 				</li>
 				<li>
 					<a href='".$rutaadmin."Admin_Crear.php'>
-						<i class='ic ico14b'></i>CREAR
+						<i class='ic ico14b'></i>CREAR ADMIN
 					</a>
 				</li>
 				<li>
 					<a href='".$rutaadmin."Feedback_Ver.php'>
-						<i class='ic ico19b'></i>VER BAJAS
+						<i class='ic ico19b'></i>GESTION BAJAS
 					</a>
 				</li>
 				<li>
@@ -525,5 +525,5 @@ print("<nav class='sidebar-nav'>
 	
 	} 
 	
-/* Creado por Juan Barros Pazos 2020 */
+/* Creado por Juan Barros Pazos 2021 */
 ?>

@@ -97,7 +97,7 @@
 				</td>
 						
 				<td class='BorderInfDch'>
-					".$rowb['Password']."
+					".$rowb['Pass']."
 				</td>
 						
 			</tr>
