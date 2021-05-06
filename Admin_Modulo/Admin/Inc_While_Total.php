@@ -88,7 +88,7 @@
 				</td>
 						
 				<td class='BorderInfDch'>
-	<img src='../Users/".$rowb['ref']."/img_admin/".$rowb['myimg']."' height='40px' width='30px' />
+	<img src='".$rutaimg.$rowb['ref']."/img_admin/".$rowb['myimg']."' height='40px' width='30px' />
 				</td>
 												
 													
@@ -128,6 +128,9 @@
 	    print("</table>");
 			
 			} 
+
+	require 'Paginacion_Futter.php';
+	
 		} 
 
 ?>

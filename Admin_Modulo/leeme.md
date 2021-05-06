@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V09_Con_password_hash
+# Admin_Modulo_V10_Paginacion_&_Hash
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -9,6 +9,12 @@
 - Recuperación de usuarios desde Feedback Admin a Admin.
 - Eliminación de usuarios y datos desde Feedback Admin.
 - Log de sistema y de actividad de los usuarios individuales.
+---
+---
+## 2021/05/06
+### Admin_Modulo_V10_Paginacion_&_Hash.zip
+- Configuración inicial de l apaginación en consultas.
+- Modificación del inicio al abrir sesión.
 ---
 ---
 ## 2021/05/05

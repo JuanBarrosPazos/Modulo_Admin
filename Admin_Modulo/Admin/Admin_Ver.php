@@ -20,25 +20,30 @@ if (($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){
 
 elseif ($_SESSION['Nivel'] == 'admin'){
 
-				master_index();
+		master_index();
 
-					if(isset($_POST['todo'])){ show_form();							
-										ver_todo();
-										info();
+		if(isset($_POST['todo'])){ show_form();							
+								   ver_todo();
+								   info();
 										}
 								
-								elseif(isset($_POST['oculto'])){
-										if($form_errors = validate_form()){
-											show_form($form_errors);
-												} else {
-													process_form();
-													info();
-													}
-												}
-								else {
-										show_form();
+		elseif(isset($_POST['oculto'])){
+				if($form_errors = validate_form()){
+						show_form($form_errors);
+			} else {process_form();
+					info();
+					}
+				}
+
+		elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
+											show_form();
+											ver_todo();
 										}
-			} else { require '../Inclu/table_permisos.php'; }
+
+		else { show_form();	}
+	} 
+			
+	else { require '../Inclu/table_permisos.php'; }
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -134,13 +139,17 @@ function ver_todo(){
 		}
 	
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
+				require 'Paginacion_Head.php';
 				$orden = $_POST['Orden'];
-				$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";
+				/*$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";*/
+				$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  `id` DESC $limit";
 				$qb = mysqli_query($db, $sqlb);
 			}
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] != $_SESSION['mydni'])){ 
+				require 'Paginacion_Head.php';
 				$orden = $_POST['Orden'];
-				$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";
+				/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";*/
+				$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  `id` DESC $limit";
 				$qb = mysqli_query($db, $sqlb);
 			}
 
@@ -150,7 +159,10 @@ function ver_todo(){
 	$twhile = "TODOS USUARIOS CONSULTA";
 	
 	require 'Inc_While_Form.php';
-
+		global $ruta;
+		$ruta = "";
+		global $rutaimg;
+		$rutaimg = "../Users/";
 	require 'Inc_While_Total.php';
 
 			////////////////////		**********  		////////////////////

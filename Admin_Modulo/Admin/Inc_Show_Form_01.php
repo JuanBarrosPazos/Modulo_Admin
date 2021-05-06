@@ -5,11 +5,12 @@ if(isset($_POST['oculto'])){
     }
     elseif(isset($_POST['todo'])){
         $defaults = $_POST;
-        } else {
-                $defaults = array (	'Nombre' => '',
-                                    'Apellidos' => '',
-                                    'Orden' => isset($ordenar));
-                                                        }
+        } 
+    elseif(isset($_GET['page'])){ }
+    else {  $defaults = array (	'Nombre' => '',
+                                'Apellidos' => '',
+                                'Orden' => isset($ordenar));
+                         }
 
 if ($errors){
     print("	<table align='center'>

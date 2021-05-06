@@ -84,7 +84,6 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 								ayear();
 							  	show_ficha();
 							  	errors();
-								ver_todo();
 								suma_acces();
 								}
 									 
@@ -636,6 +635,7 @@ function process_form(){
 	master_index();
 	print("<embed src='audi/sesion_open.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' ></embed>");
 			admin_entrada();
+			ver_todo();
 		}else { require 'Inclu/table_permisos.php'; }
 	}	
 
@@ -1034,69 +1034,45 @@ function show_form($errors=[]){
 				 ////////////////////				  ///////////////////
 
 function ver_todo(){
-		
+
 	global $db;
 	global $db_name;
+
+	global $table_name_a;
+	$table_name_a = "`".$_SESSION['clave']."admin`";
+
+	if (($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
+			$ref = $_SESSION['ref'];
+			$sqlb =  "SELECT * FROM $table_name_a WHERE `ref` = '$ref'";
+			$qb = mysqli_query($db, $sqlb);
+		}
 	
-	global $dyt1;
-	$dyt1 = date('Y');
-	global $dm1;
-	global $dd1;
-	$dm1 = date('m');
-	$dd1 = '';
-	global $fil;												
-	$fil = "%".$dyt1."-%".$dm1."%-".$dd1."%";
-
-	$tabla1 = $_SESSION['clave'].$_SESSION['ref'];
-	$tabla1 = strtolower($tabla1);
-	global $vname;
-	$vname = $tabla1."_".$dyt1;
-	$vname = "`".$vname."`";
-
-	require 'fichar/Inc_Suma_Todo.php';
+	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
+				require 'Admin/Paginacion_Head.php';
+				$orden = $_POST['Orden'];
+				/*$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";*/
+				$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  `id` ASC $limit";
+				$qb = mysqli_query($db, $sqlb);
+			}
+	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] != $_SESSION['mydni'])){ 
+				require 'Admin/Paginacion_Head.php';
+				$orden = $_POST['Orden'];
+				/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";*/
+				$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  `id` ASC $limit";
+				$qb = mysqli_query($db, $sqlb);
+			}
 
 			////////////////////		**********  		////////////////////
 
-	global $sqlb;
-	global $qb;
-	$sqlb =  "SELECT * FROM $vname WHERE `din` LIKE '$fil' ORDER BY  `din` ASC ";
-	$qb = mysqli_query($db, $sqlb);
-	
-			////////////////////		**********  		////////////////////
-
-	global $pdm;
-	$pdm = "pdm";
-	global $feedtot;
-	$feedtot = "";
-	global $name1;
-	$name1 = $_SESSION['Nombre'];
-	global $name2;
-	$name2 = $_SESSION['Apellidos'];
-	global $refses;
-	$refses = $_SESSION['ref'];
-	global $nodata;
-	$nodata = "NO HAY DATOS ESTE MES ".date('Y/m');
-	if(isset($_POST['dy']) == ''){ global $ycons;
-							$ycons = date('Y');
-	}else{ global $ycons;
-		   $ycons =	"20".$_POST['dy'];}
 	global $twhile;
-	$twhile = "<tr>
-				<th colspan=6 class='BorderInf'>".$name1." ".$name2.". Ref: ".$refses." RESULTADOS.</th>
-				</tr>";
-
-	global $tdplus;
-	$tdplus = "";
-	global $formularioh;
-	$formularioh = "";
-	global $formulariof;
-	$formulariof = "";
-	global $colspana;
-	$colspana = "6";
-	global $colspanb;
-	$colspanb = "4";
-
-	require 'fichar/Inc_Fichar_While_Total.php';
+	$twhile = "TODOS USUARIOS CONSULTA";
+	
+	require 'Admin/Inc_While_Form.php';
+		global $ruta;
+		$ruta = "Admin/";
+		global $rutaimg;
+		$rutaimg = "Users/";
+	require 'Admin/Inc_While_Total.php';
 
 			////////////////////		**********  		////////////////////
 		
