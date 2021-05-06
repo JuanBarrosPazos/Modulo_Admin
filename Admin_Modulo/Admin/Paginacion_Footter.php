@@ -7,7 +7,7 @@ if ($total_pages > 1) {
 
     for ($i=1;$i<=$total_pages;$i++) {
         if ($page == $i) {
-            echo '<li class="pageli"><a href="#">'.$page.'</a></li>';
+            echo '<li class="pagelib"><a href="#">'.$page.'</a></li>';
         } else {
             echo '<li class="pageli"><a href="'.$ruta.'Admin_Ver.php?page='.$i.'">'.$i.'</a></li>';
         }

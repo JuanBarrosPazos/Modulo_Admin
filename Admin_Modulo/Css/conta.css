@@ -333,4 +333,17 @@ a:hover  img {
 	padding: 2px 6px 2px 6px;
 }
 
+.pagelib {
+	display: inline-block;
+	border: solid 1px #f40;
+	margin: 2px;
+	padding: 2px 6px 2px 6px;
+}
+
+.pagelib a {
+	color: #f40 !important;
+	text-decoration: none;
+}
+
+
 /* Creado por Juan Barros Pazos 2021 */

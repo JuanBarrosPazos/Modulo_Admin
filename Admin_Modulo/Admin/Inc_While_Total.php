@@ -129,7 +129,7 @@
 			
 			} 
 
-	require 'Paginacion_Futter.php';
+	require 'Paginacion_Footter.php';
 	
 		} 
 
