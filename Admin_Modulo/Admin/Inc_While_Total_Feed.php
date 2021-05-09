@@ -122,6 +122,9 @@
 	    print("</table>");
 			
 			} 
+
+	require 'Paginacion_Footter.php';
+
 		} 
 
 ?>

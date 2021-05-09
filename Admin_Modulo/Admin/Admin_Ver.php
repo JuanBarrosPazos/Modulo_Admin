@@ -40,8 +40,10 @@ elseif ($_SESSION['Nivel'] == 'admin'){
 											ver_todo();
 										}
 
-		else { show_form();	}
-	} 
+		else { show_form();
+			   ver_todo();
+				}
+		} 
 			
 	else { require '../Inclu/table_permisos.php'; }
 
@@ -100,7 +102,8 @@ function process_form(){
 	$twhile = "FILTRO USUARIOS CONSULTA";
 
 	require 'Inc_While_Form.php';
-
+		global $rutaimg;
+		$rutaimg = "../Users/";
 	require 'Inc_While_Total.php';
 
 			////////////////////		**********  		////////////////////
@@ -115,6 +118,8 @@ function show_form($errors=''){
 
 	global $titulo;
 	$titulo = "GESTION USUARIOS";
+	global $boton;
+	$boton = "USUARIOS VER TODOS";
 
 	require 'Inc_Show_Form_01.php';
 	
@@ -163,6 +168,8 @@ function ver_todo(){
 		$ruta = "";
 		global $rutaimg;
 		$rutaimg = "../Users/";
+		global $pagedest;
+		$pagedest = "Admin_Ver.php";
 	require 'Inc_While_Total.php';
 
 			////////////////////		**********  		////////////////////

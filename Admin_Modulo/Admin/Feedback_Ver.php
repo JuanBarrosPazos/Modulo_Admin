@@ -28,7 +28,16 @@ if ($_SESSION['Nivel'] == 'admin'){
 									info();
 									}
 								}
-			else {show_form();}
+
+		elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
+											show_form();
+											ver_todo();
+										}
+
+		else {show_form();
+			  ver_todo();
+				}
+
 		} else { require '../Inclu/table_permisos.php'; }
 
 				   ////////////////////				   ////////////////////
@@ -69,10 +78,10 @@ function process_form(){
 	if (strlen(trim($_POST['Apellidos'])) == 0){$ape = $nom;}
 	if (strlen(trim($_POST['Nombre'])) == 0){ $nom = $ape;}
 
-	global $table_name_f;
-	$table_name_f = "`".$_SESSION['clave']."feedback`";
+	global $table_name_a;
+	$table_name_a = "`".$_SESSION['clave']."feedback`";
 
-	$sqlb =  "SELECT * FROM $table_name_f WHERE `Nombre` LIKE '$nom' OR `Apellidos` LIKE '$ape' ORDER BY `Nombre` ASC ";
+	$sqlb =  "SELECT * FROM $table_name_a WHERE `Nombre` LIKE '$nom' OR `Apellidos` LIKE '$ape' ORDER BY `Nombre` ASC ";
  	
 	$qb = mysqli_query($db, $sqlb);
 	
@@ -82,7 +91,8 @@ function process_form(){
 	$twhile = "FILTRO USUARIOS BAJAS CONSULTAR";
 
 	require 'Inc_While_Form_Feed.php';
-
+		global $rutaimg;
+		$rutaimg = "../Users/";
 	require 'Inc_While_Total_Feed.php';
 
 			////////////////////		**********  		////////////////////
@@ -97,7 +107,8 @@ function show_form($errors=''){
 	
 	global $titulo;
 	$titulo = "BAJAS TEMPORALES DEL SISTEMA";
-
+	global $boton;
+	$boton = "BAJAS VER TODAS";
 	require 'Inc_Show_Form_01.php';
 	
 	}	
@@ -112,11 +123,14 @@ function ver_todo(){
 
 	if (($_SESSION['Nivel'] == 'admin')){ 
 	$orden = $_POST['Orden'];
+	
+	global $table_name_a;
+	$table_name_a = "`".$_SESSION['clave']."feedback`";
 
-	global $table_name_f;
-	$table_name_f = "`".$_SESSION['clave']."feedback`";
+	require 'Paginacion_Head.php';
 
-	$sqlb =  "SELECT * FROM $table_name_f ORDER BY $orden ";
+	$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  `id` DESC $limit";
+	/* $sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden "; */
 	$qb = mysqli_query($db, $sqlb);
 	}
 	
@@ -126,7 +140,12 @@ function ver_todo(){
 	$twhile = "TODOS USUARIOS BAJAS CONSULTAR";
 
 	require 'Inc_While_Form_Feed.php';
-
+	global $ruta;
+	$ruta = "";
+	global $rutaimg;
+	$rutaimg = "../Users/";
+	global $pagedest;
+	$pagedest = "Feedback_Ver.php";
 	require 'Inc_While_Total_Feed.php';
 
 			////////////////////		**********  		////////////////////

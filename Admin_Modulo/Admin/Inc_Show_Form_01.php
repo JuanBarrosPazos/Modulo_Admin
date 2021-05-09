@@ -2,11 +2,14 @@
 
 if(isset($_POST['oculto'])){
     $defaults = $_POST;
+    $_SESSION['Orden'] = $_POST['Orden'];
     }
     elseif(isset($_POST['todo'])){
         $defaults = $_POST;
-        } 
-    elseif(isset($_GET['page'])){ }
+        $_SESSION['Orden'] = $_POST['Orden'];
+    } 
+    elseif(isset($_GET['page'])){ $defaults['Orden'] = $_SESSION['Orden'];}
+    
     else {  $defaults = array (	'Nombre' => '',
                                 'Apellidos' => '',
                                 'Orden' => isset($ordenar));
@@ -36,8 +39,8 @@ $ordenar = array (	'`id` ASC' => 'ID Ascendente',
                     '`Nombre` DESC' => 'Nombre Descendente',
                     '`Apellidos` ASC' => 'Apellidos Ascenedente',
                     '`Apellidos` DESC' => 'Apellidos Descendente',
-                    '`Email` ASC' => 'Dirección de Email Ascendente',
-                    '`Email` DESC' => 'Dirección de Email Descendente',
+                    '`Email` ASC' => 'Email Ascendente',
+                    '`Email` DESC' => 'Email Descendente',
                     '`Tlf1` ASC' => 'Teléfono 1 Ascendente',
                     '`Tlf1` DESC' => 'Teléfono 1 Descendente',
                     '`Tlf2` ASC' => 'Teléfono 2 Ascendente',
@@ -60,8 +63,8 @@ print(" <table align='center' style=\"border:0px;margin-top:4px\">
                     <input type='submit' value='USER CONSULTA' />
                     <input type='hidden' name='oculto' value=1 />
                 </td>
-                <td>	
-                    Nombre:
+                <td align='right'>	
+                    NOMBRE
                 </td>
                 <td>
         <input type='text' name='Nombre' size=20 maxlenth=10 value='".@$defaults['Nombre']."' />
@@ -71,8 +74,8 @@ print(" <table align='center' style=\"border:0px;margin-top:4px\">
             <tr>
                 <td>
                 </td>
-                <td>	
-                    Apellido:
+                <td align='right'>	
+                    APELLIDO
                 </td>
                 <td>
 <input type='text' name='Apellidos' size=20 maxlenth=10 value='".@$defaults['Apellidos']."' />
@@ -83,11 +86,11 @@ print(" <table align='center' style=\"border:0px;margin-top:4px\">
     <form name='todo' method='post' action='$_SERVER[PHP_SELF]' >
             <tr>
                 <td align='right'>
-                    <input type='submit' value='USER TODOS' />
+                    <input type='submit' value='".$boton."' />
                     <input type='hidden' name='todo' value=1 />
                 </td>
-                <td>	
-                    Ordenar Por:
+                <td align='right'>	
+                    ORDEN
                 </td>
                 <td>
                     <select name='Orden'>");
