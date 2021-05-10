@@ -122,14 +122,18 @@ function ver_todo(){
 	global $db;
 
 	if (($_SESSION['Nivel'] == 'admin')){ 
-	$orden = $_POST['Orden'];
+
+			if(isset($_POST['Orden'])){	global $orden;
+										$orden = $_POST['Orden'];
+			} else { global $orden;
+					 $orden = $_SESSION['Orden']; }
 	
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."feedback`";
 
 	require 'Paginacion_Head.php';
 
-	$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  `id` DESC $limit";
+	$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  $orden $limit";
 	/* $sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden "; */
 	$qb = mysqli_query($db, $sqlb);
 	}

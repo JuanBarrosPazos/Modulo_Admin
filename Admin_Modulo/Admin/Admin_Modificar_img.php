@@ -330,6 +330,7 @@ function show_form($errors=[]){
 									'Usuario2' => $_POST['Usuario'],
 									'Password' => $_POST['Password'],
 									'Password2' => $_POST['Password'],
+									'Pass' => $_POST['Pass'],
 									'Direccion' => $_POST['Direccion'],
 									'Tlf1' => $_POST['Tlf1'],
 									'Tlf2' => $_POST['Tlf2']);
@@ -351,6 +352,7 @@ function show_form($errors=[]){
 									'Usuario2' => $_POST['Usuario'],
 									'Password' => $_POST['Password'],
 									'Password2' => $_POST['Password'],
+									'Pass' => $_POST['Pass'],
 									'Direccion' => $_POST['Direccion'],
 									'Tlf1' => $_POST['Tlf1'],
 									'Tlf2' => $_POST['Tlf2']);
@@ -418,6 +420,7 @@ function show_form($errors=[]){
 						<input type='hidden' name='Usuario2' value='".$defaults['Usuario2']."' />
 						<input type='hidden' name='Password' value='".$defaults['Password']."' />
 						<input type='hidden' name='Password2' value='".$defaults['Password2']."' />
+						<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
 						<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
 						<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
 						<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
