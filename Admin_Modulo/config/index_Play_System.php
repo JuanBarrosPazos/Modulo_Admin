@@ -15,7 +15,7 @@ session_start();
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-	//require 'Inclu/error_hidden.php';
+	require 'Inclu/error_hidden.php';
 	require 'Inclu/Inclu_Menu_00.php';
 	require 'Conections/conection.php';
 	require 'Conections/conect.php';
