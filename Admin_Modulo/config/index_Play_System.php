@@ -585,26 +585,24 @@ function validate_form(){
 		global $q;
 		
 		if (strlen(trim($_POST['Usuario'])) == 0){
-			$errors [] = "Usuario: Campo obligatorio.";
-			//$errors [] = "USER ACCES ERROR";
+			//$errors [] = "Usuario: Campo obligatorio.";
+			$errors [] = "USER ACCES ERROR";
 			}
 
 		elseif (strlen(trim($_POST['Password'])) == 0){
-			$errors [] = "Password: Campo Obligatorio:";
-			//$errors [] = "USER ACCES ERROR";
+			//$errors [] = "Password: Campo Obligatorio:";
+			$errors [] = "USER ACCES ERROR";
 			}
 
 		elseif($count < 1){
-			$errors [] = "Nombre incorrecto.";
-			//$errors [] = "USER ACCES ERROR";
+			//$errors [] = "Nombre incorrecto.";
+			$errors [] = "USER ACCES ERROR";
 			}
 
 		elseif(!password_verify($_POST['Password'], $hash)){
-			//$errors [] = "Password incorrecto.";
-			//$errors [] = "USER ACCES ERROR";
 			if(trim($_POST['Password'] != $row['Pass'])){
-				$errors [] = "Password incorrecto.";
-				//$errors [] = "USER ACCES ERROR";
+				//$errors [] = "Password incorrecto.";
+				$errors [] = "USER ACCES ERROR";
 				} else {}
 	
 			}
