@@ -242,7 +242,7 @@ function process_form(){
 						Password:
 					</td>
 					<td colspan=2>"
-						.$_POST['Password'].
+						.$_POST['Pass'].
 					"</td>
 				</tr>
 				

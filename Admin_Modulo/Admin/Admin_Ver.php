@@ -70,7 +70,7 @@ function process_form(){
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
 	
-	//show_form();
+	show_form();
 		
 	$nom = "%".$_POST['Nombre']."%";
 	$ape = "%".$_POST['Apellidos']."%";
