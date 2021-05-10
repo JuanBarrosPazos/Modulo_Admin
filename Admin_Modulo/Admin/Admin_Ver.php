@@ -34,14 +34,12 @@ elseif ($_SESSION['Nivel'] == 'admin'){
 					info();
 					}
 				}
-
 		elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
 											show_form();
 											ver_todo();
 										}
-
-		else { show_form();
-			   ver_todo();
+		else { 	show_form();
+			   	ver_todo();
 				}
 		} 
 			
@@ -72,7 +70,7 @@ function process_form(){
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
 	
-	show_form();
+	//show_form();
 		
 	$nom = "%".$_POST['Nombre']."%";
 	$ape = "%".$_POST['Apellidos']."%";
@@ -137,10 +135,13 @@ function ver_todo(){
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	if(isset($_POST['Orden'])){	global $orden;
-								$orden = $_POST['Orden'];
-	} else { global $orden;
-			 $orden = $_SESSION['Orden']; }
+			if(isset($_POST['Orden'])){	global $orden;
+										$orden = $_POST['Orden'];
+			} elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
+										global $orden;
+										$orden = $_SESSION['Orden']; 
+			} else { global $orden;
+					 $orden ='`id` ASC';}
 
 	if (($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
 			$ref = $_SESSION['ref'];
@@ -149,18 +150,19 @@ function ver_todo(){
 		}
 	
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
-				require 'Paginacion_Head.php';
-				/*$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";*/
-				//$sqlb =  "SELECT * FROM $table_name_a  ORDER BY `id` DESC $limit";
-				$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  $orden $limit";
-				$qb = mysqli_query($db, $sqlb);
+
+			require 'Paginacion_Head.php';
+			/*$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";*/
+			//$sqlb =  "SELECT * FROM $table_name_a  ORDER BY `id` DESC $limit";
+			$sqlb =  "SELECT * FROM $table_name_a  ORDER BY $orden $limit";
+			$qb = mysqli_query($db, $sqlb);
 			}
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] != $_SESSION['mydni'])){ 
-				require 'Paginacion_Head.php';
-				/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";*/
-				/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  `id` DESC $limit";*/
-				$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  $orden $limit";
-				$qb = mysqli_query($db, $sqlb);
+			require 'Paginacion_Head.php';
+			/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";*/
+			/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  `id` DESC $limit";*/
+			$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  $orden $limit";
+			$qb = mysqli_query($db, $sqlb);
 			}
 
 			////////////////////		**********  		////////////////////

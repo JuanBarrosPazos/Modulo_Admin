@@ -123,17 +123,20 @@ function ver_todo(){
 
 	if (($_SESSION['Nivel'] == 'admin')){ 
 
-			if(isset($_POST['Orden'])){	global $orden;
-										$orden = $_POST['Orden'];
-			} else { global $orden;
-					 $orden = $_SESSION['Orden']; }
-	
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."feedback`";
 
+			if(isset($_POST['Orden'])){	global $orden;
+										$orden = $_POST['Orden'];
+			} elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
+										global $orden;
+										$orden = $_SESSION['Orden']; 
+			} else { global $orden;
+					 $orden ='`id` ASC';}
+
 	require 'Paginacion_Head.php';
 
-	$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  $orden $limit";
+	$sqlb =  "SELECT * FROM $table_name_a  ORDER BY $orden $limit";
 	/* $sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden "; */
 	$qb = mysqli_query($db, $sqlb);
 	}

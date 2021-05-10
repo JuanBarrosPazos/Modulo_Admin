@@ -1,18 +1,20 @@
 <?php
 
-if(isset($_POST['oculto'])){
-    $defaults = $_POST;
-    $_SESSION['Orden'] = $_POST['Orden'];
-    }
+    if(isset($_POST['oculto'])){
+        $defaults = $_POST;
+        $_SESSION['Orden'] = $_POST['Orden'];
+        }
     elseif(isset($_POST['todo'])){
         $defaults = $_POST;
         $_SESSION['Orden'] = $_POST['Orden'];
     } 
-    elseif(isset($_GET['page'])){ $defaults['Orden'] = $_SESSION['Orden'];}
-    
+    elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
+        $defaults['Orden'] = $_SESSION['Orden'];
+    }
     else {  $defaults = array (	'Nombre' => '',
                                 'Apellidos' => '',
-                                'Orden' => isset($ordenar));
+                                'Orden' => '`id` ASC');
+            $_SESSION['Orden'] = '`id` ASC';
                          }
 
 if ($errors){
