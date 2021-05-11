@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V12_Paginacion_&_Hash
+# Admin_Modulo_V12_Ok_Paginacion_&_Hash
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -12,7 +12,7 @@
 ---
 ---
 ## 2021/05/10
-### Admin_Modulo_V12_Paginacion_&_Hash.zip
+### Admin_Modulo_V12_Ok_Paginacion_&_Hash.zip
 - Configuración de la paginacion en Admin y Feedback.
 - Ajustes generales de código.
 ---
