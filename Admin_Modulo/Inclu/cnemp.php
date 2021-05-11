@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-	//require '../Inclu/error_hidden.php';
+	require '../Inclu/error_hidden.php';
 	require 'Admin_Inclu_head.php';
 	require 'mydni.php';
 	require 'nemp.php';
@@ -82,7 +82,7 @@ function show_form($errors=[]){
 	
 	if(isset($_POST['oculto'])){
 		$defaults = $_POST;
-		} else {$defaults = array ( 'nemp' => ''); }
+		} else {$defaults = array ( 'nemp' => $_SESSION['nuser']); }
 	
 	if ($errors){
 		print("<table align='center'>

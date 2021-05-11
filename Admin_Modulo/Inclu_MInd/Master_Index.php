@@ -1,7 +1,7 @@
 ﻿<?php
 
 	require $rutaindex.'Inclu/mydni.php';
-	//require $rutaindex.'Inclu/error_hidden.php';
+	require $rutaindex.'Inclu/error_hidden.php';
 	global $db_name;
 
 	if ($_SESSION['Nivel'] == 'admin') {	

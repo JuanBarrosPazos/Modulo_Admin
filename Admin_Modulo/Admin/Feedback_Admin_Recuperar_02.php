@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-	//require '../Inclu/error_hidden.php';
+	require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 
 	require '../Conections/conection.php';
@@ -25,7 +25,7 @@ if ($_SESSION['Nivel'] == 'admin'){
 
 		master_index();
 
-		if ($_POST['oculto2']){ show_form();
+		if (@$_POST['oculto2']){ show_form();
 								info_01();
 								}
 		elseif($_POST['modifica']){ process_form();
@@ -553,7 +553,7 @@ function info_01(){
 	$apellido = $_POST['Apellidos'];
 		
 	global $orden;
-	$orden = $_POST['Orden'];	
+	$orden = @$_POST['Orden'];	
 
 	$ActionTime = date('H:i:s');
 

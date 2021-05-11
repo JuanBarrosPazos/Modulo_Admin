@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-	//require '../Inclu/error_hidden.php';
+	require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 
 	require '../Conections/conection.php';
@@ -65,15 +65,16 @@ function process_form(){
 	global $db;
 	
 	global $nombre;
-	global $apellido;
 	$nombre = $_POST['Nombre'];
+	global $apellido;
 	$apellido = $_POST['Apellidos'];
 	
 	show_form();
 		
 	$nom = "%".$_POST['Nombre']."%";
 	$ape = "%".$_POST['Apellidos']."%";
-	$orden = $_POST['Orden'];
+	global $orden;
+	$orden = @$_POST['Orden'];
 		
 	if (strlen(trim($_POST['Apellidos'])) == 0){$ape = $nom;}
 	if (strlen(trim($_POST['Nombre'])) == 0){ $nom = $ape;}
@@ -176,17 +177,18 @@ function ver_todo(){
 
 function info(){
 
-	global $nombre;
-	global $apellido;
 
 	global $orden;
-	$orden = $_POST['Orden'];
+	$orden = @$_POST['Orden'];
 	
-	if ($_POST['todo']){$nombre = "TODOS LOS USUARIOS ".$orden;};	
+	if (@$_POST['todo']){$nombre = "TODOS LOS USUARIOS ".$orden;};	
 
-	$rf = $_POST['ref'];
-	$nombre = $_POST['Nombre'];
-	$apellido = $_POST['Apellidos'];
+	global $rf;
+	$rf = @$_POST['ref'];
+	global $nombre;
+	$nombre = @$_POST['Nombre'];
+	global $apellido;
+	$apellido = @$_POST['Apellidos'];
 		
 	$ActionTime = date('H:i:s');
 

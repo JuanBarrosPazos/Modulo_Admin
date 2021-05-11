@@ -9,7 +9,7 @@
         $_SESSION['Orden'] = $_POST['Orden'];
     } 
     elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
-        $defaults['Orden'] = $_SESSION['Orden'];
+        @$defaults['Orden'] = $_SESSION['Orden'];
     }
     else {  $defaults = array (	'Nombre' => '',
                                 'Apellidos' => '',

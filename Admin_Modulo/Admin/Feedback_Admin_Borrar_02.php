@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-	//require '../Inclu/error_hidden.php';
+	require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 
 	require '../Conections/conection.php';
@@ -16,7 +16,7 @@ if ($_SESSION['Nivel'] == 'admin'){
 
 	master_index();
 
-	if ($_POST['oculto2']){ show_form();
+	if (@$_POST['oculto2']){ show_form();
 							info_01();
 							}
 	elseif($_POST['borrar']){	process_form();
@@ -385,7 +385,7 @@ function show_form(){
 									'lastout' => $_POST['lastout'],
 									'visitadmin' => $_POST['visitadmin']);
 								}
-	if($_POST['borrar']){
+	if(@$_POST['borrar']){
 				$defaults = array ( 'id' => $_POST['id'],
 									'ref' => $_SESSION['sref'],
 									'Nivel' => $_POST['Nivel'],
@@ -631,16 +631,16 @@ $text = PHP_EOL."- USER BAJAS BORRARDO ".$ActionTime.PHP_EOL."\t Nombre: ".$nomb
 
 function info_01(){
 
-	global $nombre;
-	global $apellido;
-	global $rf;
 		
-	$rf = $_POST['ref'];
-	$nombre = $_POST['Nombre'];
-	$apellido = $_POST['Apellidos'];
+	global $rf;
+	$rf = @$_POST['ref'];
+	global $nombre;
+	$nombre = @$_POST['Nombre'];
+	global $apellido;
+	$apellido = @$_POST['Apellidos'];
 		
 	global $orden;
-	$orden = $_POST['Orden'];
+	$orden = @$_POST['Orden'];
 		
 	$ActionTime = date('H:i:s');
 	

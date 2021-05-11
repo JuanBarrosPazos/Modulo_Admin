@@ -15,7 +15,7 @@ session_start();
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-	//require 'Inclu/error_hidden.php';
+	require 'Inclu/error_hidden.php';
 	require 'Inclu/Inclu_Menu_00.php';
 	require 'Conections/conection.php';
 	require 'Conections/conect.php';
@@ -916,14 +916,16 @@ function ver_todo(){
 	
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
 				require 'Admin/Paginacion_Head.php';
-				@$orden = $_POST['Orden'];
+				global $orden;
+				$orden = @$_POST['Orden'];
 				/*$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";*/
 				$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  `id` ASC $limit";
 				$qb = mysqli_query($db, $sqlb);
 			}
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] != $_SESSION['mydni'])){ 
 				require 'Admin/Paginacion_Head.php';
-				$orden = $_POST['Orden'];
+				global $orden;
+				$orden = @$_POST['Orden'];
 				/*$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY $orden ";*/
 				$sqlb =  "SELECT * FROM $table_name_a WHERE $table_name_a.`dni` <> '$_SESSION[mydni]' ORDER BY  `id` ASC $limit";
 				$qb = mysqli_query($db, $sqlb);
