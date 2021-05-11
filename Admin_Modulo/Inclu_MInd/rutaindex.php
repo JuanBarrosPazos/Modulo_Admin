@@ -3,8 +3,8 @@
     global $rutaindex;
     $rutaindex = '';
     global $rutaadmin;
-    $rutaadmin = 'Admin/';
+    $rutaadmin = $rutaindex.'Admin/';
     global $rutainclu;
-    $rutainclu ='Inclu/';
+    $rutainclu = $rutaindex.'Inclu/';
 
 ?>

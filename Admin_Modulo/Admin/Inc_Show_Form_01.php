@@ -2,7 +2,7 @@
 
     if(isset($_POST['oculto'])){
         $defaults = $_POST;
-        $_SESSION['Orden'] = $_POST['Orden'];
+        $_SESSION['Orden'] = @$_POST['Orden'];
         }
     elseif(isset($_POST['todo'])){
         $defaults = $_POST;

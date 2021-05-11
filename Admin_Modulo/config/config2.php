@@ -1,6 +1,6 @@
 <?php
 
-	require '../Inclu/error_hidden.php';
+	//require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
@@ -734,7 +734,7 @@ function show_form($errors=[]){
 	
 	function master_index(){
 		
-		require '../'.$_SESSION['menu'].'/rutaadmin.php';
+		require '../'.$_SESSION['menu'].'/rutas.php';
 		require '../'.$_SESSION['menu'].'/Master_Index.php';
 		
 	} 

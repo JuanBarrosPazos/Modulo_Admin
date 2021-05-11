@@ -15,7 +15,7 @@ session_start();
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-	require 'Inclu/error_hidden.php';
+	//require 'Inclu/error_hidden.php';
 	require 'Inclu/Inclu_Menu_00.php';
 	require 'Conections/conection.php';
 	require 'Conections/conect.php';
@@ -82,7 +82,6 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 										} 
 						else {	process_form();
 								ayear();
-							  	show_ficha();
 							  	errors();
 								suma_acces();
 								}
@@ -649,142 +648,12 @@ function errors(){
 	global $sesus;
 	$sesus = $_SESSION['ref'];
 
-	require 'fichar/Inc_errors.php';
-
 }	
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-function show_ficha(){
-	
-	global $db;
-	global $db_name;
-	
-	global $vname;
-	$tabla1 = $_SESSION['clave'].$_SESSION['ref'];
-	$tabla1 = strtolower($tabla1);
-	$vname = $tabla1."_".date('Y');
-	$vname = "`".$vname."`";
-
-	// FICHA ENTRADA O SALIDA.
-	
-	$sql1 =  "SELECT * FROM `$db_name`.$vname WHERE $vname.`dout` = '' AND $vname.`tout` = '00:00:00' ";
-	$q1 = mysqli_query($db, $sql1);
-	$count1 = mysqli_num_rows($q1);
-
-	// FICHA ENTRADA.
-	
-	if($count1 < 1){
-		
-		global $din;
-		global $tin;
-		$din = date('Y-m-d');
-
-		/*
-			HORA ORIGINAL DE ENTRADA DEL SCRIPT
-			$tin = date('H:i:s');
-		*/
-
-		require 'fichar/fichar_redondeo_in.php';
-
-			////////////////////		***********  		////////////////////
-
-		global $dout;
-		global $tout;
-		global $ttot;
-		$dout = '';
-		$tout = '00:00:00';
-		$ttot = '00:00:00';
-		
-	print("<table align='center' style=\"margin-top:2px\">
-			<tr>
-				<td>
-					".$_SESSION['Nombre']." ".$_SESSION['Apellidos'].". Ref: ".$_SESSION['ref']."
-				</td>
-					<td valign='middle'  align='center'>
-	<form name='form_datos' method='post' action='fichar/fichar_Crear.php' enctype='multipart/form-data'>
-		<input type='hidden' id='ref' name='ref' value='".$_SESSION['ref']."' />
-		<input type='hidden' id='name1' name='name1' value='".$_SESSION['Nombre']."' />
-		<input type='hidden' id='name2' name='name2' value='".$_SESSION['Apellidos']."' />
-		<input type='hidden' id='din' name='din' value='".$din."' />
-		<input type='hidden' id='tin' name='tin' value='".$tin."' />
-		<input type='hidden' id='dout' name='dout' value='".$dout."' />
-		<input type='hidden' id='tout' name='tout' value='".$tout."' />
-		<input type='hidden' id='ttot' name='ttot' value='".$ttot."' />
-						<input type='submit' value='FICHAR ENTRADA' />
-						<input type='hidden' name='entrada' value=1 />
-	</form>														
-					</td>
-				</tr>
-				
-			</table>			
-						"); 
-		}
-	
-	// FICHA SALIDA.
-	
-	elseif($count1 > 0){
-		
-
-		global $dout;
-		global $tout;
-		global $ttot;
-		$dout = date('Y-m-d');
-
-		/*
-			HORA ORIGINAL DE SALIDA DEL SCRIPT
-			$tout = date('H:i:s');
-		*/
-
-		require 'fichar/fichar_redondeo_out.php';
-
-			////////////////////		***********  		////////////////////
-
-	print("<table align='center' style=\"margin-top:6px\">
-			<tr>
-				<td>
-					".$_SESSION['Nombre']." ".$_SESSION['Apellidos'].". Ref: ".$_SESSION['ref']."
-				</td>
-				<td valign='middle'  align='center'>
-	<form name='form_datos' method='post' action='fichar/fichar_Crear.php' enctype='multipart/form-data'>
-		<input type='hidden' id='ref' name='ref' value='".$_SESSION['ref']."' />
-		<input type='hidden' id='name1' name='name1' value='".$_SESSION['Nombre']."' />
-		<input type='hidden' id='name2' name='name2' value='".$_SESSION['Apellidos']."' />
-		<input type='hidden' id='dout' name='dout' value='".$dout."' />
-		<input type='hidden' id='tout' name='tout' value='".$tout."' />
-						<input type='submit' value='FICHAR SALIDA' />
-						<input type='hidden' name='salida' value=1 />
-		</form>														
-					</td>
-				</tr>
-			</table>"); 
-		
-		}
-	
-	}	
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -1047,7 +916,7 @@ function ver_todo(){
 	
 	elseif (($_SESSION['Nivel'] == 'admin') && ($_SESSION['dni'] == $_SESSION['mydni'])) { 
 				require 'Admin/Paginacion_Head.php';
-				$orden = $_POST['Orden'];
+				@$orden = $_POST['Orden'];
 				/*$sqlb =  "SELECT * FROM $table_name_a ORDER BY $orden ";*/
 				$sqlb =  "SELECT * FROM $table_name_a  ORDER BY  `id` ASC $limit";
 				$qb = mysqli_query($db, $sqlb);
@@ -1065,11 +934,13 @@ function ver_todo(){
 	global $twhile;
 	$twhile = "TODOS USUARIOS CONSULTA";
 	
-	require 'Admin/Inc_While_Form.php';
 		global $ruta;
 		$ruta = "Admin/";
+	require 'Admin/Inc_While_Form.php';
 		global $rutaimg;
 		$rutaimg = "Users/";
+		global $pagedest;
+		$pagedest = "Admin_Ver.php";
 	require 'Admin/Inc_While_Total.php';
 
 			////////////////////		**********  		////////////////////

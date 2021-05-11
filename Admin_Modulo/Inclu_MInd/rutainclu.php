@@ -1,10 +1,10 @@
 <?php
 
     global $rutaindex;
-    $rutaindex= '../';
+    $rutaindex = '../';
     global $rutaadmin;
-    $rutaadmin = '../Admin/';
+    $rutaadmin = $rutaindex.'Admin/';
     global $rutainclu;
-    $rutainclu ='';
+    $rutainclu = '';
 
 ?>

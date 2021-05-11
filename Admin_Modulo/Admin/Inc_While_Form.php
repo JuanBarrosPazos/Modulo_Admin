@@ -1,8 +1,7 @@
 <?php
-
 	global $formularioh;
 	$formularioh = "<td colspan=7 align='center' class='BorderInf'>
-				<form style=\"display:inline-block;\" name='modifica' action='Admin_Modificar_02.php' method='POST'>";
+				<form style=\"display:inline-block;\" name='modifica' action='".@$ruta."Admin_Modificar_02.php' method='POST'>";
 
 	global $formulariof;
 	$formulariof = "
@@ -11,7 +10,7 @@
 				</form>";
 
 	global $formulariohg;
-	$formulariohg = "<form style=\"display:inline-block;\" name='modifica_img' action='Admin_Modificar_img.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup',  'width=540px,height=470px')\">";
+	$formulariohg = "<form style=\"display:inline-block;\" name='modifica_img' action='".@$ruta."Admin_Modificar_img.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup',  'width=540px,height=470px')\">";
 
 	global $formulariofg;
 	$formulariofg = "<input type='submit' value='MODIFICAR IMAGEN'/>
@@ -19,7 +18,7 @@
 						</form>";
 
 	global $formulariohi;
-	$formulariohi = "<form style=\"display:inline-block;\" name='borra' action='Admin_Borrar_02.php' method='POST'>";
+	$formulariohi = "<form style=\"display:inline-block;\" name='borra' action='".@$ruta."Admin_Borrar_02.php' method='POST'>";
 
 	global $formulariofi;
 	$formulariofi = "<input type='submit' value='DAR DE BAJA' />
@@ -27,7 +26,7 @@
 				</form>";
 
 	global $formulariohe;
-	$formulariohe = "<form style=\"display:inline-block;\" name='ver' action='Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=580px')\">";
+	$formulariohe = "<form style=\"display:inline-block;\" name='ver' action='".@$ruta."Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=580px')\">";
 
 	global $formulariofe;
 	$formulariofe = "<input type='submit' value='VER DETALLES' />

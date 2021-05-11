@@ -19,5 +19,5 @@
             <input name='lastin' type='hidden' value='".$rowb['lastin']."' />
             <input name='lastout' type='hidden' value='".$rowb['lastout']."' />
             <input name='visitadmin' type='hidden' value='".$rowb['visitadmin']."' />
-            <input name='borrado' type='hidden' value='".$rowb['borrado']."' />");
+            <input name='borrado' type='hidden' value='".@$rowb['borrado']."' />");
 ?>

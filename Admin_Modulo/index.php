@@ -1,6 +1,6 @@
 <?php
 
-	require 'Inclu/error_hidden.php';
+	//require 'Inclu/error_hidden.php';
 	require 'Inclu/Admin_Inclu_headb.php';
 	require 'Inclu/my_bbdd_clave.php';
 
@@ -43,7 +43,7 @@
 				 ////////////////////				  ///////////////////
 
 function inittot(){
-	include 'Conections/conection.php';
+	@include 'Conections/conection.php';
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 	if (!$db){ //print ("Es imposible conectar con la bbdd ".$db_name."</br>".mysqli_connect_error());
 				$_SESSION['inst'] = "noinst";

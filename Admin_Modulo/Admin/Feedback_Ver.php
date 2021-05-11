@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-	require '../Inclu/error_hidden.php';
+	//require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 
 	require '../Conections/conection.php';
@@ -16,12 +16,12 @@ if ($_SESSION['Nivel'] == 'admin'){
 
 		master_index();
 
-		if($_POST['todo']){ show_form();							
+		if(@$_POST['todo']){ show_form();							
 							ver_todo();
 							info();
 							}
 								
-		elseif($_POST['oculto']){
+		elseif(@$_POST['oculto']){
 				if($form_errors = validate_form()){
 								show_form($form_errors);
 							} else {process_form();

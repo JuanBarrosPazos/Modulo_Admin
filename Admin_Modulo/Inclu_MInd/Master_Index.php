@@ -1,7 +1,7 @@
 ﻿<?php
 
 	require $rutaindex.'Inclu/mydni.php';
-	require 'Inclu/error_hidden.php';
+	//require $rutaindex.'Inclu/error_hidden.php';
 	global $db_name;
 
 	if ($_SESSION['Nivel'] == 'admin') {	
@@ -348,7 +348,7 @@ print("<nav class='sidebar-nav'>
 		<ul>
 	
 		<li>
-			<a href='".$rutaadmin."Admin_Modificar_01.php'>
+			<a href='".$rutaadmin."Admin_Ver.php'>
 				<i class='ic ico02b'></i>MODIFICAR DATOS
 			</a>
 		</li>
@@ -455,7 +455,7 @@ print("<nav class='sidebar-nav'>
 		<ul>
 	
 	<li>
-		<a href='".$rutaadmin."Admin_Modificar_01.php'>
+		<a href='".$rutaadmin."Admin_Ver.php'>
 			<i class='ic ico02b'></i>MODIFICAR DATOS
 		</a>
 	</li>

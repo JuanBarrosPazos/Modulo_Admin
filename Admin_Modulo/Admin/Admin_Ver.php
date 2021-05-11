@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-	require '../Inclu/error_hidden.php';
+	//require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 	require '../Inclu/mydni.php';
 	require '../Conections/conection.php';
@@ -99,6 +99,8 @@ function process_form(){
 	global $twhile;
 	$twhile = "FILTRO USUARIOS CONSULTA";
 
+		global $ruta;
+		$ruta = "";
 	require 'Inc_While_Form.php';
 		global $rutaimg;
 		$rutaimg = "../Users/";
@@ -138,8 +140,11 @@ function ver_todo(){
 			if(isset($_POST['Orden'])){	global $orden;
 										$orden = $_POST['Orden'];
 			} elseif ((isset($_GET['page'])) || (isset($_POST['page']))) {
+							if(isset($_SESSION['Orden'])){
 										global $orden;
 										$orden = $_SESSION['Orden']; 
+									} else { global $orden;
+											 $orden ='`id` ASC';}
 			} else { global $orden;
 					 $orden ='`id` ASC';}
 
@@ -170,9 +175,9 @@ function ver_todo(){
 	global $twhile;
 	$twhile = "TODOS USUARIOS CONSULTA";
 	
-	require 'Inc_While_Form.php';
 		global $ruta;
 		$ruta = "";
+	require 'Inc_While_Form.php';
 		global $rutaimg;
 		$rutaimg = "../Users/";
 		global $pagedest;

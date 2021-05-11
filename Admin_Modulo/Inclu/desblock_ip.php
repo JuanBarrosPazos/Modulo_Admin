@@ -1,7 +1,7 @@
 <?php
 //session_start();
 
-	require 'error_hidden.php';
+	//require 'error_hidden.php';
 	require 'Admin_Inclu_head.php';
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';

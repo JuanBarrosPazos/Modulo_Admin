@@ -5,6 +5,6 @@
     global $rutaadmin;
     $rutaadmin = '';
     global $rutainclu;
-    $rutainclu ='../Inclu/';
+    $rutainclu = $rutaindex.'Inclu/';
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-	require '../../Inclu/error_hidden.php';
+	//require '../../Inclu/error_hidden.php';
 	require '../../Inclu/SecureIndex2h.php';
 
 //////////////////////////////////////////////////////////////////////////////////////////////

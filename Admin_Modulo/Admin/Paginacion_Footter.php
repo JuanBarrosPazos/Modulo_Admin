@@ -1,5 +1,6 @@
 <?php
 
+global $total_pages;
 if ($total_pages > 1) {
     if ($page != 1) {
         echo '<li class="pageli"><a href="'.$ruta.$pagedest.'?page='.($page-1).'"><span aria-hidden="true">&laquo;</span></a></li>';
