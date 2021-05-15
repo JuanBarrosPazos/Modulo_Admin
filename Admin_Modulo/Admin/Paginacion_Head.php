@@ -42,7 +42,9 @@
 
 	//pongo el numero de registros total, el tamaño de pagina y la pagina que se muestra
 	echo '<div style="clear:both"></div>
-	<h7>* Administradores: '.$nres.' de '.$num_total_rows.' * P&aacute;gina '.$page.' de ' .$total_pages.'.</h7>';
+	<h7 class="textpaginacion">
+	* Administradores: '.$nres.' de '.$num_total_rows.' * P&aacute;gina '.$page.' de ' .$total_pages.'.
+	</h7>';
 
 	global $limit;
 	$limit = " LIMIT ".$start.", ".$nitem;

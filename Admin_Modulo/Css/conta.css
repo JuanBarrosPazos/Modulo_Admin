@@ -345,5 +345,20 @@ a:hover  img {
 	text-decoration: none;
 }
 
+.imgtitle {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40px;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.textpaginacion {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
 
 /* Creado por Juan Barros Pazos 2021 */

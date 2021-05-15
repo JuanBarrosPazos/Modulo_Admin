@@ -46,6 +46,7 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 	$_SESSION['Nivel'] = $row['Nivel'];
 	$_SESSION['Nombre'] = $row['Nombre'];
 	$_SESSION['Apellidos'] = $row['Apellidos'];
+	$_SESSION['myimg'] = $row['myimg'];
 	$_SESSION['dni'] = $row['dni'];
 	$_SESSION['Email'] = $row['Email'];
 	$_SESSION['Usuario'] = $row['Usuario'];

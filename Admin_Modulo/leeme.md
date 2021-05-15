@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V12_Ok_Paginacion_&_Hash
+# Admin_Modulo_V13_Ok_Paginacion_&_Hash
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -9,6 +9,12 @@
 - Recuperación de usuarios desde Feedback Admin a Admin.
 - Eliminación de usuarios y datos desde Feedback Admin.
 - Log de sistema y de actividad de los usuarios individuales.
+---
+---
+## 2021/05/15
+### Admin_Modulo_V13_Ok_Paginacion_&_Hash.zip
+- Configuración del menu usuario.
+- Ajustes generales de código.
 ---
 ---
 ## 2021/05/10
