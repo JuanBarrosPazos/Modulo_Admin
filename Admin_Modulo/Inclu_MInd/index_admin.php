@@ -10,7 +10,11 @@
 						<i class='ic ico15b'></i>GESTION ADMIN
 					</a>
 				</li>
-				<li>
+				");
+
+
+	if ($_SESSION['Nivel'] == 'admin') {
+	print("		<li>
 					<a href='".$rutaadmin."Admin_Crear.php'>
 						<i class='ic ico14b'></i>CREAR ADMIN
 					</a>
@@ -25,45 +29,19 @@
 						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434; padding-bottom: 10px;'>
-					</a>
-				</li>
 			</ul>
 		</li>
-	
+			");
+	}else{print("</ul></li>");}
+
+	print("
 		<li>
 			<a href='#'>
 			<i class='ic ico12'></i><span>CATEGORIA 1</span>
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 4px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:31px'>
 						<i class='ic ico13b'></i>OTRO LINK
 					</a>
 				</li>
@@ -72,65 +50,25 @@
 						<i class='ic ico15b'></i>OTRO LINK
 					</a>
 				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico15b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 65px;'>
-					</a>
-				</li>
 			</ul>
 		</li>
-	
+		");
+
+	if ($_SESSION['Nivel'] == 'admin') {
+	print("
 		<li>
 			<a href='#'>
 				<i class='ic ico19'></i><span>CATEGORIA 2</span>
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 31px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:62px'>
 						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 38px;'>
 					</a>
 				</li>
 			</ul>
@@ -142,22 +80,13 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 59px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:94px'>
 						<i class='ic ico10b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico10b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 92px;'>
 					</a>
 				</li>
 			</ul>
@@ -169,27 +98,13 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 86px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:126px'>
 						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 38px;'>
 					</a>
 				</li>
 			</ul>
@@ -200,27 +115,21 @@
 				<i class='ic ico20'></i><span>CATEGORIA 5</span></a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 114px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:158px'>
 						<i class='ic ico20b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico20b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 37px;'>
 					</a>
 				</li>
 			</ul>
 		</li>
-	
+		");
+	}else{}
+
+	print("
 		<li>
 			<a href='".$rutaindex."Mail_Php/index.php' target='_blank'>
 				<i class='ic ico16'></i>NOTIFICACIONES

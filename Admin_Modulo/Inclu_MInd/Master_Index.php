@@ -25,9 +25,7 @@
 			////////////////////			////////////////////
 							////////////////////
 	-->
-	");
-
-print("<nav class='sidebar-nav'>
+	<nav class='sidebar-nav'>
 		<ul>");
 
 if ($_SESSION['dni'] == $_SESSION['mydni']) {
@@ -47,9 +45,6 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 							<i class='ic ico22'></i>OTRO LINK
 						</a>
 					</li>
-					<li>
-						<a href='#' style='background-color: #343434;padding-bottom: 173px;'></a>
-					</li>
 				</ul>
 			</li>");
 
@@ -65,15 +60,19 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 						
 	global $niv;
 	$niv = 'Usuario Plus';
-
-		require 'index_plus.php';
+	
+	require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
+		print("<nav class='sidebar-nav'><ul>");
+	require 'index_admin.php';
 
 	}elseif ($_SESSION['Nivel'] == 'user') {
 						
 	global $niv;
 	$niv = 'Usuario';
 
-		require 'index_user.php';
+	require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
+		print("<nav class='sidebar-nav'><ul>");
+	require 'index_admin.php';
 	} 
 	
 /* Creado por Juan Barros Pazos 2021 */

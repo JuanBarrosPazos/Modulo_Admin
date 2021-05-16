@@ -6,12 +6,7 @@
 				</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='".$rutaadmin."Admin_Ver.php'>
+					<a href='".$rutaadmin."Admin_Ver.php' style='margin-top:31px'>
 						<i class='ic ico15b'></i>GESTION ADMIN
 					</a>
 				</li>
@@ -25,30 +20,6 @@
 						<i class='ic ico19b'></i>GESTION BAJAS
 					</a>
 				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434; padding-bottom: 8px;'>
-					</a>
-				</li>
 			</ul>
 		</li>
 	
@@ -58,37 +29,13 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 31px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:62px'>
 						<i class='ic ico13b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico15b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico15b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 36px;'>
 					</a>
 				</li>
 			</ul>
@@ -100,37 +47,13 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 59px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:94px'>
 						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico19b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 8px;'>
 					</a>
 				</li>
 			</ul>
@@ -142,22 +65,13 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 86px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:126px'>
 						<i class='ic ico10b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico10b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 63px;'>
 					</a>
 				</li>
 			</ul>
@@ -169,27 +83,13 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 114px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:158px'>
 						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 8px;'>
 					</a>
 				</li>
 			</ul>
@@ -200,22 +100,13 @@
 				<i class='ic ico20'></i><span>CATEGORIA 5</span></a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 141px;'>
-						<i class='ic'></i>
-					</a>
-				</li>
-				<li>
-					<a href='#'>
+					<a href='#' style='margin-top:189px'>
 						<i class='ic ico20b'></i>OTRO LINK
 					</a>
 				</li>
 				<li>
 					<a href='#'>
 						<i class='ic ico20b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#' style='background-color: #343434;padding-bottom: 8px;'>
 					</a>
 				</li>
 			</ul>
