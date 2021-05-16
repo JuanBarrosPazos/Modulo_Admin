@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V13_Ok_Paginacion_&_Hash
+# Admin_Modulo_V14_Ok_Paginacion_&_Hash
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -11,8 +11,8 @@
 - Log de sistema y de actividad de los usuarios individuales.
 ---
 ---
-## 2021/05/15
-### Admin_Modulo_V13_Ok_Paginacion_&_Hash.zip
+## 2021/05/16
+### Admin_Modulo_V14_Ok_Paginacion_&_Hash.zip
 - Configuración del menu usuario.
 - Ajustes generales de código.
 ---
