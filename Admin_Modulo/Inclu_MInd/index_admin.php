@@ -1,12 +1,13 @@
 <?php
 
+
 	print("<li>
 				<a href='#'>
 					<i class='ic ico13'></i><span>EMPLEADOS</span>
 				</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='".$rutaadmin."Admin_Ver.php'>
+					<a href='".$rutaadmin."Admin_Ver.php' ".$topcat0.">
 						<i class='ic ico15b'></i>GESTION ADMIN
 					</a>
 				</li>
@@ -41,7 +42,7 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='margin-top:31px'>
+					<a href='#' ".$topcat1.">
 						<i class='ic ico13b'></i>OTRO LINK
 					</a>
 				</li>
@@ -62,7 +63,7 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='margin-top:62px'>
+					<a href='#' ".$topcat2.">
 						<i class='ic ico19b'></i>OTRO LINK
 					</a>
 				</li>
@@ -80,7 +81,7 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='margin-top:94px'>
+					<a href='#' ".$topcat3.">
 						<i class='ic ico10b'></i>OTRO LINK
 					</a>
 				</li>
@@ -98,7 +99,7 @@
 			</a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='margin-top:126px'>
+					<a href='#' ".$topcat4.">
 						<i class='ic ico02b'></i>OTRO LINK
 					</a>
 				</li>
@@ -115,7 +116,7 @@
 				<i class='ic ico20'></i><span>CATEGORIA 5</span></a>
 			<ul class='nav-flyout'>
 				<li>
-					<a href='#' style='margin-top:158px'>
+					<a href='#' ".$topcat5.">
 						<i class='ic ico20b'></i>OTRO LINK
 					</a>
 				</li>

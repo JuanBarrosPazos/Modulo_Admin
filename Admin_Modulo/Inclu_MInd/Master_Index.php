@@ -4,6 +4,39 @@
 	require $rutaindex.'Inclu/error_hidden.php';
 	global $db_name;
 
+	if (($_SESSION['Nivel'] == 'admin')&&($_SESSION['dni'] == $_SESSION['mydni'])) {
+
+		global $topcat0;
+		$topcat0 = "style='margin-top:31px'";
+		global $topcat1;
+		$topcat1 = "style='margin-top:62px'";
+		global $topcat2;
+		$topcat2 = "style='margin-top:94px'";
+		global $topcat3;
+		$topcat3 = "style='margin-top:126px'";
+		global $topcat4;
+		$topcat4 = "style='margin-top:158px'";
+		global $topcat5;
+		$topcat5 = "style='margin-top:189px'";
+
+	}else{
+
+		global $topcat0;
+		$topcat0 = "";
+		global $topcat1;
+		$topcat1 = "style='margin-top:31px'";
+		global $topcat2;
+		$topcat2 = "style='margin-top:62px'";
+		global $topcat3;
+		$topcat3 = "style='margin-top:94px'";
+		global $topcat4;
+		$topcat4 = "style='margin-top:126px'";
+		global $topcat5;
+		$topcat5 = "style='margin-top:158px'";
+
+	}
+
+
 	if ($_SESSION['Nivel'] == 'admin') {	
 		
 			if ($_SESSION['dni'] == $_SESSION['mydni']) { global $niv;
@@ -48,7 +81,7 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 				</ul>
 			</li>");
 
-		require 'index_wmaster.php';
+		require 'index_admin.php';
 
 	}else{
 
