@@ -27,7 +27,7 @@ elseif ($_SESSION['Nivel'] == 'admin'){
 								   info();
 										}
 								
-		elseif(isset($_POST['oculto'])){
+		elseif(isset($_POST['ocultoc'])){
 				if($form_errors = validate_form()){
 						show_form($form_errors);
 			} else {process_form();

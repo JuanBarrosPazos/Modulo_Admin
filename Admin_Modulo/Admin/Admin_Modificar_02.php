@@ -79,9 +79,7 @@ function process_form(){
 				</tr>
 				
 				<tr>
-					<td width=150px>
-						Nombre:
-					</td>
+					<td width=150px>Nombre:</td>
 					<td width=200px>"
 						.$_POST['Nombre'].
 					"</td>
@@ -91,108 +89,62 @@ function process_form(){
 				</tr>
 				
 				<tr>
-					<td>
-						Apellidos:
-					</td>
-					<td>"
-						.$_POST['Apellidos'].
-					"</td>
+					<td>Apellidos:</td>
+					<td>".$_POST['Apellidos']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Tipo Documento:
-					</td>
-					<td>"
-						.$_POST['doc'].
-					"</td>
+					<td>Tipo Documento:</td>
+					<td>".$_POST['doc']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						N&uacute;mero:
-					</td>
-					<td>"
-						.$_POST['dni'].
-					"</td>
+					<td>N&uacute;mero:</td>
+					<td>".$_POST['dni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Control:
-					</td>
-					<td>"
-						.$_POST['ldni'].
-					"</td>
+					<td>Control:</td>
+					<td>".$_POST['ldni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Mail:
-					</td>
-					<td colspan=2>"
-						.$_POST['Email'].
-					"</td>
+					<td>Mail:</td>
+					<td colspan=2>".$_POST['Email']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Tipo Usuario
-					</td>
-					<td colspan=2>"
-						.$_POST['Nivel'].
-					"</td>
+					<td>Tipo Usuario</td>
+					<td colspan=2>".$_POST['Nivel']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Referencia Usuario
-					</td>
-					<td colspan=2>"
-						.$_SESSION['refcl'].
-					"</td>
+					<td>Referencia Usuario</td>
+					<td colspan=2>".$_SESSION['refcl']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Usuario:
-					</td>
-					<td colspan=2>"
-						.$_POST['Usuario'].
-					"</td>
+					<td>Usuario:</td>
+					<td colspan=2>".$_POST['Usuario']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Password:
-					</td>
-					<td colspan=2>"
-						.$_POST['Password'].
-					"</td>
+					<td>Password:</td>
+					<td colspan=2>".$_POST['Password']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Dirección:
-					</td>
-					<td colspan=2>"
-						.$_POST['Direccion'].
-					"</td>
+					<td>Dirección:</td>
+					<td colspan=2>".$_POST['Direccion']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 1:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf1'].
-					"</td>
+					<td>Teléfono 1:</td>
+					<td colspan=2>".$_POST['Tlf1']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 2:
-					</td>
+					<td>Teléfono 2:</td>
 					<td colspan=2>"
 						.$_POST['Tlf2']./*" / ".$_SESSION['dni']." / ".$_SESSION['mydni'].*/
 					"</td>

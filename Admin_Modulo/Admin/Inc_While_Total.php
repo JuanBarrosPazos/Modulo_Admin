@@ -19,87 +19,63 @@
 										</tr>
 									</table>");
 
-				} else { 	print ("<table align='center'>
+				} else { 	
+					
+					global $page;
+					if ($page >= 1){ } 
+					else { $page = 1;}
+
+		if(isset($_POST['ocultoc'])){
+					global $refrescaimg;
+					$refrescaimg = "";
+			} else { 
+				global $refrescaimg;
+				$refrescaimg = "<form name='closewindow' action='".$ruta."Admin_Ver.php'>
+									<input type='submit' value='REFRESCAR VISTA IMAGENES' />
+									<input type='hidden' name='page' value=".$page." />
+								</form>";
+						}
+
+			print ("<table align='center'>
 									<tr>
 										<th colspan=7 class='BorderInf'>
 					".$twhile.": ".mysqli_num_rows($qb).".
+								".$refrescaimg."
 										</th>
-									</tr>
+						</tr>
 									
-									<tr>
-										<th class='BorderInfDch'>
-											Nivel
-										</th>
-										
-										<th class='BorderInfDch'>
-											Referencia
-										</th>
-										
-										<th class='BorderInfDch'>
-											Nombre
-										</th>
-										
-										<th class='BorderInfDch'>
-											Apellidos
-										</th>
-										
-										<th class='BorderInfDch'>
-											
-										</th>
-										
-										<th class='BorderInfDch'>
-											Usuario
-										</th>
-										
-										<th class='BorderInfDch'>
-											Password
-										</th>
-										
-                                    </tr>");
+						<tr>
+							<th class='BorderInfDch'>Nivel</th>
+							<th class='BorderInfDch'>Referencia</th>
+							<th class='BorderInfDch'>Nombre</th>
+							<th class='BorderInfDch'>Apellidos</th>
+							<th class='BorderInfDch'></th>
+							<th class='BorderInfDch'>Usuario</th>
+							<th class='BorderInfDch'>Password</th>
+                        </tr>");
                                     
 	while($rowb = mysqli_fetch_assoc($qb)){
     
-    global $formularioh;
-    global $formulariof;
-	global $formulariohi;
-	global $formulariofi;
-	global $formulariohe;
-	global $formulariofe;
+		global $formularioh;
+		global $formulariof;
+		global $formulariohi;
+		global $formulariofi;
+		global $formulariohe;
+		global $formulariofe;
 
 	print (	"<tr align='center'>
 
             <!-- AQUÍ VA LA CABECERA DEL FORMULARIO -->
 
-
-				<td class='BorderInfDch'>
-					".$rowb['Nivel']."
-				</td>
-							
-				<td class='BorderInfDch'>
-					".$rowb['ref']."
-				</td>
-							
-				<td class='BorderInfDch'>
-					".$rowb['Nombre']."
-				</td>
-							
-				<td class='BorderInfDch'>
-					".$rowb['Apellidos']."
-				</td>
-						
+				<td class='BorderInfDch'>".$rowb['Nivel']."</td>
+				<td class='BorderInfDch'>".$rowb['ref']."</td>
+				<td class='BorderInfDch'>".$rowb['Nombre']."</td>
+				<td class='BorderInfDch'>".$rowb['Apellidos']."</td>
 				<td class='BorderInfDch'>
 	<img src='".$rutaimg.$rowb['ref']."/img_admin/".$rowb['myimg']."' height='40px' width='30px' />
 				</td>
-												
-													
-				<td class='BorderInfDch'>
-					".$rowb['Usuario']."
-				</td>
-						
-				<td class='BorderInfDch'>
-					".$rowb['Pass']."
-				</td>
-						
+				<td class='BorderInfDch'>".$rowb['Usuario']."</td>
+				<td class='BorderInfDch'>".$rowb['Pass']."</td>
 			</tr>
 			<tr>
 					
@@ -115,7 +91,11 @@
 
 		print($formulariofg.$formulariohi);
 
-		require 'rowbtotal.php';
+		if ($_SESSION['Nivel'] == 'admin') { 
+
+			require 'rowbtotal.php';
+		
+		} else { }
 
 		print($formulariofi.$formulariohe);
 

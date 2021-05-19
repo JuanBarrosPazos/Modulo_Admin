@@ -132,9 +132,7 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 				</tr>
 								
 				<tr>
-					<td width=150px>
-						Nombre:
-					</td>
+					<td width=150px>Nombre:</td>
 					<td width=200px>"
 						.$_POST['Nombre'].
 					"</td>
@@ -144,111 +142,63 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 				</tr>
 				
 				<tr>
-					<td>
-						Apellidos:
-					</td>
-					<td>"
-						.$_POST['Apellidos'].
-					"</td>
+					<td>Apellidos:</td>
+					<td>".$_POST['Apellidos']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Tipo Documento:
-					</td>
-					<td>"
-						.$_POST['doc'].
-					"</td>
+					<td>Tipo Documento:</td>
+					<td>".$_POST['doc']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						N&uacute;mero:
-					</td>
-					<td>"
-						.$_POST['dni'].
-					"</td>
+					<td>N&uacute;mero:</td>
+					<td>".$_POST['dni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Control:
-					</td>
-					<td>"
-						.$_POST['ldni'].
-					"</td>
+					<td>Control:</td>
+					<td>".$_POST['ldni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Mail:
-					</td>
-					<td colspan='2'>"
-						.$_POST['Email'].
-					"</td>
+					<td>Mail:</td>
+					<td colspan='2'>".$_POST['Email']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Tipo Usuario
-					</td>
-					<td colspan='2'>"
-						.$_POST['Nivel'].
-					"</td>
+					<td>Tipo Usuario</td>
+					<td colspan='2'>".$_POST['Nivel']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Referencia Usuario
-					</td>
-					<td colspan='2'>"
-						.$rf.
-					"</td>
+					<td>Referencia Usuario</td>
+					<td colspan='2'>".$rf."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Usuario:
-					</td>
-					<td colspan='2'>"
-						.$_POST['Usuario'].
-					"</td>
+					<td>Usuario:</td>
+					<td colspan='2'>".$_POST['Usuario']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Password:
-					</td>
-					<td colspan='2'>"
-						.$_POST['Password'].
-					"</td>
+					<td>Password:</td>
+					<td colspan='2'>".$_POST['Password']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Pais:
-					</td>
-					<td colspan='2'>"
-						.$_POST['Direccion'].
-					"</td>
+					<td>Pais:</td>
+					<td colspan='2'>".$_POST['Direccion']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 1:
-					</td>
-					<td colspan='2'>"
-						.$_POST['Tlf1'].
-					"</td>
+					<td>Teléfono 1:</td>
+					<td colspan='2'>".$_POST['Tlf1']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 2:
-					</td>
-					<td colspan='2'>"
-						.$_POST['Tlf2'].
-					"</td>
+					<td>Teléfono 2:</td>
+					<td colspan='2'>".$_POST['Tlf2']."</td>
 				</tr>
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>

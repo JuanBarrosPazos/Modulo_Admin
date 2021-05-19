@@ -42,9 +42,7 @@ function process_form(){
 				</tr>
 				
 				<tr>
-					<td width=120px>
-						ID:
-					</td>
+					<td width=120px>ID:</td>
 					<td width=100px>"
 						.$_POST['id'].
 					"</td>
@@ -54,147 +52,84 @@ function process_form(){
 				</tr>
 					
 				<tr>
-					<td>
-						Ref User:
-					</td>
-					<td>"
-						.$_POST['ref'].
-					"</td>
+					<td>Ref User:</td>
+					<td>".$_POST['ref']."</td>
 				</tr>	
 				
 				<tr>
-					<td>
-						Nivel:
-					</td>
-					<td>"
-						.$_POST['Nivel'].
-					"</td>
+					<td>Nivel:</td>
+					<td>".$_POST['Nivel']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Nombre:
-					</td>
-					<td>"
-						.$_POST['Nombre'].
-					"</td>
+					<td>Nombre:</td>
+					<td>".$_POST['Nombre']."</td>
 				</tr>
 
 				<tr>
-					<td>
-						Apellidos:
-					</td>
-					<td>"
-						.$_POST['Apellidos'].
+					<td>Apellidos:</td>
+					<td>".$_POST['Apellidos']."</td>
+				</tr>				
+				
+				<tr>
+					<td>Documento:</td>
+					<td colspan=2>".$_POST['doc']."</td>
+				</tr>				
+				
+				<tr>
+					<td>N&uacute;mero:</td>
+					<td colspan=2>".$_POST['dni']."</td>
+				</tr>				
+				
+				<tr>
+					<td>Control:</td>
+					<td colspan=2>".$_POST['ldni'].
 					"</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Documento:
-					</td>
-					<td colspan=2>"
-						.$_POST['doc'].
-					"</td>
-				</tr>				
-				
-				<tr>
-					<td>
-						N&uacute;mero:
-					</td>
-					<td colspan=2>"
-						.$_POST['dni'].
-					"</td>
-				</tr>				
-				
-				<tr>
-					<td>
-						Control:
-					</td>
-					<td colspan=2>"
-						.$_POST['ldni'].
-					"</td>
-				</tr>				
-				
-				<tr>
-					<td>
-						Mail:
-					</td>
-					<td colspan=2>"
-						.$_POST['Email'].
-					"</td>
+					<td>Mail:</td>
+					<td colspan=2>".$_POST['Email']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Usuario:
-					</td>
-					<td colspan=2>"
-						.$_POST['Usuario'].
-					"</td>
+					<td>Usuario:</td>
+					<td colspan=2>".$_POST['Usuario']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Password:
-					</td>
-					<td colspan=2>"
-						.$_POST['Pass'].
-					"</td>
+					<td>Password:</td>
+					<td colspan=2>".$_POST['Pass']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Direcci&oacute;n:
-					</td>
-					<td colspan=2>"
-						.$_POST['Direccion'].
-					"</td>
+					<td>Direcci&oacute;n:</td>
+					<td colspan=2>".$_POST['Direccion']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Tel&eacute;fono 1:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf1'].
-					"</td>
+					<td>Tel&eacute;fono 1:</td>
+					<td colspan=2>".$_POST['Tlf1']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Tel&eacute;fono 2:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf2'].
-					"</td>
+					<td>Tel&eacute;fono 2:</td>
+					<td colspan=2>".$_POST['Tlf2']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Last In:
-					</td>
-					<td colspan=2>"
-						.$_POST['lastin'].
-					"</td>
+					<td>Last In:</td>
+					<td colspan=2>".$_POST['lastin']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Last Out:
-					</td>
-					<td colspan=2>"
-						.$_POST['lastout'].
-					"</td>
+					<td>Last Out:</td>
+					<td colspan=2>".$_POST['lastout']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Nº Visitas:
-					</td>
-					<td colspan=2>"
-						.$_POST['visitadmin'].
-					"</td>
+					<td>Nº Visitas:</td>
+					<td colspan=2>".$_POST['visitadmin']."</td>
 				</tr>
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
@@ -438,9 +373,7 @@ function show_form(){
 		<input type='hidden' name='Password' value='".$defaults['Password']."' />
 	
 				<tr>
-					<td width=120px>	
-						Nivel:
-					</td>
+					<td width=120px>Nivel:</td>
 			
 					<td width=100px>
 						".$defaults['Nivel']."
@@ -455,9 +388,7 @@ function show_form(){
 				</tr>
 					
 				<tr>
-					<td>	
-						Nombre:
-					</td>
+					<td>Nombre:</td>
 			
 					<td>
 						".$defaults['Nombre']."
@@ -466,9 +397,7 @@ function show_form(){
 				</tr>
 					
 				<tr>
-					<td>
-						Apellidos:
-					</td>
+					<td>Apellidos:</td>
 			
 					<td>
 						".$defaults['Apellidos']."
@@ -477,9 +406,7 @@ function show_form(){
 				</tr>
 				
 				<tr>
-					<td>
-						Documento:
-					</td>
+					<td>Documento:</td>
 			
 					<td>
 						".$defaults['doc']."
@@ -488,9 +415,7 @@ function show_form(){
 				</tr>
 				
 				<tr>
-					<td>
-						N&uacute;mero:
-					</td>
+					<td>N&uacute;mero:</td>
 			
 					<td>
 						".$defaults['dni']."
@@ -499,9 +424,7 @@ function show_form(){
 				</tr>
 				
 				<tr>
-					<td>
-						Control:
-					</td>
+					<td>Control:</td>
 			
 					<td colspan='2'>
 						".$defaults['ldni']."
@@ -510,9 +433,7 @@ function show_form(){
 				</tr>
 				
 				<tr>
-					<td>
-						Mail:
-					</td>
+					<td>Mail:</td>
 					<td colspan='2'>
 						".$defaults['Email']."
 		<input type='hidden'' name='Email' value='".$defaults['Email']."' />
@@ -520,9 +441,7 @@ function show_form(){
 				</tr>	
 				
 				<tr>
-					<td>
-						Usuario:
-					</td>
+					<td>Usuario:</td>
 					<td colspan='2'>
 						".$defaults['Usuario']."
 		<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />
@@ -530,9 +449,7 @@ function show_form(){
 				</tr>
 							
 				<tr>
-					<td>
-						Password:
-					</td>
+					<td>Password:</td>
 					<td colspan='2'>
 						".$defaults['Pass']."
 		<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
@@ -540,9 +457,7 @@ function show_form(){
 				</tr>
 
 				<tr>
-					<td>
-						Dirección:
-					</td>
+					<td>Dirección:</td>
 					<td colspan='2'>
 						".$defaults['Direccion']."
 		<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
@@ -550,9 +465,7 @@ function show_form(){
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 1:
-				</td>
+					<td>Teléfono 1:</td>
 				<td colspan='2'>
 						".$defaults['Tlf1']."
 		<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
@@ -560,9 +473,7 @@ function show_form(){
 				</tr>
 				
 				<tr>
-					<td class='BorderInf'>
-							Teléfono 2:
-					</td>
+					<td class='BorderInf'>Teléfono 2:</td>
 					<td class='BorderInf' colspan='2'>
 						".$defaults['Tlf2']."
 		<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />

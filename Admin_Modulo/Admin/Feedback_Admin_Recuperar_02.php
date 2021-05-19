@@ -47,150 +47,86 @@ function process_form(){
 				</tr>
 				
 				<tr>
-					<td width=120px>
-						Nombre:
-					</td>
-					<td width=100px>"
-						.$_POST['Nombre'].
-					"</td>
+					<td width=120px>Nombre:</td>
+					<td width=100px>".$_POST['Nombre']."</td>
 					<td rowspan='4' align='center' width='94px'>
 <img src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."' height='120px' width='90px' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Apellidos:
-					</td>
-					<td>"
-						.$_POST['Apellidos'].
-					"</td>
+					<td>Apellidos:</td>
+					<td>".$_POST['Apellidos']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Documento:
-					</td>
-					<td>"
-						.$_POST['doc'].
-					"</td>
+					<td>Documento:</td>
+					<td>".$_POST['doc']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						N&uacute;mero:
-					</td>
-					<td>"
-						.$_POST['dni'].
-					"</td>
+					<td>N&uacute;mero:</td>
+					<td>".$_POST['dni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Control:
-					</td>
-					<td colspan=2>"
-						.$_POST['ldni'].
-					"</td>
+					<td>Control:</td>
+					<td colspan=2>".$_POST['ldni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Mail:
-					</td>
-					<td colspan=2>"
-						.$_POST['Email'].
-					"</td>
+					<td>Mail:</td>
+					<td colspan=2>".$_POST['Email']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Tipo User
-					</td>
-					<td colspan=2>"
-						.$_POST['Nivel'].
-					"</td>
+					<td>Tipo User</td>
+					<td colspan=2>".$_POST['Nivel']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Ref. Usuario
-					</td>
-					<td colspan=2>"
-						.$_POST['ref'].
-					"</td>
+					<td>Ref. Usuario</td>
+					<td colspan=2>".$_POST['ref']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						User:
-					</td>
-					<td colspan=2>"
-						.$_POST['Usuario'].
-					"</td>
+					<td>User:</td>
+					<td colspan=2>".$_POST['Usuario']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Password:
-					</td>
-					<td colspan=2>"
-						.$_POST['Pass'].
-					"</td>
+					<td>Password:</td>
+					<td colspan=2>".$_POST['Pass']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Dirección:
-					</td>
-					<td colspan=2>"
-						.$_POST['Direccion'].
-					"</td>
+					<td>Dirección:</td>
+					<td colspan=2>".$_POST['Direccion']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 1:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf1'].
-					"</td>
+					<td>Teléfono 1:</td>
+					<td colspan=2>".$_POST['Tlf1']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 2:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf2'].
-					"</td>
+					<td>Teléfono 2:</td>
+					<td colspan=2>".$_POST['Tlf2']."</td>
 				</tr>
 
 				<tr>
-					<td>
-						Last In:
-					</td>
-					<td colspan=2>"
-						.$_POST['lastin'].
-					"</td>
+					<td>Last In:</td>
+					<td colspan=2>".$_POST['lastin']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Last Out:
-					</td>
-					<td colspan=2>"
-						.$_POST['lastout'].
-					"</td>
+					<td>Last Out:</td>
+					<td colspan=2>".$_POST['lastout']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Vista Admin:
-					</td>
-					<td colspan=2>"
-						.$_POST['visitadmin'].
-					"</td>
+					<td>Vista Admin:</td>
+					<td colspan=2>".$_POST['visitadmin']."</td>
 				</tr>
 				<tr>
 						<form name='closewindow' action='Feedback_Ver.php'>

@@ -155,7 +155,11 @@ function process_form(){
 	$sqlc = "UPDATE `$db_name`.$table_name_a SET `myimg` = '$new_name' WHERE $table_name_a.`id` = '$_POST[id]' LIMIT 1 ";
 
 	if(mysqli_query($db, $sqlc)){
-			print( "<table align='center' style=\"margin-top:20px\">
+
+		if ($_SESSION['sref'] == $_SESSION['ref']){ $_SESSION['myimg'] = $new_name;  }
+		else { }
+
+		print( "<table align='center' style=\"margin-top:20px\">
 				<tr>
 					<th colspan=3  class='BorderInf'>
 						Estos son los nuevos datos de registro.

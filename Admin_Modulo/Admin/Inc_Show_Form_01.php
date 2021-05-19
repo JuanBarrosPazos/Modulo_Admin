@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST['oculto'])){
+    if(isset($_POST['ocultoc'])){
         $defaults = $_POST;
         $_SESSION['Orden'] = @$_POST['Orden'];
         }
@@ -63,7 +63,7 @@ print(" <table align='center' style=\"border:0px;margin-top:4px\">
             <tr>
                 <td align='right'>
                     <input type='submit' value='USER CONSULTA' />
-                    <input type='hidden' name='oculto' value=1 />
+                    <input type='hidden' name='ocultoc' value=1 />
                 </td>
                 <td align='right'>	
                     NOMBRE
