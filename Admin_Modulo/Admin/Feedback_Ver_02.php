@@ -34,113 +34,26 @@ function process_form(){
 	global $apellido;
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
-	
+
+
 	print("<table align='center' width='auto'>
 				<tr>
 					<th colspan=3  class='BorderInf'>
 						ESTOS SON LOS DATOS DE SU CONSULTA
 					</th>
 				</tr>
+			");
+
+	global $rutaimg;
+	$rutaimg = "src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."'";
+	require 'table_data_resum.php';
+	require 'table_data_resum_feed.php';
 				
-				<tr>
-					<td width=110px>ID:
-					</td>
-					<td>".$_POST['id']."</td>
-					<td rowspan='5' align='right' width='120px'>
-<img src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."' height='120px' width='90px' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Nivel:</td>
-					<td>".$_POST['Nivel']."</td>
-				</tr>
-				
-				<tr>
-					<td>Referencia User:</td>
-					<td>".$_POST['ref']."</td>
-				</tr>
-				
-				<tr>
-					<td>Nombre:</td>
-					<td>".$_POST['Nombre']."</td>
-				</tr>
-				
-				<tr>
-					<td>Apellidos:</td>
-					<td>".$_POST['Apellidos']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Tipo Documento:</td>
-					<td>".$_POST['doc']."</td>
-				</tr>				
-				
-				<tr>
-					<td>N&uacute;mero:</td>
-					<td colspan='2'>".$_POST['dni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Control:</td>
-					<td colspan='2'>".$_POST['ldni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Mail:</td>
-					<td colspan='2'>".$_POST['Email']."</td>
-				</tr>
-				
-				<tr>
-					<td>Usuario:</td>
-					<td colspan='2'>".$_POST['Usuario']."</td>
-				</tr>
-				
-				<tr>
-					<td>Password:</td>
-					<td colspan='2'>".$_POST['Pass']."</td>
-				</tr>
-				
-				<tr>
-					<td>Direcci&oacute;n:</td>
-					<td colspan='2'>".$_POST['Direccion']."</td>
-				</tr>
-				
-				<tr>
-					<td>Tel&eacute;fono 1:</td>
-					<td colspan='2'>".$_POST['Tlf1']."</td>
-				</tr>
-				
-				<tr>
-					<td>Tel&eacute;fono 2:</td>
-					<td colspan='2'>".$_POST['Tlf2']."</td>
-				</tr>
-				
-				<tr>
-					<td>Date Delete:</td>
-					<td colspan='2'>".$_POST['borrado']."</td>
-				</tr>
-				
-				<tr>
-					<td>Last IN:</td>
-					<td colspan='2'>".$_POST['lastin']."</td>
-				</tr>
-				
-				<tr>
-					<td>Last Out:</td>
-					<td colspan='2'>".$_POST['lastout']."</td>
-				</tr>
-				
-				<tr>
-					<td>Nº Visitas:</td>
-					<td colspan='2'>".$_POST['visitadmin']."</td>
-				</tr>
-				
-				<tr>
+		print(" <tr>
 					<td colspan=3 align='right' class='BorderSup'>
-	<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
-											<input type='submit' value='CERRAR VENTANA' />
-											<input type='hidden' name='oculto2' value=1 />
+						<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
+							<input type='submit' value='CERRAR VENTANA' />
+							<input type='hidden' name='oculto2' value=1 />
 			</form>
 					</td>
 				</tr>

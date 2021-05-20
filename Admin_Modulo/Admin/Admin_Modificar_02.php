@@ -70,95 +70,6 @@ function process_form(){
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
 	
-	global $tabla;							 
-	$tabla = "<table align='center' style=\"margin-top:20px\">
-				<tr>
-					<th colspan=3  class='BorderInf'>
-						NUEVOS DATOS DEL USUARIO.
-					</th>
-				</tr>
-				
-				<tr>
-					<td width=150px>Nombre:</td>
-					<td width=200px>"
-						.$_POST['Nombre'].
-					"</td>
-					<td rowspan='5' align='center'>
-		<img src='../Users/".$_SESSION['refcl']."/img_admin/".$_SESSION['myimgcl']."' height='120px' width='90px' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Apellidos:</td>
-					<td>".$_POST['Apellidos']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Tipo Documento:</td>
-					<td>".$_POST['doc']."</td>
-				</tr>				
-				
-				<tr>
-					<td>N&uacute;mero:</td>
-					<td>".$_POST['dni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Control:</td>
-					<td>".$_POST['ldni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Mail:</td>
-					<td colspan=2>".$_POST['Email']."</td>
-				</tr>
-				
-				<tr>
-					<td>Tipo Usuario</td>
-					<td colspan=2>".$_POST['Nivel']."</td>
-				</tr>
-				
-				<tr>
-					<td>Referencia Usuario</td>
-					<td colspan=2>".$_SESSION['refcl']."</td>
-				</tr>
-				
-				<tr>
-					<td>Usuario:</td>
-					<td colspan=2>".$_POST['Usuario']."</td>
-				</tr>
-				
-				<tr>
-					<td>Password:</td>
-					<td colspan=2>".$_POST['Password']."</td>
-				</tr>
-				
-				<tr>
-					<td>Dirección:</td>
-					<td colspan=2>".$_POST['Direccion']."</td>
-				</tr>
-				
-				<tr>
-					<td>Teléfono 1:</td>
-					<td colspan=2>".$_POST['Tlf1']."</td>
-				</tr>
-				
-				<tr>
-					<td>Teléfono 2:</td>
-					<td colspan=2>"
-						.$_POST['Tlf2']./*" / ".$_SESSION['dni']." / ".$_SESSION['mydni'].*/
-					"</td>
-				</tr>
-				<tr>
-					<td colspan=3 align='right' class='BorderSup'>
-						<form name='closewindow' action='Admin_Ver.php'>
-							<input type='submit' value='INICIO GESTION USUARIOS' />
-							<input type='hidden' name='volver' value=1 />
-						</form>
-					</td>
-				</tr>
-			</table>"; 
-
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
@@ -187,8 +98,27 @@ function process_form(){
 								 
 					require '../Inclu/mydni.php';
 
-				global $tabla;
-				print( $tabla );
+	print("<table align='center' style=\"margin-top:20px\">
+				<tr>
+					<th colspan=3  class='BorderInf'>
+						NUEVOS DATOS DEL USUARIO.
+					</th>
+				</tr>
+			");
+	
+			global $rutaimg;
+			$rutaimg = "src='../Users/".$_SESSION['refcl']."/img_admin/".$_SESSION['myimgcl']."'";
+			require 'table_data_resum.php';
+
+	print("<tr>
+				<td colspan=3 align='right' class='BorderSup'>
+					<form name='closewindow' action='Admin_Ver.php'>
+						<input type='submit' value='INICIO GESTION USUARIOS' />
+						<input type='hidden' name='volver' value=1 />
+					</form>
+				</td>
+			</tr>
+		</table>" );
 
 				} else {
 				print("<font color='#FF0000'>

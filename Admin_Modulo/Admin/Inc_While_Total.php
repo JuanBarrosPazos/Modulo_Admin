@@ -6,44 +6,44 @@
 					
 			show_form();	
 			
-		} else {
+	} else {
 			
-			if(mysqli_num_rows($qb)== 0){
-							print ("<table align='center' style=\"border:0px\">
-										<tr>
-											<td align='center'>
-												<font color='#FF0000'>
-													NO HAY DATOS
-												</font>
-											</td>
-										</tr>
-									</table>");
+		if(mysqli_num_rows($qb)== 0){
+				print ("<table align='center' style=\"border:0px\">
+							<tr>
+								<td align='center'>
+									<font color='#FF0000'>NO HAY DATOS</font>
+								</td>
+							</tr>
+						</table>");
+		} else { global $page;
+				 if ($page >= 1){ } 
+				 else { $page = 1;}
 
-				} else { 	
-					
-					global $page;
-					if ($page >= 1){ } 
-					else { $page = 1;}
+			if(isset($_POST['ocultoc'])){
 
-		if(isset($_POST['ocultoc'])){
-					global $refrescaimg;
-					$refrescaimg = "";
-			} else { 
+				$defaults['Nombre'] = $_POST['Nombre'];
+				$defaults['Apellidos'] = $_POST['Apellidos'];
 				global $refrescaimg;
-				$refrescaimg = "<form name='closewindow' action='".$ruta."Admin_Ver.php'>
-									<input type='submit' value='REFRESCAR VISTA IMAGENES' />
-									<input type='hidden' name='page' value=".$page." />
+				$refrescaimg = "<form name='refresimg' action='".$ruta."Admin_Ver.php' method='POST'>
+					<input type='hidden' name='Nombre' value='".@$defaults['Nombre']."' />
+					<input type='hidden' name='Apellidos' value='".@$defaults['Apellidos']."' />
+					<input type='submit' value='REFRESCAR VISTA IMAGENES' />
+					<input type='hidden' name='ocultoc' value=1 />
 								</form>";
-						}
+			} else { global $refrescaimg;
+					 $refrescaimg = "<form name='refresimg' action='".$ruta."Admin_Ver.php'>
+										<input type='submit' value='REFRESCAR VISTA IMAGENES' />
+										<input type='hidden' name='page' value=".$page." />
+									 </form>";
+					}
 
 			print ("<table align='center'>
-									<tr>
-										<th colspan=7 class='BorderInf'>
-					".$twhile.": ".mysqli_num_rows($qb).".
-								".$refrescaimg."
-										</th>
+						<tr>
+								<th colspan=7 class='BorderInf'>
+					".$twhile.": ".mysqli_num_rows($qb).".".$refrescaimg."
+								</th>
 						</tr>
-									
 						<tr>
 							<th class='BorderInfDch'>Nivel</th>
 							<th class='BorderInfDch'>Referencia</th>
@@ -65,8 +65,7 @@
 
 	print (	"<tr align='center'>
 
-            <!-- AQUÍ VA LA CABECERA DEL FORMULARIO -->
-
+        <!-- AQUÍ VA LA CABECERA DEL FORMULARIO -->
 				<td class='BorderInfDch'>".$rowb['Nivel']."</td>
 				<td class='BorderInfDch'>".$rowb['ref']."</td>
 				<td class='BorderInfDch'>".$rowb['Nombre']."</td>
@@ -78,18 +77,17 @@
 				<td class='BorderInfDch'>".$rowb['Pass']."</td>
 			</tr>
 			<tr>
-					
         <!-- AQUÍ VA LA BOTONERA -->
 	
 		".$formularioh);
 
 		require 'rowbtotal.php';
 
-        print($formulariof.$formulariohg);
+			print($formulariof.$formulariohg);
 
 		require 'rowbtotal.php';
 
-		print($formulariofg.$formulariohi);
+			print($formulariofg.$formulariohi);
 
 		if ($_SESSION['Nivel'] == 'admin') { 
 
@@ -97,11 +95,11 @@
 		
 		} else { }
 
-		print($formulariofi.$formulariohe);
+			print($formulariofi.$formulariohe);
 
 		require 'rowbtotal.php';
 
-		print($formulariofe."</tr>");
+			print($formulariofe."</tr>");
                     
 	 }  // FIN DEL WHILE
 

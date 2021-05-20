@@ -2,7 +2,7 @@
 
 	global $formularioh;
 	$formularioh = "<td colspan=7 align='center' class='BorderInf'>
-				<form style=\"display:inline-block;\" name='ver' action='Feedback_Ver_02.php' target='popup'method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=610px,')\">";
+				<form style=\"display:inline-block;\" name='ver' action='Feedback_Ver_02.php' target='popup'method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=550px,')\">";
 
 	global $formulariof;
 	$formulariof = "<input type='submit' value='VER DETALLES' />

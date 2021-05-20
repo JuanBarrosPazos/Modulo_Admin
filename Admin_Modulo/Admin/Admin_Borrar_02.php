@@ -37,104 +37,21 @@ function process_form(){
 						OK BAJA TEMPORAL ESTE USUARIO.
 					</th>
 				</tr>
+			");
 				
-				<tr>
-					<td width=120px>ID:</td>
-					<td width=100px>".$_POST['id']."</td>
-					
-					<td rowspan=5 width=94px>
-<img src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."' height='120px' width='90px' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Referencia:</td>
-					<td>".$_POST['ref']."</td>
-				</tr>
-				
-				<tr>
-					<td>Nivel:</td>
-					<td>".$_POST['Nivel']."</td>
-				</tr>
-				
-				<tr>
-					<td>Nombre:</td>
-					<td>".$_POST['Nombre']."</td>
-				</tr>
+			global $rutaimg;
+			$rutaimg = "src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."'";
+			require 'table_data_resum.php';
 
-				<tr>
-					<td>Apellidos:</td>
-					<td>".$_POST['Apellidos']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Tipo Documento:</td>
-					<td>".$_POST['doc']."</td>
-				</tr>				
-				
-				<tr>
-					<td>N&uacute;mero:</td>
-					<td colspan=2>".$_POST['dni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Control:</td>
-					<td colspan=2>".$_POST['ldni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Mail:</td>
-					<td colspan=2>".$_POST['Email']."</td>
-				</tr>
-				
-				<tr>
-					<td>Usuario:</td>
-					<td colspan=2>".$_POST['Usuario']."</td>
-				</tr>
-				
-				<tr>
-					<td>Password:</td>
-					<td colspan=2>".$_POST['Pass']."</td>
-				</tr>
-				
-				<tr>
-					<td>Direcci&oacute;n:</td>
-					<td colspan=2>".$_POST['Direccion']."</td>
-				</tr>
-				
-				<tr>
-					<td>Tel&eacute;fono 1:</td>
-					<td colspan=2>".$_POST['Tlf1']."</td>
-				</tr>
-				
-				<tr>
-					<td>Tel&eacute;fono 2:</td>
-					<td colspan=2>".$_POST['Tlf2']."</td>
-				</tr>
-				
-				<tr>
-					<td>Last In:</td>
-					<td colspan=2>".$_POST['lastin']."</td>
-				</tr>
-				
-				<tr>
-					<td>Last Out:</td>
-					<td colspan=2>".$_POST['lastout']."</td>
-				</tr>
-				
-				<tr>
-					<td>Nº Visitas:</td>
-					<td colspan=2>".$_POST['visitadmin']."</td>
-				</tr>
-				<tr>
-						<form name='closewindow' action='Admin_Ver.php'>
-					<td colspan=3 align='right' class='BorderSup'>
-							<input type='submit' value='INICIO GESTION USUARIOS' />
-							<input type='hidden' name='volver' value=1 />
-					</td>
-						</form>
-				</tr>
-			</table>");	
+	print("	<tr>
+				<td colspan=3 align='right' class='BorderSup'>
+					<form name='closewindow' action='Admin_Ver.php'>
+						<input type='submit' value='INICIO GESTION USUARIOS' />
+						<input type='hidden' name='volver' value=1 />
+					</form>
+				</td>
+			</tr>
+		</table>");	
 
 	global $db;
 	global $db_name;
@@ -253,93 +170,77 @@ function show_form(){
 					
 		<tr>
 			<td>Nombre:</td>
-			
-			<td>
-				".$defaults['Nombre']."
+			<td>".$defaults['Nombre']."
 				<input  type='hidden' name='Nombre' value='".$defaults['Nombre']."' />
 			</td>
 		</tr>
 					
 		<tr>
 			<td>Apellidos:</td>
-			
-			<td>
-				".$defaults['Apellidos']."
+			<td>".$defaults['Apellidos']."
 				<input type='hidden' name='Apellidos' value='".$defaults['Apellidos']."' />
 			</td>
 		</tr>
 				
 		<tr>
 			<td>Tipo Documento:</td>
-			
-			<td>
-				".$defaults['doc']."
+			<td>".$defaults['doc']."
 				<input type='hidden' name='doc' value='".$defaults['doc']."' />
 			</td>
 		</tr>
 				
 		<tr>
 			<td>N&uacute;mero:</td>
-			
-			<td>
-				".$defaults['dni']."
+			<td>".$defaults['dni']."
 				<input type='hidden' name='dni' value='".$defaults['dni']."' />
 			</td>
 		</tr>
 				
 		<tr>
 			<td>Control:</td>
-			
-			<td colspan='2'>
-				".$defaults['ldni']."
+			<td colspan='2'>".$defaults['ldni']."
 				<input type='hidden' name='ldni' value='".$defaults['ldni']."' />
 			</td>
 		</tr>
 				
 		<tr>
 			<td>Mail:</td>
-			<td colspan='2'>
-				".$defaults['Email']."
+			<td colspan='2'>".$defaults['Email']."
 				<input type='hidden'' name='Email' value='".$defaults['Email']."' />
 			</td>
 		</tr>	
 				
 		<tr>
 			<td>Nombre de Usuario:</td>
-			<td colspan='2'>
-				".$defaults['Usuario']."
+			<td colspan='2'>".$defaults['Usuario']."
 				<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />
 			</td>
 		</tr>
 							
 		<tr>
 			<td>Password:</td>
-			<td colspan='2'>
-				".$defaults['Pass']."
+			<td colspan='2'>".$defaults['Pass']."
 				<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
 			</td>
 		</tr>
 
 		<tr>
 			<td>Dirección:</td>
-			<td colspan='2'>
-				".$defaults['Direccion']."
+			<td colspan='2'>".$defaults['Direccion']."
 				<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
 			</td>
 		</tr>
 				
 		<tr>
 			<td>Teléfono 1:</td>
-			<td colspan='2'>
-				".$defaults['Tlf1']."
+			<td colspan='2'>".$defaults['Tlf1']."
 				<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
 			</td>
 		</tr>
 				
 		<tr>
 			<td class='BorderInf'>Teléfono 2:</td>
-			<td class='BorderInf' colspan='2'>
-				".$defaults['Tlf2']."
+			<td class='BorderInf' colspan='2'>".$defaults['Tlf2']."
 				<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
 			</td>
 		</tr>
