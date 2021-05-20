@@ -137,11 +137,10 @@
 			</a>
 		</li>
 	
-	<li>
+	<li style='text-align:center;'>
 		<a href='#'>
 			<form name='cerrar' action='".$rutaadmin."mcgexit.php' method='post'>
-				<i class='ic ico01'></i>
-		<input type='submit' value='CLOSE SESSION'  style='margin-top:-2px; margin-left:6px;' />
+		<input type='submit' value='CLOSE SESSION' style='margin-top:-2px; margin-left:6px;' class='botondetalles'/>
 		<input type='hidden' name='cerrar' value=1 />
 			</form>
 		</a>

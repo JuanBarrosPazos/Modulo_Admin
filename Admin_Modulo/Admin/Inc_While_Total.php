@@ -28,13 +28,13 @@
 				$refrescaimg = "<form name='refresimg' action='".$ruta."Admin_Ver.php' method='POST'>
 					<input type='hidden' name='Nombre' value='".@$defaults['Nombre']."' />
 					<input type='hidden' name='Apellidos' value='".@$defaults['Apellidos']."' />
-					<input type='submit' value='REFRESCAR VISTA IMAGENES' />
+					<input type='submit' value='REFRESCAR VISTA IMAGENES' class='botonrefres' />
 					<input type='hidden' name='ocultoc' value=1 />
 								</form>";
 			} else { global $refrescaimg;
 					 $refrescaimg = "<form name='refresimg' action='".$ruta."Admin_Ver.php'>
-										<input type='submit' value='REFRESCAR VISTA IMAGENES' />
-										<input type='hidden' name='page' value=".$page." />
+							<input type='submit' value='REFRESCAR VISTA IMAGENES' class='botonrefres' />
+							<input type='hidden' name='page' value=".$page." />
 									 </form>";
 					}
 

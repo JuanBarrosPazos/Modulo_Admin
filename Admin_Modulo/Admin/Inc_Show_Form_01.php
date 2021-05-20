@@ -62,7 +62,7 @@ print(" <table align='center' style=\"border:0px;margin-top:4px\">
                     
             <tr>
                 <td align='right'>
-                    <input type='submit' value='USER CONSULTA' />
+                    <input type='submit' value='USER CONSULTA' class='botonrefres' />
                     <input type='hidden' name='ocultoc' value=1 />
                 </td>
                 <td align='right'>	
@@ -88,7 +88,7 @@ print(" <table align='center' style=\"border:0px;margin-top:4px\">
     <form name='todo' method='post' action='$_SERVER[PHP_SELF]' >
             <tr>
                 <td align='right'>
-                    <input type='submit' value='".$boton."' />
+                    <input type='submit' value='".$boton."' class='botonrefres' />
                     <input type='hidden' name='todo' value=1 />
                 </td>
                 <td align='right'>	

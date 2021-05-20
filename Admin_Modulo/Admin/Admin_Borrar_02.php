@@ -247,7 +247,7 @@ function show_form(){
 				
 		<tr align='right'>
 			<td colspan='3'>
-				<input type='submit' value='CONFIRMAR LA BAJA TEMPORAL' />
+				<input type='submit' value='CONFIRMAR LA BAJA TEMPORAL' class='botonbaja' />
 				<input type='hidden' name='borrar' value=1 />
 			</td>
 		</tr>
