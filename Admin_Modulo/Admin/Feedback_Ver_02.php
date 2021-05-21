@@ -52,7 +52,7 @@ function process_form(){
 		print(" <tr>
 					<td colspan=3 align='right' class='BorderSup'>
 						<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
-							<input type='submit' value='CERRAR VENTANA' />
+							<input type='submit' value='CERRAR VENTANA' class='botonrojo' />
 							<input type='hidden' name='oculto2' value=1 />
 			</form>
 					</td>

@@ -46,7 +46,7 @@ function process_form(){
 	print("	<tr>
 				<td colspan=3 align='right' class='BorderSup'>
 					<form name='closewindow' action='Admin_Ver.php'>
-						<input type='submit' value='INICIO GESTION USUARIOS' />
+						<input type='submit' value='INICIO GESTION USUARIOS' class='botonverde' />
 						<input type='hidden' name='volver' value=1 />
 					</form>
 				</td>
@@ -247,7 +247,7 @@ function show_form(){
 				
 		<tr align='right'>
 			<td colspan='3'>
-				<input type='submit' value='CONFIRMAR LA BAJA TEMPORAL' class='botonbaja' />
+				<input type='submit' value='CONFIRMAR LA BAJA TEMPORAL' class='botonrojo' />
 				<input type='hidden' name='borrar' value=1 />
 			</td>
 		</tr>

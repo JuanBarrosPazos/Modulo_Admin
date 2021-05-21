@@ -81,11 +81,11 @@ function info(){
 	
 	function desconex(){
 
-			print("<table align='center'style=\"margin-top:80px; margin-bottom:80px;\">
+			print("<table style=\"margin:8.0em auto 8.0em auto;\">
 						<form name='salir' action='$_SERVER[PHP_SELF]' method='post'>
 							<tr>
 								<td valign='bottom' align='center'>
-									<input type='submit' value='CONFIRME CERRAR SESION' />
+				<input type='submit' value='CONFIRME CERRAR SESION' class='botonverde' />
 								</td>
 							</tr>								
 									<input type='hidden' name='salir' value=1 />

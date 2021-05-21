@@ -212,7 +212,7 @@ function MM_validateForm() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-function show_form($errors=''){
+function show_form($errors=[]){
 	
 	if(isset($_POST['oculto'])){
 				$defaults = $_POST;
@@ -286,7 +286,7 @@ print(" <table align='center' style=\"border:0px;margin_bottom:6px;margin-top:15
             <td>&nbsp;</td>
         	<td>&nbsp;</td>
             <td align='right'>
-                <input type='submit' value='ENVIAR FORMULARIO CONTACTO' />
+                <input type='submit' value='ENVIAR FORMULARIO CONTACTO' class='botonverde' />
 				<input type='hidden' name='oculto' value=1 />
             </td>
 		</form>	

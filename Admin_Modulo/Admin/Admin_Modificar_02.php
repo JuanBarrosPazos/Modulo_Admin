@@ -113,7 +113,7 @@ function process_form(){
 	print("<tr>
 				<td colspan=3 align='right' class='BorderSup'>
 					<form name='closewindow' action='Admin_Ver.php'>
-						<input type='submit' value='INICIO GESTION USUARIOS' />
+						<input type='submit' value='INICIO GESTION USUARIOS' class='botonverde' />
 						<input type='hidden' name='volver' value=1 />
 					</form>
 				</td>
@@ -442,7 +442,7 @@ function show_form($errors=[]){
 				
 				<tr height=40px>
 					<td colspan='2' align='right'>
-						<input type='submit' value='MODIFICAR DATOS' />
+						<input type='submit' value='MODIFICAR DATOS' class='botonnaranja' />
 						<input type='hidden' name='modifica' value=1 />
 						
 					</td>
@@ -599,7 +599,7 @@ function show_form($errors=[]){
 				
 				<tr height=40px>
 					<td colspan='2' align='right'>
-						<input type='submit' value='MODIFICAR DATOS' />
+						<input type='submit' value='MODIFICAR DATOS' class='botonnaranja' />
 						<input type='hidden' name='modifica' value=1 />
 						
 					</td>

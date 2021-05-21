@@ -718,7 +718,7 @@ function show_form($errors=[]){
 
 				<tr>
 					<td colspan='2'  align='right' valign='middle'  class='BorderSup'>
-						<input type='submit' value='REGISTRARME CON ESTOS DATOS' />
+						<input type='submit' value='REGISTRARME CON ESTOS DATOS' class='botonverde' />
 						<input type='hidden' name='oculto' value=1 />
 						
 					</td>

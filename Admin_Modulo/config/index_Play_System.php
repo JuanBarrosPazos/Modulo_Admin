@@ -872,7 +872,7 @@ function show_form($errors=[]){
 	
 				<tr>
 					<td valign='middle' align='right' colspan='2'>
-						<input type='submit' value='ACCEDER' />
+						<input type='submit' value='ACCEDER' class='botonverde' />
 						<input type='hidden' name='oculto' value=1 />
 		</form>	
 					</td>
@@ -969,7 +969,7 @@ function ver_todo(){
 						unset($_SESSION['Tlf2']);
 						unset($_SESSION['nclient']);
 
-						echo "YOU HAVE CLOSE SESSION";
+						echo "<div class='centradiv'>YOU HAVE CLOSE SESSION</div>";
 	}
 
 				   ////////////////////				   ////////////////////

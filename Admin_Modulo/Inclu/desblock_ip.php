@@ -222,7 +222,7 @@ function show_form($errors=[]){
 				<tr align='center'>
 				
 					<td colspan='2' align='center'>
-		<input type='submit' value='SOLICITAR DEBLOQUEO DE SU IP' />
+		<input type='submit' value='SOLICITAR DEBLOQUEO DE SU IP' class='botonverde' />
 		<input type='hidden' name='oculto' value=1 />
 					</td>
 		</form>	
@@ -284,7 +284,7 @@ function process_form(){
 		<tr>
 			<td colspan=2 align='center'>
 			<form name='modifica' action='$_SERVER[PHP_SELF]' method='POST'>
-				<input type='submit' value='DESBLOQUEAR SU IP' />
+				<input type='submit' value='DESBLOQUEAR SU IP' class='botonverde' />
 				<input type='hidden' name='oculto2' value=1 />
 				<input type='hidden' name='refdesb' value=".$rowqc['ref']." />
 				<input type='hidden' name='nivdesb' value=".$rowqc['Nivel']." />
@@ -294,7 +294,7 @@ function process_form(){
 		<tr>
 			<td colspan=2 align='center'>
 			<form name='fcancel' method='post' action='$_SERVER[PHP_SELF]' >
-						<input type='submit' value='CANCELAR Y VOLVER' />
+						<input type='submit' value='CANCELAR Y VOLVER' class='botonnaranja' />
 						<input type='hidden' name='cancel' value=1 />
 			</form>
 			</td>

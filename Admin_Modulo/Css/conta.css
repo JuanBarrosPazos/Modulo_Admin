@@ -17,11 +17,16 @@ h1 {
 	text-align: left;
 }
 
-table {
-	border: 1px solid #CCC;
-	margin-bottom: 12px;
+table, .centradiv {
+	border: 2px solid #CCC;
+	border-radius: 12px;
+	margin: 2px auto 6px auto;
+	text-align: center;
 }
-
+.centradiv {
+	width: max-content;
+	padding: 12px;
+}
 tr {
 	margin: 0px;
 	padding: 0px;
@@ -34,10 +39,10 @@ th {
 	padding: 6px;
 	margin: 0px;
 	text-align: center;
-	font-size: 14px;
+	font-size: 1.2em;
 	font-style: normal;
 	font-family: "Times New Roman", Times, serif;
-	font-weight: normal;
+	font-weight: bold;
 }
 
 input {
@@ -47,6 +52,7 @@ input {
 	padding-top: 3px;
 	padding-right: 4px;
 	padding-left: 4px;
+	border-radius: 6px;
 }
 
 select {
@@ -107,8 +113,8 @@ a:hover  img {
 
 .MenuVertical {
 	position: fixed;
-	top: 2.4%;
-	left: 1.0%;
+	top: 0.2%;
+	left: 0.2%;
 	margin-left: -180px;
 	z-index:999;
 	width: auto;
@@ -326,18 +332,18 @@ a:hover  img {
 	text-decoration: none;
 }
 
-.pageli {
+.pageli, .pagelib {
 	display: inline-block !important;
-	border: solid 1px #fff;
-	margin: 2px;
-	padding: 2px 6px 2px 6px;
+	margin: 3px;
+	padding: 3px 8px 3px 8px;
+	font-weight: bold;
+	font-size: 1.2em;
 }
-
+.pageli {
+	border: solid 1px #fff;
+}
 .pagelib {
-	display: inline-block !important;
-	border: solid 1px #f40;
-	margin: 2px;
-	padding: 2px 6px 2px 6px;
+	border: solid 2px #f40;
 }
 
 .pagelib a {
@@ -366,19 +372,20 @@ a:hover  img {
 /*************************************/
 /*************************************/
 
-.botondetalles {
+.botonverde {
 	background-color: #9bd8c3;
 }
-.botonmod {
+.botonnaranja {
 	background-color: #e2e474;
 }
-.botonbaja {
+.botonrojo {
 	background-color: #e47474;
 }
-.botonrefres {
+.botonazul {
 	background-color: #cc9edf;
 }
-.botondetalles, .botonmod, .botonbaja, .botonrefres {
+
+.botonverde, .botonnaranja, .botonrojo, .botonazul {
 	cursor: pointer;
 	border: none;
 	vertical-align: text-bottom;
@@ -386,7 +393,7 @@ a:hover  img {
 	padding: 5px 5px 3px 5px !important;
 	border-radius: 4px;
 }
-.botondetalles:hover, .botonmod:hover, .botonbaja:hover, .botonrefres:hover {
+.botonverde:hover, .botonnaranja:hover, .botonrojo:hover, .botonazul:hover {
 	background-color: #dbdbdb;
 }
 

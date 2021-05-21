@@ -69,7 +69,7 @@ a:hover {
 
 .sidebar header {
   background-color: #343434;
-  width: 100%;
+  width: auto;
   display: block;
   padding: 0.0em	0.5em;
 }

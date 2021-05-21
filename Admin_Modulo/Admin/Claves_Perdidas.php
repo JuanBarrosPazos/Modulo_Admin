@@ -238,7 +238,7 @@ function show_form($errors=[]){
 				
 			<tr align='center'>
 				<td colspan='2' align='right'>
-		<input type='submit' value='ENVIAR MIS CLAVES' />
+		<input type='submit' value='ENVIAR MIS CLAVES' class='botonverde' />
 		<input type='hidden' name='oculto' value=1 />
 	</form>	
 				</td>
@@ -304,7 +304,7 @@ function process_form(){
 			</tr>
 			<tr>
 				<td colspan=2 align='center'>
-			<input type='submit' value='CONFIRMAR Y ENVIAR MIS DATOS VIA MAIL' />
+			<input type='submit' value='CONFIRMAR Y ENVIAR MIS DATOS VIA MAIL' class='botonverde' />
 			<input type='hidden' name='oculto2' value=1 />
 				</td>
 		</form>

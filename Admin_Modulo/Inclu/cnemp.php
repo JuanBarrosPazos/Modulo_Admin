@@ -145,7 +145,7 @@ function show_form($errors=[]){
 				
 				<tr>
 					<td colspan='2'  align='right' valign='middle'  class='BorderSup'>
-						<input type='submit' value='GRABAR Nº EMPLEADOS PERMITIDO' />
+						<input type='submit' value='GRABAR Nº EMPLEADOS PERMITIDO' class='botonnaranja' />
 						<input type='hidden' name='oculto' value=1 />
 						
 					</td>

@@ -62,7 +62,7 @@ function process_form(){
 	print("	<tr>
 				<td colspan=3 align='right' class='BorderSup'>
 					<form name='closewindow' action='Feedback_Ver.php'>
-						<input type='submit' value='ADMIN BAJAS VOLVER' />
+						<input type='submit' value='ADMIN BAJAS VOLVER' class='botonverde' />
 						<input type='hidden' name='volver' value=1 />
 					</form>
 				</td>
@@ -393,7 +393,7 @@ function show_form(){
 				
 				<tr align='center'>
 					<td colspan='3' align='right'>
-	<input type='submit' value='BORRAR DATOS PERMANENTEMENTE' style=\"color:#FF0000;font-weight: bold; \"/>
+	<input type='submit' value='BORRAR DATOS PERMANENTEMENTE' class='botonrojo' />
 		<input type='hidden' name='borrar' value=1 />
 					</td>
 				</tr>

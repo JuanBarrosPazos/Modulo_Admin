@@ -72,7 +72,7 @@ function process_form(){
 						<tr>
 							<form name='closewindow' action='Feedback_Ver.php'>
 							<td colspan=3 align='right' class='BorderSup'>
-								<input type='submit' value='GESTION BAJAS VOLVER' />
+								<input type='submit' value='GESTION BAJAS VOLVER' class='botonverde' />
 								<input type='hidden' name='volver' value=1 />
 							</td>
 								</form>
@@ -347,7 +347,7 @@ function show_form(){
 				
 				<tr height=40px>
 					<td colspan='3' align='right' class='BorderSup'>
-						<input type='submit' value='CONFIRME RECUPERAR USER' />
+						<input type='submit' value='CONFIRME RECUPERAR USER' class='botonverde' />
 						<input type='hidden' name='modifica' value=1 />
 					</td>
 				</tr>

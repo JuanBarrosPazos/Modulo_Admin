@@ -20,7 +20,7 @@ print ("
     ".$niv."</br>
         <a href='#'>
             <form name='cerrar' action='".$rutaadmin."mcgexit.php' method='post'>
-                <input type='submit' value='CLOSE SESSION'  style='margin-top:2px;' class='botondetalles' />
+                <input type='submit' value='CLOSE SESSION'  style='margin-top:2px;' class='botonverde' />
                 <input type='hidden' name='cerrar' value=1 />
             </form>
         </a>

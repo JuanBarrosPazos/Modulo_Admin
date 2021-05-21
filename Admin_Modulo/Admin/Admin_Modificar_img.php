@@ -280,7 +280,7 @@ function process_form(){
 				<tr>
 					<td colspan=3 align='right' class='BorderSup'>
 		<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
-						<input type='submit' value='CERRAR VENTANA' />
+						<input type='submit' value='CERRAR VENTANA' class='botonrojo' />
 						<input type='hidden' name='oculto2' value=1 />
 		</form>
 					</td>
@@ -429,7 +429,7 @@ function show_form($errors=[]){
 						<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
 						<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
 
-						<input type='submit' value='MODIFICAR IMAGEN' />
+						<input type='submit' value='MODIFICAR IMAGEN' class='botonnaranja' />
 						<input type='hidden' name='imagenmodif' value=1 />
 		</form>																				
 					</td>
@@ -447,7 +447,7 @@ function show_form($errors=[]){
 					</td>
 					<td align='right' class='BorderSup'>
 			<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
-											<input type='submit' value='CERRAR VENTANA' />
+											<input type='submit' value='CERRAR VENTANA' class='botonrojo' />
 											<input type='hidden' name='oculto2' value=1 />
 			</form>
 					</td>

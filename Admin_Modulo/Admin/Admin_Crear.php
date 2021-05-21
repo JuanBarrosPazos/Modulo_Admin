@@ -139,7 +139,7 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 	print(" <tr>
 				<td colspan=3 align='right' class='BorderSup'>
 					<form name='closewindow' action='Admin_Crear.php'>
-						<input type='submit' value='VOLVER A ADMIN CREAR' />
+						<input type='submit' value='VOLVER A ADMIN CREAR' class='botonverde' />
 						<input type='hidden' name='volver' value=1 />
 					</form>
 				</td>
@@ -558,7 +558,7 @@ function show_form($errors=[]){
 				
 				<tr>
 					<td colspan='2'  align='right' valign='middle'  class='BorderSup'>
-						<input type='submit' value='REGISTRAR CON ESTOS DATOS' />
+						<input type='submit' value='REGISTRAR CON ESTOS DATOS' class='botonverde' />
 						<input type='hidden' name='oculto' value=1 />
 						
 					</td>
