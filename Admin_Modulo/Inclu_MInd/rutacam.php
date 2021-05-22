@@ -3,11 +3,11 @@
     global $rutaindex;
     $rutaindex = '../';
     global $rutaadmin;
-    $rutaadmin = '';
+    $rutaadmin = $rutaindex.'Admin/';
     global $rutabbdd;
     $rutabbdd = $rutaindex.'upbbdd/';
     global $rutacam;
-    $rutacam = $rutaindex.'cam/';
+    $rutacam = '';
     global $rutaqrgen;
     $rutaqrgen = $rutaindex.'qrgen/';
     global $rutainclu;

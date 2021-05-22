@@ -30,38 +30,30 @@
 						<i class='ic ico02b'></i>USERS.LOG
 					</a>
 				</li>
-				<li>
-					<a href='".$rutabbdd."bbdd.php'>
-						<i class='ic ico02b'></i>USERS BBDD
-					</a>
-				</li>
 			</ul>
 		</li>
 			");
 	}else{print("</ul></li>");}
 
+	if ($_SESSION['Nivel'] == 'admin') {
 	print("
 		<li>
 			<a href='#'>
-			<i class='ic ico12'></i><span>CATEGORIA 1</span>
+			<i class='ic ico12'></i><span>QR CODE</span>
 			</a>
 			<ul class='nav-flyout'>
-				<li>
-					<a href='#' ".$topcat1.">
-						<i class='ic ico13b'></i>OTRO LINK
-					</a>
-				</li>
-				<li>
-					<a href='#'>
-						<i class='ic ico15b'></i>OTRO LINK
-					</a>
-				</li>
-			</ul>
+			<li>
+			<a href='".$rutaqrgen."indexqrg.php' ".$topcat1.">
+				<i class='ic ico20b'></i>QR GENERADOR
+			</a>
 		</li>
-		");
-
-	if ($_SESSION['Nivel'] == 'admin') {
-	print("
+		<li>
+			<a href='".$rutacam."indexcam.php'>
+				<i class='ic ico20b'></i>QR SCANNER
+			</a>
+		</li>
+	</ul>
+		</li>
 		<li>
 			<a href='#'>
 				<i class='ic ico19'></i><span>CATEGORIA 2</span>
@@ -133,7 +125,27 @@
 			</ul>
 		</li>
 		");
-	}else{}
+	}else{	print("
+		<li>
+			<a href='#'>
+			<i class='ic ico12'></i><span>CATEGORIA 1</span>
+			</a>
+			<ul class='nav-flyout'>
+				<li>
+					<a href='#' ".$topcat1.">
+						<i class='ic ico13b'></i>OTRO LINK
+					</a>
+				</li>
+				<li>
+					<a href='#'>
+						<i class='ic ico15b'></i>OTRO LINK
+					</a>
+				</li>
+			</ul>
+		</li>
+		");
+
+}
 
 	print("
 		<li>

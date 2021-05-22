@@ -239,6 +239,7 @@ function show_form($errors=[]){
 	$doctype = array (	'DNI' => 'DNI/NIF Espa&ntilde;oles',
 						'NIE' => 'NIE/NIF Extranjeros',
 						'NIFespecial' => 'NIF Persona F&iacute;sica Especial',
+					  /*
 						'NIFsa' => 'NIF Sociedad An&oacute;nima',
 						'NIFsrl' => 'NIF Sociedad Responsabilidad Limitada',
 						'NIFscol' => 'NIF Sociedad Colectiva',
@@ -256,6 +257,7 @@ function show_form($errors=[]){
 						'NIFute' => 'NIF Uniones Temporales de Empresas',
 						'NIFotnd' => 'NIF Otros Tipos no Definidos',
 						'NIFepenr' => 'NIF Establecimientos Permanentes Entidades no Residentes',
+						*/
 										);
 	
 	if ($_SESSION['Nivel'] == 'admin'){
