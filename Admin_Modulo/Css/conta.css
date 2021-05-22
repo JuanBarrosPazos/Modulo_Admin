@@ -34,6 +34,7 @@ tr {
 td {
 	margin: 0px;
 	padding: 4px;
+	text-align: center;
 }
 th {
 	padding: 6px;
@@ -48,11 +49,15 @@ th {
 input {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 12px;
-	padding-bottom: 2px;
-	padding-top: 3px;
-	padding-right: 4px;
-	padding-left: 4px;
+	padding: 3px 4px 2px 4px;
+	margin: 2px auto 2px auto;
+	border: none;
 	border-radius: 6px;
+}
+input:focus {
+	color: #000;
+	background-color: #bebebe;
+	border:none;
 }
 
 select {
@@ -337,7 +342,7 @@ a:hover  img {
 	margin: 3px;
 	padding: 3px 8px 3px 8px;
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 1.0em;
 }
 .pageli {
 	border: solid 1px #fff;
@@ -373,29 +378,35 @@ a:hover  img {
 /*************************************/
 
 .botonverde {
-	background-color: #9bd8c3;
+	background-color: #90faf5;
 }
 .botonnaranja {
-	background-color: #e2e474;
+	background-color: #fdc97a;
 }
 .botonrojo {
-	background-color: #e47474;
+	background-color: #ff4d4d;
 }
 .botonazul {
-	background-color: #cc9edf;
+	background-color: #dd92fd;
 }
 
-.botonverde, .botonnaranja, .botonrojo, .botonazul {
+.botonverde, .botonnaranja, .botonrojo, .botonazul, select {
 	cursor: pointer;
 	border: none;
 	vertical-align: text-bottom;
 	margin: 2px;
 	padding: 5px 5px 3px 5px !important;
 	border-radius: 4px;
+	font-weight: bold;
 }
 .botonverde:hover, .botonnaranja:hover, .botonrojo:hover, .botonazul:hover {
-	background-color: #dbdbdb;
+	background-color: #dadada;
 }
 
 
-/* Creado por Juan Barros Pazos 2021 */
+/*************************************/
+/*************************************/
+/*************************************/
+
+
+  /* Creado por Juan Barros Pazos 2021 */

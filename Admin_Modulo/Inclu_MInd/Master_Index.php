@@ -74,8 +74,8 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 						</a>
 					</li>
 					<li>
-						<a href='#'>
-							<i class='ic ico22'></i>OTRO LINK
+						<a href='".$rutabbdd."export_bbdd_backups.php'>
+							<i class='ic ico22'></i>EXPORT BBDD
 						</a>
 					</li>
 				</ul>

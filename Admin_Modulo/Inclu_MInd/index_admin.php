@@ -26,8 +26,13 @@
 					</a>
 				</li>
 				<li>
-					<a href='#'>
-						<i class='ic ico02b'></i>OTRO LINK
+					<a href='".$rutabbdd."export_log.php'>
+						<i class='ic ico02b'></i>USERS.LOG
+					</a>
+				</li>
+				<li>
+					<a href='".$rutabbdd."bbdd.php'>
+						<i class='ic ico02b'></i>USERS BBDD
 					</a>
 				</li>
 			</ul>

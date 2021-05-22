@@ -3,9 +3,9 @@
     global $rutaindex;
     $rutaindex = '../';
     global $rutaadmin;
-    $rutaadmin = '';
+    $rutaadmin = $rutaindex.'Admin/';
     global $rutabbdd;
-    $rutabbdd = $rutaindex.'upbbdd/';
+    $rutabbdd = '';
     global $rutainclu;
     $rutainclu = $rutaindex.'Inclu/';
 
