@@ -36,7 +36,7 @@ function process_form(){
 	$apellido = $_POST['Apellidos'];
 
 
-	print("<table align='center' width='auto'>
+	print("<table align='center'>
 				<tr>
 					<th colspan=3  class='BorderInf'>
 						ESTOS SON LOS DATOS DE SU CONSULTA

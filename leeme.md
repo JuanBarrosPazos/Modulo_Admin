@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V20_Ok_Botones_Paginacion_&_Hash
+# Admin_Modulo_V21_Ok_Botones_Paginacion_&_Hash
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -11,12 +11,22 @@
 - Log de sistema y de actividad de los usuarios individuales.
 - 
 - Integro la función de copia de seguridad automática después de suma_visit(); en index_Play_System.php que pasa a ser index.php en el momento de la instalación. (dias 6, 12, 18, 24, 30. si se inicia sesión.)
+- 
 - Exportación de bbdd completa.
 - Exportación y eliminación de log de usuarios.
 - 
 - Generador de qr code usuarios.
 - Lector de qr code de usuarios.
 - 
+# IMPORTANTE:
+- Las modificaciones en el archivo config/index_Play_System.php se han de reflejar en index.php.
+- Borramos o renombramos index.php en el directorio raiz.
+- Copiamos config/index_Play_System.php en el directorio raiz y le cambiamos el nombre por index.php
+---
+---
+## 2021/05/23
+### Admin_Modulo_V21_Ok_Botones_Paginacion_&_Hash.zip
+- Ajustes generales en qrgen, qrcam.
 ---
 ---
 ## 2021/05/22

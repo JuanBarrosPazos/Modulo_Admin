@@ -34,7 +34,7 @@ function process_form(){
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
 	
-	print("<table align='center' width='auto'>
+	print("<table align='center'>
 				<tr>
 					<th colspan=3  class='BorderInf'>
 						DATOS DEL USUARIO

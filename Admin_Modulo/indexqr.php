@@ -4,6 +4,7 @@ session_start();
 	//require 'Inclu/error_hidden.php';
 	require 'Inclu/Inclu_Menu_00.php';
 	require 'Inclu/mydni.php';
+	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
 	require 'Conections/conect.php';
 	require 'Inclu/my_bbdd_clave.php';
@@ -13,21 +14,29 @@ session_start();
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-if (($_SESSION['Nivel'] == 'admin') || ($_SESSION['Nivel'] == 'plus')){ 
+	global $ruta;
+	$ruta = "";
+	global $rutacam;
+	$rutacam = "cam/";
+	global $docname;
+	$docname = "index.php";
 
-	if(isset($_GET['pin'])){ process_pinqr(); }
-	else { process_pinqr(); }
+ if(isset($_GET['pin'])){
 
-		} else { require 'Inclu/table_permisos.php';
-				 	global $redir;
-					$redir = "<script type='text/javascript'>
-									function redir(){
-									window.location.href='index.php';
-								}
-								setTimeout('redir()',6000);
-								</script>";
-					print ($redir);
+	require $rutacam.'consultaqr.php';
+	
+		if (($rowu['Nivel'] == 'admin') || ($rowu['Nivel'] == 'plus') || ($rowu['Nivel'] == 'user')){ 
+
+				process_pinqr(); 
+				
+		} else { require $ruta.'Inclu/table_permisos.php';
+	      		 require $rutacam.'redir.php';
 					}
+	
+	
+	} else { require $ruta.'Inclu/table_permisos.php';
+			 require $rutacam.'redir.php';
+				}
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -35,143 +44,24 @@ if (($_SESSION['Nivel'] == 'admin') || ($_SESSION['Nivel'] == 'plus')){
 
 function process_pinqr(){
 	
-	global $db;
-	global $db_name;
-
-	global $table_name_a;
-	$table_name_a = "`".$_SESSION['clave']."admin`";
-
-	$sqlp =  "SELECT * FROM `$db_name`.$table_name_a WHERE $table_name_a.`dni` = '$_GET[pin]' ";
-	$qp = mysqli_query($db, $sqlp);
-	$cp = mysqli_num_rows($qp);
-	$rp = mysqli_fetch_assoc($qp);
+	global $rutacam;
+	require $rutacam.'consultaqr.php';
 	
-	$_SESSION['usuarios'] = strtolower($rp['ref']);
+	$_SESSION['usuarios'] = strtolower($rowu['ref']);
 	
-	if ($cp > 0){
+	if ($contu> 0){
+	
+	global $rutacam;
+	require $rutacam.'table_data.php';
 		
-	global $rutaimg;
-	$rutaimg = "src='Users/".$rp['ref']."/img_admin/".$rp['myimg']."'";
-	
-		print("<table align='center' width='auto'>
-		<tr>
-			<th colspan=3  class='BorderInf'>
-				DATOS DEL USUARIO
-			</th>
-		</tr>
-	 <tr>
-					<td width=150px>Nombre:</td>
-					<td width=200px>"
-						.$rp['Nombre'].
-					"</td>
-					<td rowspan='5' align='center'>
-				<img ".$rutaimg." height='120px' width='90px' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Apellidos:</td>
-					<td>".$rp['Apellidos']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Tipo Documento:</td>
-					<td>".$rp['doc']."</td>
-				</tr>				
-				
-				<tr>
-					<td>N&uacute;mero:</td>
-					<td>".$rp['dni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Control:</td>
-					<td>".$rp['ldni']."</td>
-				</tr>				
-				
-				<tr>
-					<td>Mail:</td>
-					<td colspan='2'>".$rp['Email']."</td>
-				</tr>
-				
-				<tr>
-					<td>Tipo Usuario</td>
-					<td colspan='2'>".$rp['Nivel']."</td>
-				</tr>
-				
-				<tr>
-					<td>Referencia Usuario</td>
-					<td colspan='2'>".$rp['ref']."</td>
-				</tr>
-				
-				<tr>
-					<td>Usuario:</td>
-					<td colspan='2'>".$rp['Usuario']."</td>
-				</tr>
-				
-				<tr>
-					<td>Password:</td>
-					<td colspan='2'>".$rp['Pass']."</td>
-				</tr>
-				
-				<tr>
-					<td>Pais:</td>
-					<td colspan='2'>".$rp['Direccion']."</td>
-				</tr>
-				
-				<tr>
-					<td>Teléfono 1:</td>
-					<td colspan='2'>".$rp['Tlf1']."</td>
-				</tr>
-				
-				<tr>
-					<td>Teléfono 2:</td>
-					<td colspan='2'>".$rp['Tlf2']."</td>
-				</tr>
+	}else{	
 
-         <tr>
-		<td colspan=3 align='right' class='BorderSup'>
-			<form name='closewindow' action='index.php' />
-				<input type='submit' value='CANCELAR Y VOLVER' class='botonnaranja' />
-				<input type='hidden' name='cancel' value=1 />
-			</form>
-		</td>
-	</tr>
-</table>"); 
-	
-		
-	}else{	print("<table align='center' style='margin-top:10px' width=450px >
-				<tr>
-					<th class='BorderInf'>
-					<b>
-					<font color='#FF0000'>
-						NO EXISTE EL USUARIO.
-						</br>
-						PONGASE EN CONTACTO CON ADMIN SYSTEM.
-					</font>
-					</b>
-					</th>
-				 </tr>
-				 <tr>
-					<td valign='middle'  align='center'>
-						<form name='cancel' action='indexcam.php' >
-								<input type='submit'  value='CANCELAR Y VOLVER' class='botonnaranja' />
-						</form>
-					</td>
-				</tr>
-			</table>
-	<embed src='audi/user_lost.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
-	</embed>");
+		global $rutacam;
+		require $rutacam.'table_lost.php';
+
 	 		}	
 			
-		global $redir;
-		$redir = "<script type='text/javascript'>
-						function redir(){
-						window.location.href='index.php';
-					}
-					setTimeout('redir()',6000);
-					</script>";
-		print ($redir);
+	require $rutacam.'redir.php';
 
 } // FIN FUNCTION 
 
