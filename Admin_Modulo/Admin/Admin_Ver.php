@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-	require '../Inclu/error_hidden.php';
+	//require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 	require '../Inclu/mydni.php';
 	require '../Conections/conection.php';
@@ -173,7 +173,8 @@ function ver_todo(){
 			////////////////////		**********  		////////////////////
 
 	global $twhile;
-	$twhile = "TODOS USUARIOS CONSULTA";
+	//$twhile = "TODOS USUARIOS CONSULTA";
+	$twhile = "";
 	
 		global $ruta;
 		$ruta = "";

@@ -161,124 +161,76 @@ function process_form(){
 
 		print( "<table align='center' style=\"margin-top:20px\">
 				<tr>
-					<th colspan=3  class='BorderInf'>
-						Estos son los nuevos datos de registro.
+					<th style='text-align:center;' colspan=3  class='BorderInf'>
+						ESTOS SON LOS DATOS DEL USUARIO.
 					</th>
 				</tr>
 				
 				<tr>
-					<td width=150px>
-						Nombre:
-					</td>
-					<td width=200px>"
-						.$_POST['Nombre'].
-					"</td>
-					<td rowspan='5' align='center'>
+					<td style='text-align:right !important; width:120px;'>Nombre: </td>
+					<td style='text-align:left !important; width:100px;'>".$_POST['Nombre']."</td>
+					<td rowspan='5' style='text-align:center;'>
 	<img src='../Users/".$_SESSION['sref']."/img_admin/".$_SESSION['new_name']."' height='120px' width='90px' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Apellidos:
-					</td>
-					<td>"
-						.$_POST['Apellidos'].
-					"</td>
+					<td style='text-align:right !important;'>Apellidos: </td>
+					<td style='text-align:left !important;'>".$_POST['Apellidos']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Tipo Documento:
-					</td>
-					<td>"
-						.$_POST['doc'].
-					"</td>
+					<td style='text-align:right !important;'>Tipo Documento: </td>
+					<td style='text-align:left !important;'>".$_POST['doc']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						N&uacute;mero:
-					</td>
-					<td>"
-						.$_POST['dni'].
-					"</td>
+					<td style='text-align:right !important;'>N&uacute;mero: </td>
+					<td style='text-align:left !important;'>".$_POST['dni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Control:
-					</td>
-					<td>"
-						.$_POST['ldni'].
-					"</td>
+					<td style='text-align:right !important;'>Control: </td>
+					<td style='text-align:left !important;'>".$_POST['ldni']."</td>
 				</tr>				
 				
 				<tr>
-					<td>
-						Mail:
-					</td>
-					<td colspan=2>"
-						.$_POST['Email'].
-					"</td>
+					<td style='text-align:right !important;'>Mail: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Email']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Tipo Usuario
-					</td>
-					<td colspan=2>"
-						.$_POST['Nivel'].
-					"</td>
+					<td style='text-align:right !important;'>Tipo Usuario: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Nivel']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Usuario:
-					</td>
-					<td colspan=2>"
-						.$_POST['Usuario'].
-					"</td>
+					<td style='text-align:right !important;'>Usuario: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Usuario']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Password:
-					</td>
-					<td colspan=2>"
-						.$_POST['Pass'].
-					"</td>
+					<td style='text-align:right !important;'>Password: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Pass']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Dirección:
-					</td>
-					<td colspan=2>"
-						.$_POST['Direccion'].
-					"</td>
+					<td style='text-align:right !important;'>Dirección: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Direccion']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 1:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf1'].
-					"</td>
+					<td style='text-align:right !important;'>Teléfono 1: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Tlf1']."</td>
 				</tr>
 				
 				<tr>
-					<td>
-						Teléfono 2:
-					</td>
-					<td colspan=2>"
-						.$_POST['Tlf2'].
-					"</td>
+					<td style='text-align:right !important;'>Teléfono 2: </td>
+					<td style='text-align:left !important;' colspan=2>".$_POST['Tlf2']."</td>
 				</tr>
 												
 				<tr>
-					<td colspan=3 align='right' class='BorderSup'>
+					<td style='text-align:right !important;' colspan=3 class='BorderSup'>
 		<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
 						<input type='submit' value='CERRAR VENTANA' class='botonrojo' />
 						<input type='hidden' name='oculto2' value=1 />

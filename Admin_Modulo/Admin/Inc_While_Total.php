@@ -40,9 +40,9 @@
 
 			print ("<table align='center'>
 						<tr>
-								<th colspan=7 class='BorderInf'>
-					".$twhile.": ".mysqli_num_rows($qb).".".$refrescaimg."
-								</th>
+							<th colspan=7 class='BorderInf'>
+					<!--".$twhile.": ".mysqli_num_rows($qb).".-->".$refrescaimg."
+							</th>
 						</tr>
 						<tr>
 							<th class='BorderInfDch'>Nivel</th>
