@@ -1,0 +1,39 @@
+/* Oculta Input Default */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+
+label {
+  background-color: #fff;
+  display: block;
+  width: 90%;
+  text-align: center;
+  font-weight: bold;
+	font-size: 16px;
+	padding: 4px 4px 2px 4px;
+	margin: 2px auto 2px auto;
+	border: none;
+	border-radius: 7px;
+
+}
+
+span {
+  color: #000;
+  width: 100%;
+  font-size: 16px;
+}
+
+label:hover  {
+  background-color: #dadada;
+  cursor: pointer;
+}
+
+label:hover span {
+  cursor: pointer;
+}

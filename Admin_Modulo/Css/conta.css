@@ -21,11 +21,20 @@ table, .centradiv {
 	border: 2px solid #CCC;
 	border-radius: 12px;
 	margin: 2px auto 6px auto;
-	text-align: center;
+	text-align: center !important;
 }
 .centradiv {
 	width: max-content;
 	padding: 12px;
+}
+th {
+	padding: 6px;
+	margin: 0px;
+	text-align: center !important;
+	font-size: 1.2em;
+	font-style: normal;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
 }
 tr {
 	margin: 0px;
@@ -34,16 +43,7 @@ tr {
 td {
 	margin: 0px;
 	padding: 4px;
-	text-align: left !important;
-}
-th {
-	padding: 6px;
-	margin: 0px;
-	text-align: center;
-	font-size: 1.2em;
-	font-style: normal;
-	font-family: "Times New Roman", Times, serif;
-	font-weight: bold;
+	text-align: center !important;
 }
 
 input {
@@ -337,6 +337,7 @@ a:hover  img {
 	text-decoration: none;
 }
 
+
 .pageli, .pagelib {
 	display: inline-block !important;
 	margin: 3px;
@@ -346,9 +347,11 @@ a:hover  img {
 }
 .pageli {
 	border: solid 1px #fff;
+	border-radius: 6px;
 }
 .pagelib {
 	border: solid 2px #f40;
+	border-radius: 6px;
 }
 
 .pagelib a {

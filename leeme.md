@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V21_Ok_Botones_Paginacion_&_Hash
+# Admin_Modulo_V22_Ok
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -22,6 +22,11 @@
 - Las modificaciones en el archivo config/index_Play_System.php se han de reflejar en index.php.
 - Borramos o renombramos index.php en el directorio raiz.
 - Copiamos config/index_Play_System.php en el directorio raiz y le cambiamos el nombre por index.php
+---
+---
+## 2021/05/24
+### Admin_Modulo_V22_Ok.zip
+- Ajustes generales de código.
 ---
 ---
 ## 2021/05/23

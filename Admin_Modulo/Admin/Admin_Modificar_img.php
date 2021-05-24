@@ -397,11 +397,12 @@ function show_form($errors=[]){
 					</th>
 				</tr>
 				
-				<tr>
+				<tr align='center'>
 					<td colspan=2>
-		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'  enctype='multipart/form-data'>
-			<input type='file' name='myimg' value='".$defaults['myimg']."' />
-					</td>
+	<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'  enctype='multipart/form-data'>
+		<input type='file' name='myimg' id='myimg' value='".$defaults['myimg']."' class='inputfile custom' />
+		<label for='myimg'><span id='file_name'>SELECCIONE UNA IMAGEN</span></label>
+			</td>
 				</tr>
 
 				<tr align='center' height=30px>

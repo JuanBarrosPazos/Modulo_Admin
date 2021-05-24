@@ -26,6 +26,9 @@ require '../Inclu/misdatos.php';
 
 <link href="../Images/favicon.png" type='image/ico' rel='shortcut icon' />
 
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/inputfile-custom.js"></script>
+<link href="../css/inputfile.css"  rel="stylesheet" type="text/css"/>
 
 </head>
 
