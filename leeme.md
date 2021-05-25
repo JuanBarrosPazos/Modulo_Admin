@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V22_Ok
+# Admin_Modulo_V23
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -24,8 +24,8 @@
 - Copiamos config/index_Play_System.php en el directorio raiz y le cambiamos el nombre por index.php
 ---
 ---
-## 2021/05/24
-### Admin_Modulo_V22_Ok.zip
+## 2021/05/25
+### Admin_Modulo_V23.zip
 - Ajustes generales de código.
 ---
 ---

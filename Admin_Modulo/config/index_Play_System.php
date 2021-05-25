@@ -712,9 +712,11 @@ function process_form(){
 	global $db;
 					
 	if (($_SESSION['Nivel'] == 'admin') || ($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){				 
-	//print("Wellcome: ".$_SESSION['Nombre']." ".$_SESSION['Apellidos'].".");
-	master_index();
-	print("<embed src='audi/sesion_open.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' ></embed>");
+			//print("Wellcome: ".$_SESSION['Nombre']." ".$_SESSION['Apellidos'].".");
+			master_index();
+	print("
+	<embed src='audi/sesion_open.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
+	</embed>");
 			admin_entrada();
 			ver_todo();
 		}else { require 'Inclu/table_permisos.php'; }
@@ -875,7 +877,8 @@ function bloqueo(){
 			if($_SESSION['bloqh'] >= 2300){$_SESSION['desbloqh'] = "23:59:00"; } 
 			elseif(strlen(trim($_SESSION['bloqh'] <= 3))){  $_SESSION['desbloqh'] = "0".$bloqh.":".$bloqm.":00";}
 			else{ $_SESSION['desbloqh'] = $bloqh.":".$bloqm.":00";}
-print("	<embed src='audi/ip_block.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
+		print("	
+		<embed src='audi/ip_block.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
 		</embed>");
 
 		if(mysqli_query($db, $emarc)){ }else {print("* ERROR ENTRADA 95: ".mysqli_error($db)).".";}
