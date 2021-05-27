@@ -25,44 +25,6 @@ session_start();
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
-
-	global $table_name_a;
-	$table_name_a = "`".$_SESSION['clave']."admin`";
-
-	$sql =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]' AND `Pass` = '$_POST[Password]'";
-	$q = mysqli_query($db, $sql);
-	global $row;
-	$row = mysqli_fetch_assoc($q);
-	global $countq;
-	$countq = mysqli_num_rows($q);
-	global $userid;
-	global $uservisita;
-
-	if($countq < 1){}
-		else{
-	$_SESSION['id'] = $row['id'];
-	$_SESSION['ref'] = $row['ref'];
-	$_SESSION['Nivel'] = $row['Nivel'];
-	$_SESSION['Nombre'] = $row['Nombre'];
-	$_SESSION['Apellidos'] = $row['Apellidos'];
-	$_SESSION['myimg'] = $row['myimg'];
-	$_SESSION['dni'] = $row['dni'];
-	$_SESSION['Email'] = $row['Email'];
-	$_SESSION['Usuario'] = $row['Usuario'];
-	$_SESSION['Password'] = $row['Password'];
-	$_SESSION['Pass'] = $row['Pass'];
-	$_SESSION['Direccion'] = $row['Direccion'];
-	$_SESSION['Tlf1'] = $row['Tlf1'];
-	$_SESSION['Tlf2'] = $row['Tlf2'];
-	$_SESSION['lastin'] = $row['lastin'];
-	$_SESSION['lastout'] = $row['lastout'];
-	$_SESSION['visitadmin'] = $row['visitadmin'];
-
-	$userid = $_SESSION['id'];
-	$uservisita = $_SESSION['visitadmin'];
-		}
-}
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -81,10 +43,8 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 								else{show_form($form_errors);
 									 show_visit();}
 										} 
-						else {	process_form();
-								ayear();
-							  	errors();
-								suma_acces();
+						else {	require 'Inclu/Only.index.php';
+								process_form();
 								}
 									 
 			}	// FIN POST OCULTO
@@ -134,10 +94,6 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 		return "Inclu_MInd";
 		}
 } // FIN FUNCION NAVEGADOR
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -426,42 +382,18 @@ function show_visit(){
 	if(mysqli_query($db, $sqlv)){
 		print("<table align='center'>
 				<tr>	
-					<td align='right'>
-						<font color='#59746A'>
-							VISITS:
-						</font>
-					</td>
-					<td  align='right'>
-						<font color='#59746A'>
-											".$tot."
-						</font>
-					</td>
+					<td align='right'><font color='#59746A'>VISITS: </font></td>
+					<td  align='right'><font color='#59746A'>".$tot."</font></td>
 				</tr>
 						
 				<tr>
-					<td align='right'>
-						<font color='#59746A'>
-							AUTHORIZED:
-						</font>
-					</td>
-					<td align='right'>
-						<font color='#59746A'>
-											".$rowv['acceso']."
-						</font>
-					</td>
+					<td align='right'><font color='#59746A'>AUTHORIZED: </font></td>
+					<td align='right'><font color='#59746A'>".$rowv['acceso']."</font></td>
 				</tr>
 
 				<tr>
-					<td align='right'>
-						<font color='#59746A'>
-							FORBIDDEN:
-						</font>
-					</td>
-					<td align='right'>
-						<font color='#59746A'>
-											".$rowv['deneg']."
-						</font>
-					</td>
+					<td align='right'><font color='#59746A'>FORBIDDEN:</font></td>
+					<td align='right'><font color='#59746A'>".$rowv['deneg']."</font></td>
 				</tr>
 			</table>");
 	} else {print("<font color='#FF0000'>
@@ -645,13 +577,17 @@ function validate_form(){
 	
 	global $db;
 	global $db_name;
-
+	
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-	$sqlp =  "SELECT * FROM $table_name_a WHERE `Usuario` = '$_POST[Usuario]' ";
+	global $sqlp;
+	$sqlp =  "SELECT * FROM `$db_name`.$table_name_a WHERE `Usuario` = '$_POST[Usuario]' LIMIT 1";
+	global $qp;
 	$qp = mysqli_query($db, $sqlp);
+	global $rn;
 	$rn = mysqli_fetch_assoc($qp);
+	global $count;
 	$count = mysqli_num_rows($qp);
 
 	global $password;
@@ -664,9 +600,6 @@ function validate_form(){
 
 	$errors = array();
 	
-		global $sql;
-		global $q;
-		
 		if (strlen(trim($_POST['Usuario'])) == 0){
 			//$errors [] = "Usuario: Campo obligatorio.";
 			$errors [] = "USER ACCES ERROR";
@@ -683,11 +616,10 @@ function validate_form(){
 			}
 
 		elseif(!password_verify($_POST['Password'], $hash)){
-			if(trim($_POST['Password'] != $row['Pass'])){
+			if(trim($_POST['Password'] != $rn['Pass'])){
 				//$errors [] = "Password incorrecto.";
 				$errors [] = "USER ACCES ERROR";
 				} else {}
-	
 			}
 		
 		elseif ($rn['Nivel'] == 'close'){
@@ -702,23 +634,27 @@ function validate_form(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
-
 function process_form(){
 	
 	global $db;
 					
 	if (($_SESSION['Nivel'] == 'admin') || ($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){				 
 			//print("Wellcome: ".$_SESSION['Nombre']." ".$_SESSION['Apellidos'].".");
-			master_index();
-	print("
+
+			global $onlyindex;
+
+			if ($onlyindex == 1){
+					ayear();
+					suma_acces();
+					bbdd_backup();
+					master_index();
+					ver_todo();
+			} else { }
+
+		print("
 	<embed src='audi/sesion_open.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
 	</embed>");
-			admin_entrada();
-			ver_todo();
+
 		}else { require 'Inclu/table_permisos.php'; }
 	}	
 
