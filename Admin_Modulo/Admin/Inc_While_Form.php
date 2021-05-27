@@ -1,7 +1,7 @@
 <?php
 	global $formularioh;
 	$formularioh = "<td colspan=7 align='center' class='BorderInf'>
-	<form style=\"display:inline-block;\" name='ver' action='".@$ruta."Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=480px')\">";
+	<form style=\"display:inline-block;\" name='ver' action='".@$ruta."Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=420px,height=520px')\">";
 
 	global $formulariof;
 	$formulariof = "<input type='submit' value='VER DETALLES' class='botonverde' />
@@ -9,7 +9,7 @@
 					</form>";
 
 	global $formulariohg;
-	$formulariohg = "<form style=\"display:inline-block;\" name='modifica_img' action='".@$ruta."Admin_Modificar_img.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup',  'width=540px,height=470px')\">";
+	$formulariohg = "<form style=\"display:inline-block;\" name='modifica_img' action='".@$ruta."Admin_Modificar_img.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup',  'width=380px,height=490px')\">";
 
 	global $formulariofg;
 	$formulariofg = "<input type='submit' value='MODIFICAR IMAGEN' class='botonnaranja' />

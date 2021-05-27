@@ -412,7 +412,9 @@ function show_form($errors=[]){
 										);
 	
 	/*******************************/
-
+	
+		global $imgform;
+		$imgform = "config2";
 		require '../Gcb.Docs/table_crea_admin.php';
 
 	}	
