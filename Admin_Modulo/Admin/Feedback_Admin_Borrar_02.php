@@ -60,7 +60,7 @@ function process_form(){
 		require 'table_data_resum_feed.php';
 
 	print("	<tr>
-				<td colspan=3 align='right' class='BorderSup'>
+				<td colspan=3 class='BorderSup'>
 					<form name='closewindow' action='Feedback_Ver.php'>
 						<input type='submit' value='ADMIN BAJAS VOLVER' class='botonverde' />
 						<input type='hidden' name='volver' value=1 />
@@ -229,7 +229,9 @@ function show_form(){
 									'Tlf2' => $_POST['Tlf2'],
 									'lastin' => $_POST['lastin'],
 									'lastout' => $_POST['lastout'],
-									'visitadmin' => $_POST['visitadmin']);
+									'visitadmin' => $_POST['visitadmin'],
+									'borrado' => $_POST['borrado'],
+										);
 								}
 	if(@$_POST['borrar']){
 				$defaults = array ( 'id' => $_POST['id'],
@@ -250,17 +252,17 @@ function show_form(){
 									'Tlf2' => $_POST['Tlf2'],
 									'lastin' => $_POST['lastin'],
 									'lastout' => $_POST['lastout'],
-									'visitadmin' => $_POST['visitadmin']);
+									'visitadmin' => $_POST['visitadmin'],
+									'borrado' => $_POST['borrado'],
+										);
 								}
 								   
-	print("<table align='center' style=\"margin-top:20px\">
+	print("<table style=\"margin-top:20px\">
 				<tr>
 					<th colspan=3 class='BorderInf'>
 						<font color='#FF0000'>
-						SE BORRARÁN ESTOS DATOS DEL REGISTRO.
-						</br>
-						DIRECTORIOS Y TABLAS DE BBDD.
-						</br>
+						SE BORRARÁN ESTOS DATOS DEL REGISTRO.</br>
+						DIRECTORIOS Y TABLAS DE BBDD.</br>
 						NO SE PODRÁN VOLVER A RECUPERAR.
 						</font>
 					</th>
@@ -282,117 +284,110 @@ function show_form(){
 		<input name='lastout' type='hidden' value='".$defaults['lastout']."' />					
 		<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />					
 		<input type='hidden' name='Password' value='".$defaults['Password']."' />
+		<input type='hidden' name='borrado' value='".$defaults['borrado']."' />
 	
 				<tr>
-					<td width=120px>Nivel:</td>
-			
-					<td width=100px>
+					<td style='text-align:right !important; width:120px'>Nivel:</td>
+					<td style='text-align:left !important; width:100px'>
 						".$defaults['Nivel']."
 		<input  type='hidden' name='Nivel' value='".$defaults['Nivel']."' />
 					</td>
-			
-					<td rowspan='5' align='center' width='94px'>
+					<td rowspan='5' width='94px'>
 <img src='../Users/".$_SESSION['sref']."/img_admin/".$_POST['myimg']."' height='120px' width='90px' />
 		<input name='myimg' type='hidden' value='".$_POST['myimg']."' />
-
 					</td>
 				</tr>
 					
 				<tr>
-					<td>Nombre:</td>
-			
-					<td>
+					<td style='text-align:right !important;'>Nombre:</td>
+					<td style='text-align:left !important;'>
 						".$defaults['Nombre']."
 		<input  type='hidden' name='Nombre' value='".$defaults['Nombre']."' />
 					</td>
 				</tr>
 					
 				<tr>
-					<td>Apellidos:</td>
-			
-					<td>
+					<td style='text-align:right !important;'>Apellidos:</td>
+					<td style='text-align:left !important;'>
 						".$defaults['Apellidos']."
 		<input type='hidden' name='Apellidos' value='".$defaults['Apellidos']."' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>Documento:</td>
-			
-					<td>
+					<td style='text-align:right !important;'>Documento:</td>
+					<td style='text-align:left !important;'>
 						".$defaults['doc']."
 		<input type='hidden' name='doc' value='".$defaults['doc']."' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>N&uacute;mero:</td>
-			
-					<td>
+					<td style='text-align:right !important;'>N&uacute;mero:</td>
+					<td style='text-align:left !important;'>
 						".$defaults['dni']."
 		<input type='hidden' name='dni' value='".$defaults['dni']."' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>Control:</td>
-			
-					<td colspan='2'>
+					<td style='text-align:right !important;'>Control:</td>
+					<td style='text-align:left !important;' colspan='2'>
 						".$defaults['ldni']."
 		<input type='hidden' name='ldni' value='".$defaults['ldni']."' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>Mail:</td>
-					<td colspan='2'>
+					<td style='text-align:right !important;'>Mail:</td>
+					<td style='text-align:left !important;' colspan='2'>
 						".$defaults['Email']."
 		<input type='hidden'' name='Email' value='".$defaults['Email']."' />
 					</td>
 				</tr>	
 				
 				<tr>
-					<td>Usuario:</td>
-					<td colspan='2'>
+					<td style='text-align:right !important;'>Usuario:</td>
+					<td style='text-align:left !important;' colspan='2'>
 						".$defaults['Usuario']."
 		<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />
 					</td>
 				</tr>
 							
 				<tr>
-					<td>Password:</td>
-					<td colspan='2'>
+					<td style='text-align:right !important;'>Password:</td>
+					<td style='text-align:left !important;' colspan='2'>
 						".$defaults['Pass']."
 		<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
 					</td>
 				</tr>
 
 				<tr>
-					<td>Dirección:</td>
-					<td colspan='2'>
+					<td style='text-align:right !important;'>Dirección:</td>
+					<td style='text-align:left !important;' colspan='2'>
 						".$defaults['Direccion']."
 		<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td>Teléfono 1:</td>
-				<td colspan='2'>
+					<td style='text-align:right !important;'>Teléfono 1:</td>
+					<td style='text-align:left !important;' colspan='2'>
 						".$defaults['Tlf1']."
 		<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
 					</td>
 				</tr>
 				
 				<tr>
-					<td class='BorderInf'>Teléfono 2:</td>
-					<td class='BorderInf' colspan='2'>
+					<td style='text-align:right !important;' class='BorderInf'>Teléfono 2:</td>
+					<td style='text-align:left !important;' class='BorderInf' colspan='2'>
 						".$defaults['Tlf2']."
 		<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
 					</td>
 				</tr>
 				
-				<tr align='center'>
-					<td colspan='3' align='right'>
+				<tr>
+					<td colspan='3'>
 	<input type='submit' value='BORRAR DATOS PERMANENTEMENTE' class='botonrojo' />
 		<input type='hidden' name='borrar' value=1 />
 					</td>

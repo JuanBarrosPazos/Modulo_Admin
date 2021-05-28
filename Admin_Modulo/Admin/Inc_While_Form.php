@@ -17,7 +17,7 @@
 						</form>";
 
 	global $formulariohi;
-	$formulariohi = "<form style=\"display:inline-block;\" name='modifica' action='".@$ruta."Admin_Modificar_02.php' method='POST' target='popup' onsubmit=\"window.open('', 'popup', 'width=680px,height=480px')\">";
+	$formulariohi = "<form style=\"display:inline-block;\" name='modifica' action='".@$ruta."Admin_Modificar_02.php' method='POST' target='popup' onsubmit=\"window.open('', 'popup', 'width=480px,height=680px')\">";
 
 	global $formulariofi;
 	$formulariofi = "<input type='submit' value='MODIFICAR DATOS' class='botonnaranja' />

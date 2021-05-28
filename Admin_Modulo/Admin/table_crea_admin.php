@@ -30,9 +30,7 @@
 
 	print("<table style=\"margin-top:6px\">
 				<tr>
-					<th colspan=2 class='BorderInf'>
-							".$title."
-					</th>
+					<th colspan=2 class='BorderInf'>".$title."</th>
 				</tr>".$closewin."
 				
 		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>
@@ -73,7 +71,7 @@
 				<tr>
 					<td style='text-align:right !important;'>
 						<font color='#FF0000'>*</font>
-						Tipo Documento:
+						Documento:
 					</td>
 					<td style='text-align:left !important;'>");
 	
@@ -146,14 +144,14 @@
 						Mail:
 					</td>
 					<td style='text-align:left !important;'>
-		<input type='text' name='Email' size=52 maxlength=50 value='".$defaults['Email']."' />
+		<input type='text' name='Email' size=42 maxlength=50 value='".$defaults['Email']."' />
 					</td>
 				</tr>	
 				
 				<tr>
 					<td style='text-align:right !important;'>
 						<font color='#FF0000'>*</font>
-						Nivel Usuario:
+						Nivel:
 					</td>
 					<td style='text-align:left !important;'>");
 
@@ -178,7 +176,7 @@
 				<tr>
 					<td style='text-align:right !important;'>
 						<font color='#FF0000'>*</font>
-						Nombre Usuario:
+						Usuario:
 					</td>
 					<td style='text-align:left !important;'>");
 
@@ -193,7 +191,7 @@
 	print("<input type='text' name='Usuario' size=12 maxlength=10 value='".$defaults['Usuario']."' />
 				</td></tr>
 				<tr><td style='text-align:right !important;'><font color='#FF0000'>*</font>
-						Confirme Usuario:
+						Conf. Usuario:
 				</td><td style='text-align:left !important;'>
 		<input type='text' name='Usuario2' size=12 maxlength=10 value='".$defaults['Usuario2']."' />
 				</td></tr>");
@@ -218,7 +216,7 @@
 		print("<input type='text' name='Password' size=12 maxlength=10 value='".$defaults['Password']."' />
 				</td></tr>
 				<tr><td style='text-align:right !important;'><font color='#FF0000'>*</font>
-						Confirme Password:
+						Conf. Password:
 				</td><td style='text-align:left !important;'>
 	<input type='text' name='Password2' size=12 maxlength=10 value='".$defaults['Password2']."' />
 				</td></tr>");
@@ -231,7 +229,7 @@
 						Dirección:
 					</td>
 					<td style='text-align:left !important;'>
-	<input type='text' name='Direccion' size=52 maxlength=60 value='".$defaults['Direccion']."' />
+	<input type='text' name='Direccion' size=42 maxlength=60 value='".$defaults['Direccion']."' />
 					</td>
 				</tr>
 				

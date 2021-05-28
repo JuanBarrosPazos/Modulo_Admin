@@ -126,12 +126,14 @@ function show_form(){
 								'Tlf2' => $_POST['Tlf2'],
 								'lastin' => $_POST['lastin'],
 								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin']);
-							}
+								'visitadmin' => $_POST['visitadmin'],
+								'borrado' => $_POST['borrado'],
+							);
+				}
 								   
 	print("<table align='center' style=\"margin-top:10px\">
 				<tr>
-					<td colspan=3 class='BorderInf' align='center'>
+					<td colspan=3 class='BorderInf'>
 						<font color='#FF0000'>
 						SE DARÁ DE BAJA TEMPORAL EN EL REGISTRO.
 						</br>
@@ -141,9 +143,7 @@ function show_form(){
 				</tr>
 				<tr>
 					<td colspan=3 class='BorderInf' style=\"text-align:right\">
-						<a href='Admin_Ver.php' >
-													CANCELAR Y VOLVER
-							</a>
+						<a href='Admin_Ver.php' >CANCELAR Y VOLVER</a>
 					</td>
 				</tr>
 				
@@ -154,10 +154,11 @@ function show_form(){
 				<input name='lastout' type='hidden' value='".$defaults['lastout']."' />					
 				<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />
 				<input name='Password' type='hidden' value='".$defaults['Password']."' />
-		<tr>
-			<td width=120px>Nivel:</td>
+				<input type='hidden' name='borrado' value='".$defaults['borrado']."' />
+				<tr>
+			<td style='text-align:right !important; width:120px;'>Nivel:</td>
 			
-			<td width=100px>
+			<td style='text-align:left !important; width:100px;'>
 				".$defaults['Nivel']."
 				<input  type='hidden' name='Nivel' value='".$defaults['Nivel']."' />
 			</td>
@@ -169,83 +170,83 @@ function show_form(){
 		</tr>
 					
 		<tr>
-			<td>Nombre:</td>
-			<td>".$defaults['Nombre']."
+			<td style='text-align:right !important;'>Nombre:</td>
+			<td style='text-align:left !important;'>".$defaults['Nombre']."
 				<input  type='hidden' name='Nombre' value='".$defaults['Nombre']."' />
 			</td>
 		</tr>
 					
 		<tr>
-			<td>Apellidos:</td>
-			<td>".$defaults['Apellidos']."
+			<td style='text-align:right !important;'>Apellidos:</td>
+			<td style='text-align:left !important;'>".$defaults['Apellidos']."
 				<input type='hidden' name='Apellidos' value='".$defaults['Apellidos']."' />
 			</td>
 		</tr>
 				
 		<tr>
-			<td>Tipo Documento:</td>
-			<td>".$defaults['doc']."
+			<td style='text-align:right !important;'>Tipo Documento: </td>
+			<td style='text-align:left !important;'>".$defaults['doc']."
 				<input type='hidden' name='doc' value='".$defaults['doc']."' />
 			</td>
 		</tr>
 				
 		<tr>
-			<td>N&uacute;mero:</td>
-			<td>".$defaults['dni']."
+			<td style='text-align:right !important;'>N&uacute;mero: </td>
+			<td style='text-align:left !important;'>".$defaults['dni']."
 				<input type='hidden' name='dni' value='".$defaults['dni']."' />
 			</td>
 		</tr>
 				
 		<tr>
-			<td>Control:</td>
-			<td colspan='2'>".$defaults['ldni']."
+			<td style='text-align:right !important;'>Control: </td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['ldni']."
 				<input type='hidden' name='ldni' value='".$defaults['ldni']."' />
 			</td>
 		</tr>
 				
 		<tr>
-			<td>Mail:</td>
-			<td colspan='2'>".$defaults['Email']."
+			<td style='text-align:right !important;'>Mail: </td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Email']."
 				<input type='hidden'' name='Email' value='".$defaults['Email']."' />
 			</td>
 		</tr>	
 				
 		<tr>
-			<td>Nombre de Usuario:</td>
-			<td colspan='2'>".$defaults['Usuario']."
+			<td style='text-align:right !important;'>Nombre de Usuario: </td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Usuario']."
 				<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />
 			</td>
 		</tr>
 							
 		<tr>
-			<td>Password:</td>
-			<td colspan='2'>".$defaults['Pass']."
+			<td style='text-align:right !important;'>Password: </td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Pass']."
 				<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
 			</td>
 		</tr>
 
 		<tr>
-			<td>Dirección:</td>
-			<td colspan='2'>".$defaults['Direccion']."
+			<td style='text-align:right !important;'>Dirección: </td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Direccion']."
 				<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
 			</td>
 		</tr>
 				
 		<tr>
-			<td>Teléfono 1:</td>
-			<td colspan='2'>".$defaults['Tlf1']."
+			<td style='text-align:right !important;'>Teléfono 1: </td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Tlf1']."
 				<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
 			</td>
 		</tr>
 				
 		<tr>
-			<td class='BorderInf'>Teléfono 2:</td>
-			<td class='BorderInf' colspan='2'>".$defaults['Tlf2']."
+			<td class='BorderInf' style='text-align:right !important;'>Teléfono 2: </td>
+			<td class='BorderInf' style='text-align:left !important;' colspan='2'>".$defaults['Tlf2']."
 				<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
 			</td>
 		</tr>
 				
-		<tr align='right'>
+		<tr>
 			<td colspan='3'>
 				<input type='submit' value='CONFIRMAR LA BAJA TEMPORAL' class='botonrojo' />
 				<input type='hidden' name='borrar' value=1 />
