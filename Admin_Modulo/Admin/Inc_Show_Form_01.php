@@ -66,7 +66,7 @@ print(" <table align='center' style=\"border:0px;margin-top:-20px\">
                 <td style='text-align:right;'>	
                     NOMBRE
                 </td>
-                <td>
+                <td style='text-align:left !important;'>
         <input type='text' name='Nombre' size=20 maxlenth=10 value='".@$defaults['Nombre']."' />
                 </td>
             </tr>
@@ -77,7 +77,7 @@ print(" <table align='center' style=\"border:0px;margin-top:-20px\">
                 <td style='text-align:right;'>	
                     APELLIDO
                 </td>
-                <td>
+                <td style='text-align:left !important;'>
 <input type='text' name='Apellidos' size=20 maxlenth=10 value='".@$defaults['Apellidos']."' />
                 </td>
             </tr>
