@@ -59,11 +59,11 @@ print(" <table align='center' style=\"border:0px;margin-top:-20px\">
     <form name='form_tabla' method='post' action='$_SERVER[PHP_SELF]'>
                     
             <tr>
-                <td align='right'>
+                <td style='text-align:right;'>
                     <input type='submit' value='USER CONSULTA' class='botonazul' />
                     <input type='hidden' name='ocultoc' value=1 />
                 </td>
-                <td align='right'>	
+                <td style='text-align:right;'>	
                     NOMBRE
                 </td>
                 <td>
@@ -74,7 +74,7 @@ print(" <table align='center' style=\"border:0px;margin-top:-20px\">
             <tr>
                 <td>
                 </td>
-                <td align='right'>	
+                <td style='text-align:right;'>	
                     APELLIDO
                 </td>
                 <td>
@@ -85,11 +85,11 @@ print(" <table align='center' style=\"border:0px;margin-top:-20px\">
             
     <form name='todo' method='post' action='$_SERVER[PHP_SELF]' >
             <tr>
-                <td align='right'>
+                <td style='text-align:right;'>
                     <input type='submit' value='".$boton."' class='botonazul' />
                     <input type='hidden' name='todo' value=1 />
                 </td>
-                <td align='right'>	
+                <td style='text-align:right;'>	
                     ORDEN
                 </td>
                 <td>

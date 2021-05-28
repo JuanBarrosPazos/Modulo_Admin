@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+	global $docs;
+	$docs = 1;
+	
 	require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_popup.php';
 	require '../Conections/conection.php';

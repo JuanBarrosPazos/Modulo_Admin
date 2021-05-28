@@ -9,9 +9,9 @@
 	} else {
 			
 		if(mysqli_num_rows($qb)== 0){
-				print ("<table align='center' style=\"border:0px\">
+				print ("<table style=\"text-align:center; border:0px;\">
 							<tr>
-								<td align='center'>
+								<td>
 									<font color='#FF0000'>NO HAY DATOS</font>
 								</td>
 							</tr>
@@ -28,17 +28,17 @@
 				$refrescaimg = "<form name='refresimg' action='".$ruta."Admin_Ver.php' method='POST'>
 					<input type='hidden' name='Nombre' value='".@$defaults['Nombre']."' />
 					<input type='hidden' name='Apellidos' value='".@$defaults['Apellidos']."' />
-					<input type='submit' value='REFRESCAR VISTA IMAGENES' class='botonazul' />
+					<input type='submit' value='REFRESCAR DESPUES DE MODIFICAR DATOS' class='botonazul' />
 					<input type='hidden' name='ocultoc' value=1 />
 								</form>";
 			} else { global $refrescaimg;
 					 $refrescaimg = "<form name='refresimg' action='".$ruta."Admin_Ver.php'>
-							<input type='submit' value='REFRESCAR VISTA IMAGENES' class='botonazul' />
-							<input type='hidden' name='page' value=".$page." />
-									 </form>";
+						<input type='submit' value='REFRESCAR DESPUES DE MODIFICAR DATOS' class='botonazul' />
+						<input type='hidden' name='page' value=".$page." />
+								</form>";
 					}
 
-			print ("<table align='center'>
+			print ("<table>
 						<tr>
 							<th colspan=7 class='BorderInf'>
 					<!--".$twhile.": ".mysqli_num_rows($qb).".-->".$refrescaimg."
@@ -89,12 +89,8 @@
 
 			print($formulariofg.$formulariohi);
 
-		if ($_SESSION['Nivel'] == 'admin') { 
-
-			require 'rowbtotal.php';
+		require 'rowbtotal.php';
 		
-		} else { }
-
 			print($formulariofi.$formulariohe);
 
 		require 'rowbtotal.php';

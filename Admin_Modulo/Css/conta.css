@@ -19,7 +19,7 @@ h1 {
 
 table, .centradiv {
 	border: 2px solid #CCC;
-	border-radius: 12px;
+	border-radius: 12px !important;
 	margin: 2px auto 6px auto;
 	text-align: center !important;
 }
@@ -27,8 +27,7 @@ table, .centradiv {
 	width: max-content;
 	padding: 4px;
 }
-th {
-	padding: 6px;
+th {padding: 6px;
 	margin: 0px;
 	text-align: center !important;
 	font-size: 1.2em;

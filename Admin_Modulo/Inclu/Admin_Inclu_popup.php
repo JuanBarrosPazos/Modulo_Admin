@@ -20,10 +20,6 @@ require '../Inclu/misdatos.php';
 <link href="../Css/menu.css" rel="stylesheet" type="text/css" />
 <link href="../Css/menuico.css" rel="stylesheet" type="text/css" />
 
-<script src="../MenuVertical/SpryMenuBar.js" type="text/javascript"></script>
-<link href="../MenuVertical/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-<script src="../Scripts/swfobject_modified.js" type="text/javascript"></script>
-
 <link href="../Images/favicon.png" type='image/ico' rel='shortcut icon' />
 
 <script src="img_change_jscss/jquery-3.4.1.min.js"></script>

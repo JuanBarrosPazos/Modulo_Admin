@@ -25,11 +25,6 @@ session_start();
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
 	require_once('geo_class/geoplugin.class.php');
 	$geoplugin = new geoPlugin();
 	$geoplugin->locate();
@@ -64,7 +59,6 @@ session_start();
 			else{show_form(@$form_errors);
 				 show_visit();}
 				 suma_visit();
-				 bbdd_backup();
 				 }
 				
 				   ////////////////////				   ////////////////////
@@ -402,8 +396,7 @@ function show_visit(){
 						</br>
 						&nbsp;&nbsp;&nbsp;".mysqli_error($db)."
 						</br>");
-						
-						}
+			}
 
 	}
 
@@ -644,11 +637,11 @@ function process_form(){
 			global $onlyindex;
 
 			if ($onlyindex == 1){
+					master_index();
+					ver_todo();
 					ayear();
 					suma_acces();
 					bbdd_backup();
-					master_index();
-					ver_todo();
 			} else { }
 
 		print("
@@ -671,11 +664,6 @@ function errors(){
 	$sesus = $_SESSION['ref'];
 
 }	
-
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

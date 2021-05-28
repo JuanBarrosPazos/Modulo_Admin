@@ -1,6 +1,9 @@
 <?php
+        global $rf;
         if ($rf == ''){$rf = $_POST['ref'];}
+		elseif (isset($_SESSION['refcl'])){$rf = $_SESSION['refcl'];}
         else { }
+		global $pass;
         if ($_POST['Pass'] == ''){ $pass = $_POST['Password'];}
         else { $pass = $_POST['Pass'];}
 
@@ -18,7 +21,7 @@
 				</tr>				
 				
 				<tr>
-					<td style='text-align:right !important;'>Tipo Documento: </td>
+					<td style='text-align:right !important;'>Documento: </td>
 					<td style='text-align:left !important;'>".$_POST['doc']."</td>
 				</tr>				
 				
@@ -38,12 +41,14 @@
 				</tr>
 				
 				<tr>
-					<td style='text-align:right !important;'>Tipo Usuario: </td>
+					<td style='text-align:right !important;'>Nivel: </td>
 					<td style='text-align:left !important;' colspan='2'>".$_POST['Nivel']."</td>
-				</tr>
+				</tr>");
 				
-				<tr>
-					<td style='text-align:right !important;'>Referencia Usuario: </td>
+		if (isset($vertabla)){ }
+		elseif (!isset($vertabla)){		
+		print("	<tr>
+					<td style='text-align:right !important;'>Ref Usuario: </td>
 					<td style='text-align:left !important;' colspan='2'>".$rf."</td>
 				</tr>
 				
@@ -70,7 +75,6 @@
 				<tr>
 					<td style='text-align:right !important;'>Teléfono 2: </td>
 					<td style='text-align:left !important;' colspan='2'>".$_POST['Tlf2']."</td>
-				</tr>
-
-             ");
+				</tr>");
+		}
 ?>
