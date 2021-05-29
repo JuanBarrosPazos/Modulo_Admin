@@ -83,9 +83,13 @@ function process_form(){
 					
 function show_form(){
 		
-	if($_POST['oculto2']){ require 'admin_array_a.php'; }
+	if($_POST['oculto2']){  global $array_a;
+							$array_a = 1;
+							require 'admin_array_total.php'; }
 
-	if(@$_POST['borrar']){ require 'admin_array_a.php'; }
+	if(@$_POST['borrar']){  global $array_a;
+							$array_a = 1;
+							require 'admin_array_total.php'; }
 								   
 	print("<table align='center' style=\"margin-top:10px\">
 				<tr>

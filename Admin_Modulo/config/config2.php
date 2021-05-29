@@ -345,9 +345,11 @@ fwrite($log, $logtext);
 
 function show_form($errors=[]){
 	
-	if(isset($_POST['oculto'])){
-		$defaults = $_POST;
-		} else { require '../Admin/admin_array_cero.php'; }
+	if(isset($_POST['oculto'])){ $defaults = $_POST; } 
+	else {  global $array_cero;
+			$array_cero = 1; 
+			require '../Admin/admin_array_total.php';
+				}
 	
 	if ($errors){
 		print("<table align='center'>
@@ -366,8 +368,10 @@ function show_form($errors=[]){
 				</tr>
 				</table>");
 			}
-		
-			require '../Admin/admin_array_nivel_doc.php';
+			
+			global $array_nive_doc;
+			$array_nive_doc = 1;
+			require '../Admin/admin_array_total.php';
 	
 	/*******************************/
 	

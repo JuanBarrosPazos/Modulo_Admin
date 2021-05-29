@@ -207,12 +207,15 @@ function show_form(){
 		copy($imgorg, $ctemp."/".$_POST['myimg']);
 			}
 
-	if($_POST['oculto2']){	 $_SESSION['sref'] = $_POST['ref'];
-		
-							require 'admin_array_a.php'; 
+	if($_POST['oculto2']){	$_SESSION['sref'] = $_POST['ref'];
+							global $array_a;
+							$array_a = 1;
+							require 'admin_array_total.php'; 
 				}
 
-	if(@$_POST['borrar']){ require 'admin_array_a.php'; }
+	if(@$_POST['borrar']){  global $array_a;
+							$array_a = 1;
+							require 'admin_array_total.php'; }
 								   
 	print("<table style=\"margin-top:20px\">
 				<tr>

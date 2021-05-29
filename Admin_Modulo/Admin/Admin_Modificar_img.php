@@ -218,9 +218,13 @@ function show_form($errors=[]){
 	$_SESSION['sid'] = $_POST['id'];
 	$_SESSION['sdni'] = $_POST['dni'];
 	
-		require 'admin_array_c.php';
+	global $array_c;
+	$array_c = 1;
+	require 'admin_array_total.php';
 
-	} elseif($_POST['imagenmodif']){ require 'admin_array_c.php'; }
+	} elseif($_POST['imagenmodif']){ global $array_c;
+									 $array_c = 1;
+									 require 'admin_array_total.php'; }
 	
 	if ($errors){
 		print("	<table align='center'>

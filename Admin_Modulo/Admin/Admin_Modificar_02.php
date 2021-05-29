@@ -184,8 +184,10 @@ function show_form($errors=[]){
 				$password = $_POST['Pass'];
 				global $password2;
 				$password2 = $_POST['Pass'];
-			
-		require 'admin_array_b.php';
+
+				global $array_b;
+				$array_b = 1;
+				require 'admin_array_total.php';
 
 			}
 								   
@@ -198,10 +200,14 @@ function show_form($errors=[]){
 			global $password2;
 			$password2 = $_POST['Password2'];
 
+			global $array_b;
+			$array_b = 1;
+			require 'admin_array_total.php';
 
-		require 'admin_array_b.php';
-
-		} else {  require 'admin_array_defaults.php'; }
+		} else {  global $array_defaults;
+				  $array_defaults = 1;
+				  require 'admin_array_total.php';
+					}
 
 	if ($errors){
 		print("<table align='center'>
@@ -220,8 +226,9 @@ function show_form($errors=[]){
 				</tr>
 				</table>");
 					}
-		
-		require 'admin_array_nivel_doc.php';
+		global $array_nive_doc;
+		$array_nive_doc = 1;
+		require 'admin_array_total.php';
 
 	if ($_SESSION['Nivel'] == 'admin'){
 	

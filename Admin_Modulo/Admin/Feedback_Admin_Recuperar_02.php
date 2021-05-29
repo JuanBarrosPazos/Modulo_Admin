@@ -115,7 +115,9 @@ function show_form(){
 	$img = 	$_POST['myimg'];
 
 	if($_POST['oculto2']){ 	$_SESSION['sref'] = $_POST['ref'];
-							require 'admin_array_a.php'; 
+							global $array_a;
+							$array_a = 1;
+							require 'admin_array_total.php'; 
 								}
 	
 	print("<table align='center'>
