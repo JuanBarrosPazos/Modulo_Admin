@@ -180,70 +180,28 @@ function show_form($errors=[]){
 				
 				global $dt;
 				$dt = $_POST['doc'];
-		
-				global $defaults;
-				$defaults = array ( 'id' => $_POST['id'],
-									'ref' => $_POST['ref'],
-									'Nombre' => $_POST['Nombre'],
-									'Apellidos' => $_POST['Apellidos'],
-									'myimg' => $_SESSION['myimgcl'],
-									'Nivel' => $_POST['Nivel'],			
-									'doc' => $dt,
-									'dni' => $_POST['dni'],
-									'ldni' => $_POST['ldni'],
-									'Email' => $_POST['Email'],
-									'Usuario' => $_POST['Usuario'],
-									'Usuario2' => $_POST['Usuario'],
-									'Password' => $_POST['Pass'],
-									'Password2' => $_POST['Pass'],
-									'Direccion' => $_POST['Direccion'],
-									'Tlf1' => $_POST['Tlf1'],
-									'Tlf2' => $_POST['Tlf2']);
-												}
+				global $password;
+				$password = $_POST['Pass'];
+				global $password2;
+				$password2 = $_POST['Pass'];
+			
+		require 'admin_array_b.php';
+
+			}
 								   
-		elseif(isset($_POST['modifica'])){
+	elseif(isset($_POST['modifica'])){
 			
 			global $dt;
 			$dt = $_POST['doc'];
-			
-			global $defaults;
-			$defaults = array ( 'id' => $_POST['id'],
-								'ref' => $_SESSION['refcl'],
-								'Nombre' => $_POST['Nombre'],
-								'Apellidos' => $_POST['Apellidos'],
-								'myimg' => $_SESSION['myimgcl'],
-								'Nivel' => $_POST['Nivel'],						
-								'doc' => $dt,
-								'dni' => $_POST['dni'],
-								'ldni' => $_POST['ldni'],
-								'Email' => $_POST['Email'],
-								'Usuario' => $_POST['Usuario'],
-								'Usuario2' => $_POST['Usuario2'],
-								'Password' => $_POST['Password'],
-								'Password2' => $_POST['Password2'],
-								'Direccion' => $_POST['Direccion'],
-								'Tlf1' => $_POST['Tlf1'],
-								'Tlf2' => $_POST['Tlf2']);
-												}
-		else {  global $defaults;
-				$defaults = array ( 'id' => $defaults['id'],
-									'ref' => $defaults['ref'],
-									'Nombre' => $defaults['Nombre'],
-									'Apellidos' => $defaults['Apellidos'],
-									'myimg' => $defaults['myimgcl'],
-									'Nivel' => $defaults['Nivel'],			
-									'doc' => $defaults['doc'],
-									'dni' => $defaults['dni'],
-									'ldni' => $defaults['ldni'],
-									'Email' => $defaults['Email'],
-									'Usuario' => $defaults['Usuario'],
-									'Usuario2' => $defaults['Usuario'],
-									'Password' => $defaults['Pass'],
-									'Password2' => $defaults['Pass'],
-									'Direccion' => $defaults['Direccion'],
-									'Tlf1' => $defaults['Tlf1'],
-									'Tlf2' => $defaults['Tlf2']);
-					}
+			global $password;
+			$password = $_POST['Password'];
+			global $password2;
+			$password2 = $_POST['Password2'];
+
+
+		require 'admin_array_b.php';
+
+		} else {  require 'admin_array_defaults.php'; }
 
 	if ($errors){
 		print("<table align='center'>
@@ -263,36 +221,8 @@ function show_form($errors=[]){
 				</table>");
 					}
 		
-	$Nivel = array (	'' => 'NIVEL USUARIO',
-						'admin' => 'ADMINISTRADOR',
-						'plus' => 'USER PLUS',
-						'user'  => 'USER',
-						'close'  => 'CLOSE', );														
+		require 'admin_array_nivel_doc.php';
 
-	$doctype = array (	'DNI' => 'DNI/NIF Espa&ntilde;oles',
-						'NIE' => 'NIE/NIF Extranjeros',
-						'NIFespecial' => 'NIF Persona F&iacute;sica Especial',
-					  /*
-						'NIFsa' => 'NIF Sociedad An&oacute;nima',
-						'NIFsrl' => 'NIF Sociedad Responsabilidad Limitada',
-						'NIFscol' => 'NIF Sociedad Colectiva',
-						'NIFscom' => 'NIF Sociedad Comanditaria',
-						'NIFcbhy' => 'NIF Comunidad Bienes y Herencias Yacentes',
-						'NIFscoop' => 'NIF Sociedades Cooperativas',
-						'NIFasoc' => 'NIF Asociaciones',
-						'NIFcpph' => 'NIF Comunidad Propietarios Propiedad Horizontal',
-						'NIFsccspj' => 'NIF Sociedad Civil, con o sin Personalidad Juridica',
-						'NIFee' => 'NIF Entidad Extranjera',
-						'NIFcl' => 'NIF Corporaciones Locales',
-						'NIFop' => 'NIF Organismo Publico',
-						'NIFcir' => 'NIF Congragaciones Instituciones Religiosas',
-						'NIFoaeca' => 'NIF Organos Admin Estado y Comunidades Autonomas',
-						'NIFute' => 'NIF Uniones Temporales de Empresas',
-						'NIFotnd' => 'NIF Otros Tipos no Definidos',
-						'NIFepenr' => 'NIF Establecimientos Permanentes Entidades no Residentes',
-						*/
-										);
-	
 	if ($_SESSION['Nivel'] == 'admin'){
 	
 		global $modifadmin;

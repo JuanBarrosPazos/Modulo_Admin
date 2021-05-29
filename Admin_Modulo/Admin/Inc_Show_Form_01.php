@@ -51,9 +51,9 @@ $ordenar = array (	'`id` ASC' => 'ID Ascendente',
 
 if (($_SESSION['Nivel'] == 'admin')){ 
 
-print(" <table align='center' style=\"border:0px;margin-top:-20px\">
+print(" <table align='center' style=\"margin-top:-20px\">
             <tr>
-                <th colspan=3 width=100%>".$titulo."</th>
+                <th colspan=3 class='BorderInf'>".$titulo."</th>
             </tr>
             
     <form name='form_tabla' method='post' action='$_SERVER[PHP_SELF]'>

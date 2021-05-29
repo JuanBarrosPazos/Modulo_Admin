@@ -4,7 +4,6 @@ session_start();
 	require '../Inclu/error_hidden.php';
 	require '../Inclu/Admin_Inclu_head.php';
 	require '../Inclu/mydni.php';
-
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
 
@@ -23,7 +22,7 @@ if /*(*/($_SESSION['Nivel'] == 'admin')/* || ($_SESSION['Nivel'] == 'plus'))*/{
 									Feedback();
 									info_02();
 			} else {show_form();}
-				} else { require '../Inclu/table_permisos.php'; }
+	} else { require '../Inclu/table_permisos.php'; }
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -36,8 +35,7 @@ function process_form(){
 					<th colspan=3  class='BorderInf'>
 						OK BAJA TEMPORAL ESTE USUARIO.
 					</th>
-				</tr>
-			");
+				</tr>");
 				
 			global $rutaimg;
 			$rutaimg = "src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."'";
@@ -85,51 +83,9 @@ function process_form(){
 					
 function show_form(){
 		
-	if($_POST['oculto2']){
-			$defaults = array ( 'id' => $_POST['id'],
-								'ref' => $_POST['ref'],
-								'Nivel' => $_POST['Nivel'],
-								'Nombre' => $_POST['Nombre'],
-								'Apellidos' => $_POST['Apellidos'],
-								'myimg' => $_POST['myimg'],
-								'doc' => $_POST['doc'],
-								'dni' => $_POST['dni'],
-								'ldni' => $_POST['ldni'],
-								'Email' => $_POST['Email'],
-								'Usuario' => $_POST['Usuario'],
-								'Password' => $_POST['Password'],
-								'Pass' => $_POST['Pass'],
-								'Direccion' => $_POST['Direccion'],
-								'Tlf1' => $_POST['Tlf1'],
-								'Tlf2' => $_POST['Tlf2'],
-								'lastin' => $_POST['lastin'],
-								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin']);
-							}
+	if($_POST['oculto2']){ require 'admin_array_a.php'; }
 
-	if(@$_POST['borrar']){
-			$defaults = array ( 'id' => $_POST['id'],
-								'ref' => $_POST['ref'],
-								'Nivel' => $_POST['Nivel'],
-								'Nombre' => $_POST['Nombre'],
-								'Apellidos' => $_POST['Apellidos'],
-								'myimg' => $_POST['myimg'],
-								'doc' => $_POST['doc'],
-								'dni' => $_POST['dni'],
-								'ldni' => $_POST['ldni'],
-								'Email' => $_POST['Email'],
-								'Usuario' => $_POST['Usuario'],
-								'Password' => $_POST['Password'],
-								'Pass' => $_POST['Pass'],
-								'Direccion' => $_POST['Direccion'],
-								'Tlf1' => $_POST['Tlf1'],
-								'Tlf2' => $_POST['Tlf2'],
-								'lastin' => $_POST['lastin'],
-								'lastout' => $_POST['lastout'],
-								'visitadmin' => $_POST['visitadmin'],
-								'borrado' => $_POST['borrado'],
-							);
-				}
+	if(@$_POST['borrar']){ require 'admin_array_a.php'; }
 								   
 	print("<table align='center' style=\"margin-top:10px\">
 				<tr>
@@ -147,113 +103,69 @@ function show_form(){
 					</td>
 				</tr>
 				
-	<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>
-				<input name='id' type='hidden' value='".$defaults['id']."' />					
-				<input name='ref' type='hidden' value='".$defaults['ref']."' />					
-				<input name='lastin' type='hidden' value='".$defaults['lastin']."' />					
-				<input name='lastout' type='hidden' value='".$defaults['lastout']."' />					
-				<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />
-				<input name='Password' type='hidden' value='".$defaults['Password']."' />
-				<input type='hidden' name='borrado' value='".$defaults['borrado']."' />
-				<tr>
-			<td style='text-align:right !important; width:120px;'>Nivel:</td>
-			
-			<td style='text-align:left !important; width:100px;'>
-				".$defaults['Nivel']."
-				<input  type='hidden' name='Nivel' value='".$defaults['Nivel']."' />
-			</td>
-			
+	<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>");
+
+	require 'admin_input_default_a.php';
+
+	print("<tr>
+			<td style='text-align:right !important; width:120px;'>Nivel: </td>
+			<td style='text-align:left !important; width:100px;'>".$defaults['Nivel']."</td>
 			<td rowspan='5' align='center' width='94px'>
 <img src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."' height='120px' width='90px' />
-						<input name='myimg' type='hidden' value='".$_POST['myimg']."' />
 			</td>
 		</tr>
-					
 		<tr>
-			<td style='text-align:right !important;'>Nombre:</td>
-			<td style='text-align:left !important;'>".$defaults['Nombre']."
-				<input  type='hidden' name='Nombre' value='".$defaults['Nombre']."' />
-			</td>
+			<td style='text-align:right !important;'>Nombre: </td>
+			<td style='text-align:left !important;'>".$defaults['Nombre']."</td>
 		</tr>
-					
 		<tr>
-			<td style='text-align:right !important;'>Apellidos:</td>
-			<td style='text-align:left !important;'>".$defaults['Apellidos']."
-				<input type='hidden' name='Apellidos' value='".$defaults['Apellidos']."' />
-			</td>
+			<td style='text-align:right !important;'>Apellidos: </td>
+			<td style='text-align:left !important;'>".$defaults['Apellidos']."</td>
 		</tr>
-				
 		<tr>
 			<td style='text-align:right !important;'>Tipo Documento: </td>
-			<td style='text-align:left !important;'>".$defaults['doc']."
-				<input type='hidden' name='doc' value='".$defaults['doc']."' />
-			</td>
+			<td style='text-align:left !important;'>".$defaults['doc']."</td>
 		</tr>
-				
 		<tr>
 			<td style='text-align:right !important;'>N&uacute;mero: </td>
-			<td style='text-align:left !important;'>".$defaults['dni']."
-				<input type='hidden' name='dni' value='".$defaults['dni']."' />
-			</td>
+			<td style='text-align:left !important;'>".$defaults['dni']."</td>
 		</tr>
-				
 		<tr>
 			<td style='text-align:right !important;'>Control: </td>
-			<td style='text-align:left !important;' colspan='2'>".$defaults['ldni']."
-				<input type='hidden' name='ldni' value='".$defaults['ldni']."' />
-			</td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['ldni']."</td>
 		</tr>
-				
 		<tr>
 			<td style='text-align:right !important;'>Mail: </td>
-			<td style='text-align:left !important;' colspan='2'>".$defaults['Email']."
-				<input type='hidden'' name='Email' value='".$defaults['Email']."' />
-			</td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Email']."</td>
 		</tr>	
-				
 		<tr>
 			<td style='text-align:right !important;'>Nombre de Usuario: </td>
-			<td style='text-align:left !important;' colspan='2'>".$defaults['Usuario']."
-				<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />
-			</td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Usuario']."</td>
 		</tr>
-							
 		<tr>
 			<td style='text-align:right !important;'>Password: </td>
-			<td style='text-align:left !important;' colspan='2'>".$defaults['Pass']."
-				<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
-			</td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Pass']."</td>
 		</tr>
-
 		<tr>
 			<td style='text-align:right !important;'>Dirección: </td>
-			<td style='text-align:left !important;' colspan='2'>".$defaults['Direccion']."
-				<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
-			</td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Direccion']."</td>
 		</tr>
-				
 		<tr>
 			<td style='text-align:right !important;'>Teléfono 1: </td>
-			<td style='text-align:left !important;' colspan='2'>".$defaults['Tlf1']."
-				<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
-			</td>
+			<td style='text-align:left !important;' colspan='2'>".$defaults['Tlf1']."</td>
 		</tr>
-				
 		<tr>
 			<td class='BorderInf' style='text-align:right !important;'>Teléfono 2: </td>
-			<td class='BorderInf' style='text-align:left !important;' colspan='2'>".$defaults['Tlf2']."
-				<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
-			</td>
+			<td class='BorderInf' style='text-align:left !important;' colspan='2'>".$defaults['Tlf2']."</td>
 		</tr>
-				
 		<tr>
 			<td colspan='3'>
 				<input type='submit' value='CONFIRMAR LA BAJA TEMPORAL' class='botonrojo' />
 				<input type='hidden' name='borrar' value=1 />
 			</td>
 		</tr>
-</form>														
-	</table>"); 
+	</form>														
+		</table>"); 
 	
 	}	
 
@@ -277,7 +189,7 @@ function Feedback(){
 	$sqlf = "INSERT INTO `$db_name`.$table_name_a (`ref`, `Nivel`, `Nombre`, `Apellidos`, `myimg`, `doc`, `dni`, `ldni`, `Email`, `Usuario`, `Password`, `Pass`, `Direccion`, `Tlf1`, `Tlf2`,`lastin`, `lastout`, `visitadmin`, `borrado` ) VALUES ('$_POST[ref]', '$_POST[Nivel]', '$_POST[Nombre]', '$_POST[Apellidos]', '$_POST[myimg]', '$_POST[doc]', '$_POST[dni]', '$_POST[ldni]', '$_POST[Email]', '$_POST[Usuario]', '$_POST[Password]','$_POST[Pass]', '$_POST[Direccion]', '$_POST[Tlf1]', '$_POST[Tlf2]', '$_POST[lastin]', '$_POST[lastout]', '$_POST[visitadmin]', '$FBaja')";
 	
 	if(mysqli_query($dbf, $sqlf)){
-			//print("FOK.");
+								//print("FOK.");
 					} else {
 				print("<font color='#FF0000'>
 						* SE HA PRODUCIDO UN ERROR AL GRABAR FEEDBACK: </font>

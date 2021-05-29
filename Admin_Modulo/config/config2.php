@@ -347,24 +347,7 @@ function show_form($errors=[]){
 	
 	if(isset($_POST['oculto'])){
 		$defaults = $_POST;
-		} else {$defaults = array ( 'Nombre' => '',
-									'Apellidos' => '',
-									'myimg' => isset($_POST['myimg']),	
-									'Nivel' => '',
-									'ref' => '',
-									'doc' => '',
-									'dni' => '',
-									'ldni' => '',
-									'Email' => 'Solo letras minúsculas',
-									'Usuario' => '',
-									'Usuario2' => '',
-									'Password' => '',
-									'Password2' => '',
-									'Direccion' => '',
-									'Tlf1' => '',
-									'Tlf2' => '');
-								   }
-	
+		} else { require '../Admin/admin_array_cero.php'; }
 	
 	if ($errors){
 		print("<table align='center'>
@@ -384,38 +367,13 @@ function show_form($errors=[]){
 				</table>");
 			}
 		
-	$Nivel = array (	//'' => 'NIVEL USUARIO',
-						'admin' => 'ADMINISTRADOR');														
-
-	$doctype = array (	'DNI' => 'DNI/NIF Espa&ntilde;oles',
-						'NIE' => 'NIE/NIF Extranjeros',
-						'NIFespecial' => 'NIF Persona F&iacute;sica Especial',
-					  /*
-						'NIFsa' => 'NIF Sociedad An&oacute;nima',
-						'NIFsrl' => 'NIF Sociedad Responsabilidad Limitada',
-						'NIFscol' => 'NIF Sociedad Colectiva',
-						'NIFscom' => 'NIF Sociedad Comanditaria',
-						'NIFcbhy' => 'NIF Comunidad Bienes y Herencias Yacentes',
-						'NIFscoop' => 'NIF Sociedades Cooperativas',
-						'NIFasoc' => 'NIF Asociaciones',
-						'NIFcpph' => 'NIF Comunidad Propietarios Propiedad Horizontal',
-						'NIFsccspj' => 'NIF Sociedad Civil, con o sin Personalidad Juridica',
-						'NIFee' => 'NIF Entidad Extranjera',
-						'NIFcl' => 'NIF Corporaciones Locales',
-						'NIFop' => 'NIF Organismo Publico',
-						'NIFcir' => 'NIF Congragaciones Instituciones Religiosas',
-						'NIFoaeca' => 'NIF Organos Admin Estado y Comunidades Autonomas',
-						'NIFute' => 'NIF Uniones Temporales de Empresas',
-						'NIFotnd' => 'NIF Otros Tipos no Definidos',
-						'NIFepenr' => 'NIF Establecimientos Permanentes Entidades no Residentes',
-						*/
-										);
+			require '../Admin/admin_array_nivel_doc.php';
 	
 	/*******************************/
 	
 		global $imgform;
 		$imgform = "config2";
-		require '../Gcb.Docs/table_crea_admin.php';
+		require '../Admin/table_crea_admin.php';
 
 	}	
 

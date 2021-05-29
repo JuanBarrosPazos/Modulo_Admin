@@ -218,47 +218,9 @@ function show_form($errors=[]){
 	$_SESSION['sid'] = $_POST['id'];
 	$_SESSION['sdni'] = $_POST['dni'];
 	
-				$defaults = array ( 'id' => $_POST['id'],
-									'Nombre' => $_POST['Nombre'],
-									'Apellidos' => $_POST['Apellidos'],
-									'myimg' => $img,
-									'ref' =>  $_SESSION['sref'],
-									'Nivel' => $_POST['Nivel'],
-								    'doc' => $_POST['doc'],
-									'dni' => $_POST['dni'],
-									'ldni' => $_POST['ldni'],
-									'Email' => $_POST['Email'],
-									'Usuario' => $_POST['Usuario'],
-									'Usuario2' => $_POST['Usuario'],
-									'Password' => $_POST['Password'],
-									'Password2' => $_POST['Password'],
-									'Pass' => $_POST['Pass'],
-									'Direccion' => $_POST['Direccion'],
-									'Tlf1' => $_POST['Tlf1'],
-									'Tlf2' => $_POST['Tlf2']);
-								   		}
-								   
-		elseif($_POST['imagenmodif']){
+		require 'admin_array_c.php';
 
-				$defaults = array ( 'id' => $_POST['id'],
-									'Nombre' => $_POST['Nombre'],
-									'Apellidos' => $_POST['Apellidos'],
-									'ref' => $_SESSION['sref'],
-									'myimg' => isset($_POST['myimg']),
-									'Nivel' => $_POST['Nivel'],
-								    'doc' => $_POST['doc'],
-									'dni' => $_POST['dni'],
-									'ldni' => $_POST['ldni'],
-									'Email' => $_POST['Email'],
-									'Usuario' => $_POST['Usuario'],
-									'Usuario2' => $_POST['Usuario'],
-									'Password' => $_POST['Password'],
-									'Password2' => $_POST['Password'],
-									'Pass' => $_POST['Pass'],
-									'Direccion' => $_POST['Direccion'],
-									'Tlf1' => $_POST['Tlf1'],
-									'Tlf2' => $_POST['Tlf2']);
-										}
+	} elseif($_POST['imagenmodif']){ require 'admin_array_c.php'; }
 	
 	if ($errors){
 		print("	<table align='center'>
@@ -274,16 +236,13 @@ function show_form($errors=[]){
 						print("<font color='#FF0000'>**</font>  ".$errors [$a]."<br/>");
 						}
 
-		print("</td>
-				</tr>
-				 </table>");
-				}
+		print("</td></tr></table>");
+
+		}
 		
 	print("<table align='center'  border=0 style='margin-top:20px; width:95.5%'>
 				<tr>
-					<th colspan=2 class='BorderInf'>
-						SELECCIONE UNA NUEVA IMAGEN.
-					</th>
+					<th colspan=2 class='BorderInf'>SELECCIONE UNA NUEVA IMAGEN.</th>
 				</tr>
 				
 				<tr>
@@ -304,9 +263,8 @@ function show_form($errors=[]){
 				</tr>
 
 				<tr align='center' height=30px>
+					<td></td>
 					<td>
-					</td>
-					<td >
 						<input type='hidden' name='id' value='".$defaults['id']."' />					
 						<input type='hidden' name='ref' value='".$_SESSION['sref']."' />					
 						<input type='hidden' name='Nombre' value='".$defaults['Nombre']."' />
@@ -332,23 +290,18 @@ function show_form($errors=[]){
 				</tr>
 			
 				<tr>
-					<td class='BorderSup'>
-					</td>
-					<td align='right' class='BorderSup'>
-					</td>
+					<td class='BorderSup'></td>
+					<td align='right' class='BorderSup'></td>
 				</tr>
 				
 				<tr>
-					<td class='BorderSup'>
-					</td>
+					<td class='BorderSup'></td>
 					<td align='right' class='BorderSup'>
 			<form name='closewindow' action='$_SERVER[PHP_SELF]'  onsubmit=\"window.close()\">
-											<input type='submit' value='CERRAR VENTANA' class='botonrojo' />
-											<input type='hidden' name='oculto2' value=1 />
+						<input type='submit' value='CERRAR VENTANA' class='botonrojo' />
+						<input type='hidden' name='oculto2' value=1 />
 			</form>
-					</td>
-				</tr>
-			</table>");
+					</td></tr></table>");
 
 	}
 

@@ -114,34 +114,9 @@ function show_form(){
 	global $img;
 	$img = 	$_POST['myimg'];
 
-	if($_POST['oculto2']){
-		
-	$_SESSION['sref'] = $_POST['ref'];
-	
-				$defaults = array ( 'id' => $_POST['id'],
-									'ref' => $_POST['ref'],
-									'Nombre' => $_POST['Nombre'],
-									'Apellidos' => $_POST['Apellidos'],
-									'myimg' => $_POST['myimg'],
-									'Nivel' => $_POST['Nivel'],
-								   	'doc' => $dt,
-									'dni' => $_POST['dni'],
-									'ldni' => $_POST['ldni'],
-									'Email' => $_POST['Email'],
-									'Usuario' => $_POST['Usuario'],
-									'Usuario2' => $_POST['Usuario'],
-									'Password' => $_POST['Password'],
-									'Password2' => $_POST['Password'],
-									'Pass' => $_POST['Pass'],
-									'Direccion' => $_POST['Direccion'],
-									'Tlf1' => $_POST['Tlf1'],
-									'Tlf2' => $_POST['Tlf2'],
-									'lastin' => $_POST['lastin'],
-									'lastout' => $_POST['lastout'],
-									'visitadmin' => $_POST['visitadmin'],
-									'borrado' => $_POST['borrado'],
-										);
-							}
+	if($_POST['oculto2']){ 	$_SESSION['sref'] = $_POST['ref'];
+							require 'admin_array_a.php'; 
+								}
 	
 	print("<table align='center'>
 				<tr>
@@ -151,200 +126,17 @@ function show_form(){
 				</tr>
 				<tr>
 					<th colspan=3 class='BorderInf' style=\"text-align:right\">
-							<a href='Feedback_Ver.php' >
-													CANCELAR Y VOLVER
-							</a>
+							<a href='Feedback_Ver.php' >CANCELAR Y VOLVER</a>
 						</font>
 					</th>
 				</tr>
 				
-		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>
+		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>");
 			
-		<input name='id' type='hidden' value='".$defaults['id']."' />					
-		<input name='myimg' type='hidden' value='".$defaults['myimg']."' />	
-		<input type='hidden' name='Password' value='".$defaults['Password']."' />
-		<input type='hidden' name='borrado' value='".$defaults['borrado']."' />
-
-				<tr>
-					<td style='text-align:right !important; width:120px'>	
-						<font color='#FF0000'>*</font>
-						Ref. User:
-					</td>
-					<td style='text-align:left !important; width:100px'>
-						".$defaults['ref']."
-						<input name='ref' type='hidden' value='".$defaults['ref']."' />
-					</td>
-					<td rowspan=5 width=94px>
-<img src='../Users/".$_SESSION['sref']."/img_admin/".$defaults['myimg']."' height='120px' width='90px' />
-					</td>
-				</tr>
-					
-				<tr>
-					<td style='text-align:right !important;'>	
-						<font color='#FF0000'>*</font>
-						Nombre:
-					</td>
-					<td style='text-align:left !important;'>
-						".$defaults['Nombre']."
-						<input type='hidden' name='Nombre' value='".$defaults['Nombre']."' />
-					</td>
-				</tr>
-					
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Apellidos:
-					</td>
-					<td style='text-align:left !important;'>
-						".$defaults['Apellidos']."
-						<input type='hidden' name='Apellidos' value='".$defaults['Apellidos']."' />
-					</td>
-				</tr>
-
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Documento:
-					</td>
-					<td style='text-align:left !important;'>
-						".$defaults['doc']."
-						<input type='hidden' name='doc' value='".$defaults['doc']."' />
-					</td>
-				</tr>
-					
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						N&uacute;mero:
-					</td>
-					<td style='text-align:left !important;'>
-						".$defaults['dni']."
-						<input type='hidden' name='dni' value='".$defaults['dni']."' />
-					</td>
-				</tr>
+			require 'admin_input_default_a.php';
+			require 'feedback_table_show_form.php';
 				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Control:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['ldni']."
-						<input type='hidden' name='ldni' value='".$defaults['ldni']."' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Mail:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Email']."
-						<input type='hidden' name='Email' value='".$defaults['Email']."' />
-					</td>
-				</tr>	
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Nivel:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Nivel']."
-						<input type='hidden' name='Nivel' value='".$defaults['Nivel']."' />
-					</td>
-				</tr>
-					
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Usuario:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Usuario']."
-						<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />
-					</td>
-				</tr>
-							
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Password:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Pass']."
-						<input type='hidden' name='Pass' value='".$defaults['Pass']."' />
-					</td>
-				</tr>
-
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Dirección:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Direccion']."
-						<input type='hidden' name='Direccion' value='".$defaults['Direccion']."' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Teléfono 1:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Tlf1']."
-						<input type='hidden' name='Tlf1' value='".$defaults['Tlf1']."' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Teléfono 2:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['Tlf2']."
-						<input type='hidden' name='Tlf2' value='".$defaults['Tlf2']."' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Last In:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['lastin']."
-						<input type='hidden' name='lastin' value='".$defaults['lastin']."' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Last Out:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['lastout']."
-						<input type='hidden' name='lastout' value='".$defaults['lastout']."' />
-					</td>
-				</tr>
-				
-				<tr>
-					<td style='text-align:right !important;'>
-						<font color='#FF0000'>*</font>
-						Visitas:
-					</td>
-					<td style='text-align:left !important;' colspan=2>
-						".$defaults['visitadmin']."
-						<input name='visitadmin' type='hidden' value='".$defaults['visitadmin']."' />
-					</td>
-				</tr>
-				
-				<tr height=40px>
+		print("<tr height=40px>
 					<td style='text-align:right !important;' colspan='3' class='BorderSup'>
 						<input type='submit' value='CONFIRME RECUPERAR USER' class='botonverde' />
 						<input type='hidden' name='modifica' value=1 />
