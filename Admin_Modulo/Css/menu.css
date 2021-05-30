@@ -1,3 +1,58 @@
+@media screen and (max-width:740px){ 
+  
+  .app {
+    height: 354px !important;
+      }
+
+  .sidebar {
+    position: absolute;
+    width: 6.2em !important;
+    height: 70px !important;
+      }
+
+  .sidebar:hover {
+    height: 100% !important;
+    width: 11.6em !important;
+        }
+
+  .sidebar header {
+    background-color: #343434;
+    width: auto;
+    display: block;
+    padding: 0.0em	0.5em;
+        }
+
+    }
+
+@media screen and (max-width:440px){
+  .app {
+      height: 302px !important;
+        }
+  .sidebar {
+      position: absolute;
+      width: 6.2em !important;
+      height: 21px !important;
+        }
+
+  .sidebar:hover {
+      height: 100% !important;
+      width: 11.6em !important;
+        }
+
+  .sidebar header {
+      background-color: #343434;
+      width: auto;
+      display: block;
+      padding: 0.0em	0.5em;
+        }
+  
+    }
+
+
+
+/*************************************/
+/*************************************/
+/*************************************/
 
 body {
   /*font-family: "Lato";*/
@@ -29,9 +84,12 @@ a:hover {
 }
 
 .app {
-  /*height: 40.4vh;
-  height: 304px;*/
-  height: 418px;
+  /*
+  ALTURA TOTAL DEL DESPLEGABLE
+  height: 40.4vh;
+  height: 304px;
+  */
+  height: 422px;
 
 }
 
@@ -44,12 +102,9 @@ a:hover {
 
 .sidebar {
   position: absolute;
-  /* width: 11.6em; */
   width: 11.6em;
- /* Altura menu desplegable 2 
-  height: 100%; 
-  height: 54px;*/
-  height: 134px;
+ /* Altura menu desplegable 2 */
+  height: 138px;
   top: 0;
   overflow: hidden;
   background-color: #343434;
@@ -58,8 +113,9 @@ a:hover {
   -webkit-backface-visibility: hidden;
 }
 
+
 .sidebar:hover {
-  height: 100%;
+  height: 100% !important;
   /*  velocidad transiciones sumenu 0 */
   -webkit-transition: all 0.8s ease;
   -moz-transition: all 0.8s ease;
@@ -103,9 +159,7 @@ a:hover {
 }
 .sidebar-nav ul li a {
   /*color: rgba(255, 255, 255, 0.9);*/
-  /* color fondo de menu total 
-    background-color: #410e0e;
-  */
+  /* color fondo de menu total */
   background-color: #343434;
   font-size: 0.75em;
   margin-right: 2px;
@@ -117,8 +171,7 @@ a:hover {
 }
 .sidebar-nav ul li a:hover {
   /*background-color: rgba(0, 0, 0, 0.9);*/
-  /* fondo menu principal 
-  background-color: #000;*/
+  /* fondo menu principal */
   background-color: #4b4b4b;  
   color: #fff;
  -webkit-transition: all 0.8s ease;
@@ -150,10 +203,8 @@ a:hover {
 
 .sidebar-nav .nav-flyout {
   position: absolute;
-/* color de fondo submenu a:hover 
-  background-color: #d0d17d;
-*/ 
-  background-color: #343434 ;
+/* color de fondo submenu a:hover */ 
+  background-color: #343434;
   z-index: 9;
   left: 1.5em;
   top: 0;
