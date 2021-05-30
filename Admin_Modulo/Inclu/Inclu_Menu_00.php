@@ -108,7 +108,7 @@ left: 32%;
 border: 2px solid #408080;  /* Borde de la ventana */
 border-radius: 12px;
 box-shadow: 0 5px 25px rgba(0,0,0,.1);  /* Sombra */
-z-index:999;
+z-index:1100;
 }
 #ventana-flotante .cerrar {
 float: right;
