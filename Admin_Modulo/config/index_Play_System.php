@@ -70,22 +70,22 @@ session_start();
 
 	if(strpos($user_agent, 'MSIE') !== FALSE){
 		//return 'Internet explorer';
-		return "Inclu_MInd";
+		return "Inclu_Menu";
 	}elseif(strpos($user_agent, 'Edge') !== FALSE){ //Microsoft Edge
 		//return 'Microsoft Edge';
-		return "Inclu_MInd";
+		return "Inclu_Menu";
 	}elseif(strpos($user_agent, 'Trident') !== FALSE){ //IE 11
 		//return 'Internet explorer';
-		return "Inclu_MInd";
+		return "Inclu_Menu";
 	}elseif(strpos($user_agent, 'Firefox') !== FALSE){
 		//return 'Mozilla Firefox';
-		return "Inclu_MInd";
+		return "Inclu_Menu";
 	}elseif(strpos($user_agent, 'Chrome') !== FALSE){
 		//return 'Google Chrome';
-		return "Inclu_MInd";
+		return "Inclu_Menu";
 	}else{
 		//return 'No hemos podido detectar su navegador';
-		return "Inclu_MInd";
+		return "Inclu_Menu";
 		}
 } // FIN FUNCION NAVEGADOR
 

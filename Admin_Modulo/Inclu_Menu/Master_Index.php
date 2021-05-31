@@ -44,7 +44,7 @@
 												}else{	global $niv;
 														$niv = 'Administrador';
 														}
-	require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
+	require $rutaindex.'Inclu_Menu/Master_Index_Header.php';
 	
 	print("
 	<!--
@@ -94,7 +94,7 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 	global $niv;
 	$niv = 'Usuario Plus';
 	
-	require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
+	require $rutaindex.'Inclu_Menu/Master_Index_Header.php';
 		print("<nav class='sidebar-nav'><ul>");
 	require 'index_admin.php';
 
@@ -103,7 +103,7 @@ if ($_SESSION['dni'] == $_SESSION['mydni']) {
 	global $niv;
 	$niv = 'Usuario';
 
-	require $rutaindex.'Inclu_MInd/Master_Index_Header.php';
+	require $rutaindex.'Inclu_Menu/Master_Index_Header.php';
 		print("<nav class='sidebar-nav'><ul>");
 	require 'index_admin.php';
 	} 
