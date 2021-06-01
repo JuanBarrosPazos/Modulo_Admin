@@ -4,19 +4,19 @@ session_start();
 require 'misdatos.php';
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 	
 <head>
 	
-<meta http-equiv="content-type" content="text/html" charset="<?php print($meta_type_charset);?>" />
-<meta http-equiv="Content-Language" content="<?php print($meta_lang_cotent2);?>">
-<meta name="Language" content="<?php print($meta_lang_cotent);?>">
-<meta name="description" content="<?php print($meta_desc_cotent);?>" />
-<meta name="keywords" content="<?php print($meta_key_cotent);?>" />
-<meta name="robots" content="<?php print($meta_robots_cotent);?>" />
-<meta name="audience" content="<?php print($meta_audience_cotent);?>" />
-<title><?php print($meta_titulo_contac);?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+<meta http-equiv="Content-Language" content="es-es">
+<meta name="Language" content="Spanish">
+<meta name="description" content="Modulo Administrador" />
+<meta name="keywords" content="Juan Barros Pazos, Programas gratis, Spain, Mallorca, Palma de Mallorca" />
+<meta name="robots" content="all, index, follow" />
+<meta name="audience" content="All" />
+<title>Juan Manuel Barros Pazos</title>
 
 <link href="Descargas.css" rel="stylesheet" type="text/css" />
 <link href="favicon.png" type='image/ico' rel='shortcut icon' />
@@ -83,15 +83,15 @@ function MM_validateForm() {
 <body topmargin="0">
 <div id="Conte">
 
-  <div id="head" style="padding-bottom:12px; padding-top:6px">
-  			<font style="font-family:'Times New Roman', Times, serif; font-size:24px">
-  							<?php print(strtoupper($head_titulo));?>
-            </font>
-  	<br />
-			<font style="font-family:'Times New Roman', Times, serif; font-size:16px">
-  				<?php print("".$head_direc." / ".$head_email." / ".$head_telef."."); ?>
-          	</font>
- </div>
+  <div id="head"> 
+  			<span style="font-size:18px">
+			  		JUAN BARROS PAZOS
+            </span>
+  	</br>
+  			<span style="font-size:12px">
+			  	Design & Programming in Palma de Mallorca
+            </span>
+   </div>
 
   	<div style="clear:both"></div>
    

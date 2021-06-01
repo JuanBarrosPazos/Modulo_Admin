@@ -1,28 +1,20 @@
-<?php
-require '../Inclu/misdatos.php';
-?>
-
 <!DOCTYPE html >
 	
 <head>
 	
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="content-type" content="text/html" charset="<?php print($meta_type_charset);?>" />
-<meta http-equiv="Content-Language" content="<?php print($meta_lang_cotent2);?>">
-<meta name="Language" content="<?php print($meta_lang_cotent);?>">
-<meta name="description" content="<?php print($meta_desc_cotent);?>" />
-<meta name="keywords" content="<?php print($meta_key_cotent);?>" />
-<meta name="robots" content="<?php print($meta_robots_cotent);?>" />
-<meta name="audience" content="<?php print($meta_audience_cotent);?>" />
-<title><?php print($meta_titulo);?></title>
+<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+<meta http-equiv="Content-Language" content="es-es">
+<meta name="Language" content="Spanish">
+<meta name="description" content="Modulo Administrador" />
+<meta name="keywords" content="Juan Barros Pazos, Programas gratis, Spain, Mallorca, Palma de Mallorca" />
+<meta name="robots" content="all, index, follow" />
+<meta name="audience" content="All" />
+<title>Juan Manuel Barros Pazos</title>
 	
 <link href="../Css/conta.css" rel="stylesheet" type="text/css" />
 <link href="../Css/menu.css" rel="stylesheet" type="text/css" />
 <link href="../Css/menuico.css" rel="stylesheet" type="text/css" />
-
-<script src="../MenuVertical/SpryMenuBar.js" type="text/javascript"></script>
-<link href="../MenuVertical/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
-<script src="../Scripts/swfobject_modified.js" type="text/javascript"></script>
 
 <link href="../Images/favicon.png" type='image/ico' rel='shortcut icon' />
 
@@ -34,11 +26,11 @@ require '../Inclu/misdatos.php';
 
   <div id="head"> 
   			<span style="font-size:18px">
-  							<?php print(strtoupper($head_titulo));?>
+			  		JUAN BARROS PAZOS
             </span>
   	</br>
   			<span style="font-size:12px">
-  							<?php print(strtoupper($head_titulo2));?>
+			  	Design & Programming in Palma de Mallorca
             </span>
    </div>
 

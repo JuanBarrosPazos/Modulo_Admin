@@ -1009,8 +1009,6 @@ function ver_todo(){
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
-require 'Inclu/misdatos.php';
-
 /* Creado por Juan Barros Pazos 2021 */
 
 ?>

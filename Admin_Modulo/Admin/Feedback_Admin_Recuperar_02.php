@@ -9,14 +9,6 @@ session_start();
 	require '../Conections/conect.php';
 	require '../Inclu/my_bbdd_clave.php';
 
-/*
-global $table_name_a;
-$table_name_a = "`".$_SESSION['clave']."admin`";
-$sqld =  "SELECT * FROM $table_name_a WHERE `ref` = '$_SESSION[ref]' AND `Usuario` = '$_SESSION[Usuario]'";
-$qd = mysqli_query($db, $sqld);
-$rowd = mysqli_fetch_assoc($qd);
-*/
-
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
@@ -26,7 +18,7 @@ if ($_SESSION['Nivel'] == 'admin'){
 		master_index();
 
 		if (@$_POST['oculto2']){ show_form();
-								info_01();
+								 info_01();
 								}
 		elseif($_POST['modifica']){ process_form();
 									info_02();
@@ -120,9 +112,9 @@ function show_form(){
 							require 'admin_array_total.php'; 
 								}
 	
-	print("<table align='center'>
+	print("<table style=\"margin-top:20px\">
 				<tr>
-					<td colspan=3 class='BorderInf' align='center'>
+					<td colspan=3 class='BorderInf'>
 						DATOS DEL USER A RECUPERAR.
 					</td>
 				</tr>

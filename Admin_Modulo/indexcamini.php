@@ -3,8 +3,8 @@
 session_start();
 
 	//require 'Inclu/error_hidden.php';
+	//require 'Inclu/misdatos.php';
 	require 'Inclu/Inclu_Menu_00.php';
-	require 'Inclu/misdatos.php';
 	require 'Inclu/mydni.php';
 
 	require 'Conections/conection.php';
