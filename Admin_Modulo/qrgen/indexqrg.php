@@ -2,7 +2,7 @@
 	session_start();
 
 	//require '../Inclu/error_hidden.php';
-	require '../Inclu/Admin_Inclu_head.php';
+	require '../Inclu/Admin_head.php';
 	require '../Inclu/mydni.php';
 	require '../Inclu/nemp.php';
 

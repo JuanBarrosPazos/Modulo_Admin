@@ -1,8 +1,13 @@
 <?php
 //session_start();
 
+	global $playinclu;
+	$playinclu = 1;
+
 	require 'error_hidden.php';
-	require 'Admin_Inclu_head.php';
+	require 'Admin_head.php';
+	require 'mydni.php';
+	require 'nemp.php';
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
 	require 'my_bbdd_clave.php';

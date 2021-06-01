@@ -2,7 +2,7 @@
 session_start();
 
 	require '../Inclu/error_hidden.php';
-	require '../Inclu/Admin_Inclu_head.php';
+	require '../Inclu/Admin_head.php';
 
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
@@ -217,13 +217,11 @@ function show_form(){
 							$array_a = 1;
 							require 'admin_array_total.php'; }
 								   
-	print("<table style=\"margin-top:20px\">
+	print("<table style=\"margin-top:2px\">
 				<tr>
 					<th colspan=3 class='BorderInf'>
 						<font color='#FF0000'>
-						SE BORRARÁN ESTOS DATOS DEL REGISTRO.</br>
-						DIRECTORIOS Y TABLAS DE BBDD.</br>
-						NO SE PODRÁN VOLVER A RECUPERAR.
+						SE BORRARÁN Y NO SE PODRÁN VOLVER A RECUPERAR.
 						</font>
 					</th>
 				</tr>

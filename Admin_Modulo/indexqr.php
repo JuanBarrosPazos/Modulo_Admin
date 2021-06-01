@@ -1,8 +1,11 @@
 <?php
 session_start();
  
+	global $playini;
+	$playini = 1;
+
 	//require 'Inclu/error_hidden.php';
-	require 'Inclu/Inclu_Menu_00.php';
+	require 'Inclu/Admin_head.php';
 	require 'Inclu/mydni.php';
 	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';

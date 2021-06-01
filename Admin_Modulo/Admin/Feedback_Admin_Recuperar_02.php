@@ -3,7 +3,7 @@
 session_start();
 
 	require '../Inclu/error_hidden.php';
-	require '../Inclu/Admin_Inclu_head.php';
+	require '../Inclu/Admin_head.php';
 
 	require '../Conections/conection.php';
 	require '../Conections/conect.php';
@@ -112,7 +112,7 @@ function show_form(){
 							require 'admin_array_total.php'; 
 								}
 	
-	print("<table style=\"margin-top:20px\">
+	print("<table style=\"margin-top:2px\">
 				<tr>
 					<td colspan=3 class='BorderInf'>
 						DATOS DEL USER A RECUPERAR.

@@ -1,9 +1,3 @@
-<?php
-session_start();
-
-require 'misdatos.php';
-?>
-
 <!DOCTYPE html>
 	
 <head>
@@ -99,7 +93,7 @@ function MM_validateForm() {
    
         <font color="#FFFFFF">
 					<strong> <i>
-  							<?php print(strtoupper($head_titulo3));?>
+					Design & Programming in Palma de Mallorca
             		</i></strong>
     	</font>
 
@@ -114,8 +108,6 @@ function MM_validateForm() {
 	  
 <?php
 		
-	/* OJO APUNTA A MISDATOS.PHP DEL SERVIDOR
-		HAY OTRO ARCHIVO MISDATOS.PHP EN ESTE DIRECTORIO */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -381,13 +373,13 @@ print(" <table align='center' style=\"border:0px;margin_bottom:6px;margin-top:15
 							</html>
 									';
 			
-	$headers = array ('From' => $_SESSION['mail_destin'],
+	$headers = array ('From' => 'juanbarrospazos@hotmail.es',
 					  'Subject' => $_POST['asunto']);
 					  
 		# datos del mensaje
 	 
 				global $destinatario;
-				$destinatario = $_SESSION['mail_destin']; /*../INCLU/MISDATOS.PHP // MISDATOS.PHP */
+				$destinatario = 'juanbarrospazos@hotmail.es'; 
 				$titulo= $_POST['asunto']." ".$_POST['nombre']." ".$_POST['apellidos'].".";
 				$responder= $_POST['Email'];
 				$remite= $_POST['Email'];
@@ -470,9 +462,9 @@ print(" <table align='center' style=\"border:0px;margin_bottom:6px;margin-top:15
 /* Creado por Juan Barros Pazos 2021 */
 ?>
 
-</div>
-<div style="clear:both"></div>
-<div id="footer"><?php print($head_footer);?></div>
-</div>
+	</div>
+	<div style="clear:both"></div>
+		<div id="footer">&copy; Juan Barr&oacute;s Pazos 2021.</div>
+	</div>
 </body>
 </html>

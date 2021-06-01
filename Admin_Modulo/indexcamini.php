@@ -2,9 +2,11 @@
 
 session_start();
 
+	global $playini;
+	$playini = 1;
+
 	//require 'Inclu/error_hidden.php';
-	//require 'Inclu/misdatos.php';
-	require 'Inclu/Inclu_Menu_00.php';
+	require 'Inclu/Admin_head.php';
 	require 'Inclu/mydni.php';
 
 	require 'Conections/conection.php';
