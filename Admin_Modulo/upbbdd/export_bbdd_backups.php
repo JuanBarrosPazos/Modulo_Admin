@@ -265,8 +265,8 @@ function info_downl(){
 	
 	function master_index(){
 		
-	require '../'.$_SESSION['menu'].'/rutaupbbdd.php';
-	require '../'.$_SESSION['menu'].'/Master_Index.php';
+	require '../Inclu_Menu/rutaupbbdd.php';
+	require '../Inclu_Menu/Master_Index.php';
 		
 		} /* Fin funcion master_index.*/
 

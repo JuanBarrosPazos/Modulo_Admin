@@ -254,8 +254,8 @@ function show_form($errors=[]){
 	
 	function master_index(){
 		
-		require '../'.$_SESSION['menu'].'/rutaadmin.php';
-		require '../'.$_SESSION['menu'].'/Master_Index.php';
+		require '../Inclu_Menu/rutaadmin.php';
+		require '../Inclu_Menu/Master_Index.php';
 		
 	} 
 

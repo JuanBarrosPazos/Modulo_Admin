@@ -10,8 +10,8 @@
 	require '../Conections/conect.php';
 	require '../Inclu/my_bbdd_clave.php';
 
-	require '../'.$_SESSION['menu'].'/rutaqrgen.php';
-	require '../'.$_SESSION['menu'].'/Master_Index.php';
+	require '../Inclu_Menu/rutaqrgen.php';
+	require '../Inclu_Menu/Master_Index.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

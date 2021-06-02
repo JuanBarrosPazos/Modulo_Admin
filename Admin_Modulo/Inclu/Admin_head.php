@@ -16,7 +16,7 @@
 		global $rutameta;
 		$rutameta = "";
 		global $rutarequir;
-		$rutarequir = "";
+		$rutarequir = "Inclu/";
 		global $meta2;
 		$meta2 = "<link href='".$rutameta."Inclu/playini.css' rel='stylesheet' type='text/css' />
 				  <script src='".$rutameta."Inclu/playhora.js' type='text/javascript'></script>";

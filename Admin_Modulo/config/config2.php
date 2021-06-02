@@ -387,8 +387,8 @@ function show_form($errors=[]){
 	
 	function master_index(){
 		
-		require '../'.$_SESSION['menu'].'/rutas.php';
-		require '../'.$_SESSION['menu'].'/Master_Index.php';
+		require '../Inclu_Menu/rutas.php';
+		require '../Inclu_Menu/Master_Index.php';
 		
 	} 
 

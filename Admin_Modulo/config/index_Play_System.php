@@ -1,15 +1,6 @@
 <?php
 session_start();
 
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
-	// DETERMINO EL NAVEGADOR WEB Y PASO EL MENU ADECUADO
-	global $user_agent;
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	//getBrowser($user_agent);
-	$_SESSION['menu'] = getBrowser($user_agent);
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -64,33 +55,6 @@ session_start();
 				 suma_visit();
 				 }
 				
-				   ////////////////////				   ////////////////////
-////////////////////				////////////////////				////////////////////
-				 ////////////////////				  ///////////////////
-
- // DETERMINO EL NAVEGADOR WEB Y PASO EL MENU ADECUADO
- function getBrowser($user_agent){
-
-	if(strpos($user_agent, 'MSIE') !== FALSE){
-		//return 'Internet explorer';
-		return "Inclu_Menu";
-	}elseif(strpos($user_agent, 'Edge') !== FALSE){ //Microsoft Edge
-		//return 'Microsoft Edge';
-		return "Inclu_Menu";
-	}elseif(strpos($user_agent, 'Trident') !== FALSE){ //IE 11
-		//return 'Internet explorer';
-		return "Inclu_Menu";
-	}elseif(strpos($user_agent, 'Firefox') !== FALSE){
-		//return 'Mozilla Firefox';
-		return "Inclu_Menu";
-	}elseif(strpos($user_agent, 'Chrome') !== FALSE){
-		//return 'Google Chrome';
-		return "Inclu_Menu";
-	}else{
-		//return 'No hemos podido detectar su navegador';
-		return "Inclu_Menu";
-		}
-} // FIN FUNCION NAVEGADOR
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -997,8 +961,8 @@ function ver_todo(){
 				 ////////////////////				  ///////////////////
 
 	function master_index(){
-		require $_SESSION['menu'].'/rutaindex.php';
-		require $_SESSION['menu'].'/Master_Index.php';
+		require 'Inclu_Menu/rutaindex.php';
+		require 'Inclu_Menu/Master_Index.php';
 		
 				} 
 

@@ -19,8 +19,8 @@ session_start();
 
 if (($_SESSION['Nivel'] == 'admin') || ($_SESSION['Nivel'] == 'plus')){ 
 
-	require '../'.$_SESSION['menu'].'/rutacam.php';
-	require '../'.$_SESSION['menu'].'/Master_Index.php';
+	require '../Inclu_Menu/rutacam.php';
+	require '../Inclu_Menu/Master_Index.php';
 
 } else { require '../Inclu/table_permisos.php'; }
 
