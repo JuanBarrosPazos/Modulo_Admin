@@ -152,13 +152,7 @@ function info(){
 	global $text;
 	$text = PHP_EOL."- RESPALDADO CREADO MANUALMENTE BBDD ".$ActionTime.PHP_EOL."\t NOMBRE BBDD: ".$datebbddx.".sql";
 
-	$logdocu = $_SESSION['ref'];
-	$logdate = date('Y_m_d');
-	$logtext = $text.PHP_EOL;
-	$filename = $dir."/".$logdate."_".$logdocu.".log";
-	$log = fopen($filename, 'ab+');
-	fwrite($log, $logtext);
-	fclose($log);
+	require '../Admin/log_write.php';
 
 			////////////////////		**********  		////////////////////
 
@@ -193,13 +187,7 @@ function info_del(){
 	global $text;
 	$text = PHP_EOL."- RESPALDO BORRADO MANUALMENTE BBDD ".$ActionTime.PHP_EOL."\t NOMBRE BBDD: ".$_POST['ruta'];
 
-	$logdocu = $_SESSION['ref'];
-	$logdate = date('Y_m_d');
-	$logtext = $text.PHP_EOL;
-	$filename = $dir."/".$logdate."_".$logdocu.".log";
-	$log = fopen($filename, 'ab+');
-	fwrite($log, $logtext);
-	fclose($log);
+	require '../Admin/log_write.php';
 
 			////////////////////		**********  		////////////////////
 
@@ -234,13 +222,7 @@ function info_downl(){
 	global $text;
 	$text = PHP_EOL."- RESPALDO DESCARGADO MANUALMENTE BBDD ".$ActionTime.PHP_EOL."\t NOMBRE BBDD: ".$_POST['ruta'];
 
-	$logdocu = $_SESSION['ref'];
-	$logdate = date('Y_m_d');
-	$logtext = $text.PHP_EOL;
-	$filename = $dir."/".$logdate."_".$logdocu.".log";
-	$log = fopen($filename, 'ab+');
-	fwrite($log, $logtext);
-	fclose($log);
+	require '../Admin/log_write.php';
 
 			////////////////////		**********  		////////////////////
 

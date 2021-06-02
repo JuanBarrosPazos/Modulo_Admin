@@ -296,19 +296,11 @@ function admin_entrada(){
 	global $dir;
 	$dir = "Users/".$_SESSION['ref']."/log";
 
-global $datos;
-$logdocu = $_SESSION['ref'];
-$logdate = date('Y_m_d');
-	
-$logtext = PHP_EOL."** INICIO SESION => ".$datein;
-$logtext = $logtext.PHP_EOL.".\t User Ref: ".$_SESSION['ref'];
-$logtext = $logtext.PHP_EOL.".\t User Name: ".$_SESSION['Nombre']." ".$_SESSION['Apellidos'];
-$logtext = $logtext.PHP_EOL.$datos;
+	global $datos;
+	global $text;
+	$text = PHP_EOL."** INICIO SESION => ".$datein.PHP_EOL.".\t User Ref: ".$_SESSION['ref'].PHP_EOL.".\t User Name: ".$_SESSION['Nombre']." ".$_SESSION['Apellidos'].PHP_EOL.$datos;
 
-$filename = $dir."/".$logdate."_".$logdocu.".log";
-$log = fopen($filename, 'ab+');
-fwrite($log, $logtext);
-fclose($log);
+	require 'Admin/log_write.php';
 
 	} 
 

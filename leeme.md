@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V34_Ok
+# Admin_Modulo_V35_Log
 
 ## DESCRIPCION GENERAL:
 - Creación automática de las tablas necesarias en la bbdd
@@ -25,7 +25,7 @@
 ---
 ---
 ## 2021/06/02
-### Admin_Modulo_V34_Ok.zip
+### Admin_Modulo_V35_Log.zip
 - Ajustes generales de código.
 ---
 ---

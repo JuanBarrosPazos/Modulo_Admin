@@ -16,20 +16,16 @@ session_start();
 
 if ($_SESSION['Nivel'] == 'admin'){
 
-					master_index();
+	master_index();
 
-						if(isset($_POST['oculto'])){
-							
-								if($form_errors = validate_form()){
-									show_form($form_errors);
-										} else {
-											process_form();
-											show_form();
-												}
-							} else {
-										show_form();
-								}
-			} else { require 'table_permisos.php'; } 
+	if(isset($_POST['oculto'])){
+			if($form_errors = validate_form()){ show_form($form_errors); }
+				else {  process_form();
+						show_form();
+						info_02(); }
+		} else { show_form();
+				 info_01(); }
+	} else { require 'table_permisos.php'; } 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,16 +100,11 @@ function show_form($errors=[]){
 				</tr>
 				</table>");
 		}
-		
-	$nemp = array (	'' => 'EMPLEADOS PERMITIDOS',
-					'1' => '<= 1 EMPLEADOS',
-					'3' => '<= 3 EMPLEADOS',
-					'5' => '<= 5 EMPLEADOS',
-					'10' => '<= 10 EMPLEADOS',
-					'20' => '<= 20 EMPLEADOS',
-					'50' => '<= 50 EMPLEADOS',
-					'100' => '<= 100 EMPLEADOS',
-											);														
+	
+	global $array_nemp;
+	$array_nemp = 1;
+	
+	require '../Admin/admin_array_total.php';
 
 /*******************************/
 
@@ -159,7 +150,46 @@ function show_form($errors=[]){
 	
 	}
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+				   ////////////////////				   ////////////////////
+////////////////////				////////////////////				////////////////////
+				 ////////////////////				  ///////////////////
+
+function info_01(){
+
+	$ActionTime = date('H:i:s');
+	
+	global $dir;
+	$dir = "../Users/".$_SESSION['ref']."/log";
+
+	global $text;
+	$text = PHP_EOL."- NUMERO USUARIOS ACCESO: ".$ActionTime.PHP_EOL."\t Nº EMPLEADOS: ".$_SESSION['nuser'];
+
+	require '../Admin/log_write.php';
+
+	}
+
+				   ////////////////////				   ////////////////////
+////////////////////				////////////////////				////////////////////
+				 ////////////////////				  ///////////////////
+
+function info_02(){
+
+	$ActionTime = date('H:i:s');
+	
+	global $dir;
+	$dir = "../Users/".$_SESSION['ref']."/log";
+
+	global $text;
+	$text = PHP_EOL."- NUMERO USUARIOS MODIFICADO: ".$ActionTime.PHP_EOL."\t Nº EMPLEADOS: ".$_POST['nemp'];
+
+	require '../Admin/log_write.php';
+
+	}
+
+
+				   ////////////////////				   ////////////////////
+////////////////////				////////////////////				////////////////////
+				 ////////////////////				  ///////////////////
 	
 	function master_index(){
 		

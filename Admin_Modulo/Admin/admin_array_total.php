@@ -127,6 +127,16 @@ if(isset($array_nive_doc)){
 					*/
 				);
 
+} elseif(isset($array_nemp)) {	
+				$nemp = array (	'' => 'EMPLEADOS PERMITIDOS',
+								'1' => '<= 1 EMPLEADOS',
+								'3' => '<= 3 EMPLEADOS',
+								'5' => '<= 5 EMPLEADOS',
+								'10' => '<= 10 EMPLEADOS',
+								'20' => '<= 20 EMPLEADOS',
+								'50' => '<= 50 EMPLEADOS',
+								'100' => '<= 100 EMPLEADOS',
+										);														
 } else { }
 
 ?>

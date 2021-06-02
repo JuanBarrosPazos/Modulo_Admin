@@ -329,12 +329,12 @@ function crear_tablas(){
 	
 	/************	PASAMOS LOS PARAMETROS A .LOG	*****************/
 	
-$datein = date('Y-m-d/H:i:s');
-$logdate = date('Y_m_d');
-$logtext = PHP_EOL."- CONFIG INIT ".$datein.PHP_EOL."* ".$db_name.PHP_EOL."* ".$db_host.PHP_EOL.". * ".$db_user.PHP_EOL."* ".$db_pass.PHP_EOL.$dbconecterror.$data1.$data2.$data3.PHP_EOL;
-$filename = "logs/".$logdate."_CONFIG_INIT.log";
-$log = fopen($filename, 'ab+');
-fwrite($log, $logtext);
+	$datein = date('Y-m-d/H:i:s');
+	$logdate = date('Y_m_d');
+	$logtext = PHP_EOL."- CONFIG INIT ".$datein.PHP_EOL."* ".$db_name.PHP_EOL."* ".$db_host.PHP_EOL.". * ".$db_user.PHP_EOL."* ".$db_pass.PHP_EOL.$dbconecterror.$data1.$data2.$data3.PHP_EOL;
+	$filename = "logs/".$logdate."_CONFIG_INIT.log";
+	$log = fopen($filename, 'ab+');
+	fwrite($log, $logtext);
 	fclose($log);
 
 	}	

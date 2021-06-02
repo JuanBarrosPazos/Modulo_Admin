@@ -151,13 +151,10 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 	global $dir;
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
-	$logdocu = $_SESSION['ref'];
-	$logdate = date('Y_m_d');
-	$logtext = PHP_EOL."- CREADO NUEVO USUARIO ".$datein.PHP_EOL."\t User Ref: ".$rf.PHP_EOL."\t Name: ".$_POST['Nombre']." ".$_POST['Apellidos'].PHP_EOL."\t User: ".$_POST['Usuario'].PHP_EOL."\t Pass: ".$_POST['Password'].PHP_EOL;
-	$filename = $dir."/".$logdate."_".$logdocu.".log";
-	$log = fopen($filename, 'ab+');
-	fwrite($log, $logtext);
-	fclose($log);
+	global $text;
+	$text = PHP_EOL."- CREADO NUEVO USUARIO ".$datein.PHP_EOL."\t User Ref: ".$rf.PHP_EOL."\t Name: ".$_POST['Nombre']." ".$_POST['Apellidos'].PHP_EOL."\t User: ".$_POST['Usuario'].PHP_EOL."\t Pass: ".$_POST['Password'].PHP_EOL;
+
+	require 'log_write.php';
 
 	} else { print("</br>
 				<font color='#FF0000'>
@@ -269,13 +266,10 @@ function crear_tablas(){
 	global $dir;
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
-	$logdocu = $_SESSION['ref'];
-	$logdate = date('Y_m_d');
-	$logtext = PHP_EOL."- NUEVO USUARIO CREADAS BBDD TABLAS Y DIRECTORIOS. ".$datein.PHP_EOL." ".$dbconecterror.$data1.$data2.$data3.PHP_EOL;
-	$filename = $dir."/".$logdate."_".$logdocu.".log";
-	$log = fopen($filename, 'ab+');
-	fwrite($log, $logtext);
-	fclose($log);
+	global $text;
+	$text = PHP_EOL."- NUEVO USUARIO CREADAS BBDD TABLAS Y DIRECTORIOS. ".$datein.PHP_EOL." ".$dbconecterror.$data1.$data2.$data3.PHP_EOL;
+
+	require 'log_write.php';
 
 	} // FIN FUNCTION CREAR_TABLAS	
 

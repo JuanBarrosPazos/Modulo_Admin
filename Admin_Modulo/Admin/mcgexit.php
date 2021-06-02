@@ -52,15 +52,11 @@ function info(){
 		* FATAL ERROR funcion admin_entrada(): </font></br> ".mysqli_error($db))."
 				</br>";
 					}
-					
+	
+	global $text;
 	$text = PHP_EOL."** FIN DE SESION ".$_SESSION['Nombre']." ".$_SESSION['Apellidos']." => ".$dateadout;
-	$logdocu = $_SESSION['ref'];
-	$logdate = date('Y_m_d');
-	$logtext = PHP_EOL.$text.PHP_EOL.PHP_EOL;
-	$filename = $dir."/".$logdate."_".$logdocu.".log";
-	$log = fopen($filename, 'ab+');
-	fwrite($log, $logtext);
-	fclose($log);
+
+	require 'log_write.php';
 
 	}
 

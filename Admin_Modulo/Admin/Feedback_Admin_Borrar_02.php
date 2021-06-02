@@ -278,18 +278,12 @@ function info_02(){
 	global $dir;
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
-global $ddr;
-global $deletet;	
-global $text;
-$text = PHP_EOL."- USER BAJAS BORRARDO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
+	global $ddr;
+	global $deletet;	
+	global $text;
+	$text = PHP_EOL."- USER BAJAS BORRARDO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'].$deletet.PHP_EOL.$ddr;
 
-		$logdocu = $_SESSION['ref'];
-		$logdate = date('Y_m_d');
-		$logtext = $text.PHP_EOL.$deletet.PHP_EOL.$ddr;
-		$filename = $dir."/".$logdate."_".$logdocu.".log";
-		$log = fopen($filename, 'ab+');
-		fwrite($log, $logtext);
-		fclose($log);
+	require 'log_write.php';
 
 	}
 
@@ -315,16 +309,10 @@ function info_01(){
 	global $dir;
 	$dir = "../Users/".$_SESSION['ref']."/log";
 
-global $text;
-$text = PHP_EOL."- USER BAJAS BORRAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
+	global $text;
+	$text = PHP_EOL."- USER BAJAS BORRAR SELECCIONADO ".$ActionTime.PHP_EOL."\t Nombre: ".$nombre." ".$apellido.PHP_EOL."\t Ref: ".$rf.". Nivel: ".$_POST['Nivel'].PHP_EOL."\t User: ".$_POST['Usuario'].". Pass: ".$_POST['Pass'];
 
-		$logdocu = $_SESSION['ref'];
-		$logdate = date('Y_m_d');
-		$logtext = $text.PHP_EOL;
-		$filename = $dir."/".$logdate."_".$logdocu.".log";
-		$log = fopen($filename, 'ab+');
-		fwrite($log, $logtext);
-		fclose($log);
+	require 'log_write.php';
 
 	}
 
