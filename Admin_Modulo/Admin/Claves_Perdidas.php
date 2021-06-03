@@ -161,7 +161,7 @@ function show_form($errors=[]){
 	global $row;
 	
 	if(isset($_POST['oculto2'])){
-				$defaults = array (	'Asunto' => 'SUS CLAVES CONTROL LABORAL.',
+				$defaults = array (	'Asunto' => 'SUS CLAVES DE ACCESO.',
 									'Email' => $_POST['Email'],
 									'dni' => isset($_POST['dni']),	
 									'ldni' => isset($_POST['ldni']));
@@ -170,7 +170,7 @@ function show_form($errors=[]){
 	if(isset($_POST['oculto'])){
 		$defaults = $_POST;
 		} else {
-				$defaults = array (	'Asunto' => 'SUS CLAVES CONTROL LABORAL.',
+				$defaults = array (	'Asunto' => 'SUS CLAVES DE ACCESO.',
 									'Email' => '',
 									'dni' => '',
 									'ldni' => isset($_POST['ldni']));
