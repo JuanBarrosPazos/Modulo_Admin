@@ -42,6 +42,15 @@
 		border: 2px #fff solid !important;
 		border-radius: 6px !important;
 			}
+
+	.whiletotalaimg  {
+		display:block !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		max-width: max-content !important;
+		/* border: #93D7BF solid 2px; */
+			}
+
 	}
 
 /*************************************/
@@ -429,7 +438,6 @@ img {
 	text-align: center;
 }
 
-
 /*************************************/
 /*************************************/
 /*************************************/
@@ -460,10 +468,46 @@ img {
 	background-color: #dadada;
 }
 
-
 /*************************************/
 /*************************************/
 /*************************************/
 
+.juancentra {
+	text-align: center;
+	margin: 6px auto 6px auto;
+	padding: 8px 4px 6px 4px;
+    max-width: max-content;
+    min-width: 310px;
+    height: auto;
+	vertical-align: top !important; 
+    border: solid 2px #ccc;/*  */
+	border-radius: 12px;
+}
+
+.whiletotal {
+	display:inline-block; 
+	vertical-align: top !important;
+	width: 100px;
+	padding: 1px 4px 1px 4px; 
+	margin: 0.4em 3px 1px 3px;
+}
+
+.whiletotala, .whiletotalaimg {
+	display:inline-block; 
+	vertical-align: top !important;
+	width: 100px;
+	max-width: auto;
+	padding: 1px 4px 1px 4px; 
+	margin: 0.4em 3px 1px 3px;
+	/* border: #93D7BF solid 1px; */
+}
+
+.whiletotalaimg  {
+	max-width: max-content !important;
+		}
+
+/*************************************/
+/*************************************/
+/*************************************/
 
   /* Creado por Juan Barros Pazos 2021 */

@@ -35,19 +35,14 @@ if ($errors){
             </table>");
                 }
     
-$ordenar = array (	'`id` ASC' => 'ID Ascendente',
-                    '`id` DESC' => 'ID Descendente',
-                    '`Nombre` ASC' => 'Nombre Ascendente',
-                    '`Nombre` DESC' => 'Nombre Descendente',
-                    '`Apellidos` ASC' => 'Apellidos Ascenedente',
-                    '`Apellidos` DESC' => 'Apellidos Descendente',
-                    '`Email` ASC' => 'Email Ascendente',
-                    '`Email` DESC' => 'Email Descendente',
-                    '`Tlf1` ASC' => 'Teléfono 1 Ascendente',
-                    '`Tlf1` DESC' => 'Teléfono 1 Descendente',
-                    '`Tlf2` ASC' => 'Teléfono 2 Ascendente',
-                    '`Tlf2` DESC' => 'Teléfono 2 Descendente',
-                                                            );
+$ordenar = array (	'`id` ASC' => 'ID Ascen',
+                    '`id` DESC' => 'ID Descen',
+                    '`Nombre` ASC' => 'Nombre Ascen',
+                    '`Nombre` DESC' => 'Nombre Descen',
+                    '`Apellidos` ASC' => 'Apellido Ascen',
+                    '`Apellidos` DESC' => 'Apellido Descen',
+                    '`Email` ASC' => 'Email Ascen',
+                    '`Email` DESC' => 'Email Descen',);
 
 if (($_SESSION['Nivel'] == 'admin')){ 
 
@@ -60,7 +55,7 @@ print(" <table align='center' style=\"margin-top:-20px\">
                     
             <tr>
                 <td style='text-align:right !important;'>
-                    <input type='submit' value='USER CONSULTA' class='botonazul' />
+                    <input type='submit' value='FILTRO' class='botonazul' />
                     <input type='hidden' name='ocultoc' value=1 />
                 </td>
                 <td style='text-align:right !important;'>	

@@ -118,25 +118,15 @@ function show_form($errors=[]){
 				<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]' >
 						
 				<tr>
-					<td>
-						Nº 
-					</td>
-					<td>
+					<td colspan=2 >
 				<select name='nemp'>");
 
 				foreach($nemp as $optionnv => $labelnv){
-					
 					print ("<option value='".$optionnv."' ");
-					
-					if($optionnv == $defaults['nemp']){
-															print ("selected = 'selected'");
-																								}
-													print ("> $labelnv </option>");
+					if($optionnv == $defaults['nemp']){ print ("selected = 'selected'"); }
+														print ("> $labelnv </option>");
 												}	
-						
-	print ("</select>
-					</td>
-				</tr>
+	print ("</select></td></tr>
 				
 				<tr>
 					<td colspan='2'  align='right' valign='middle'  class='BorderSup'>

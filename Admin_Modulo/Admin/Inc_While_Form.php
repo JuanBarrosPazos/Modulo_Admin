@@ -1,7 +1,6 @@
 <?php
 	global $formularioh;
-	$formularioh = "<td colspan=7 align='center' class='BorderInf'>
-	<form style=\"display:inline-block;\" name='ver' action='".@$ruta."Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=380px,height=530px')\">";
+	$formularioh = "<form style=\"display:inline-block;\" name='ver' action='".@$ruta."Admin_Ver_02.php' target='popup' method='POST' onsubmit=\"window.open('', 'popup', 'width=380px,height=530px')\">";
 
 	global $formulariof;
 	$formulariof = "<input type='submit' value='VER DETALLES' class='botonverde' />
@@ -39,7 +38,7 @@
 		$formulariohe = "";
 			
 		global $formulariofe;
-		$formulariofe = "</td>";
+		$formulariofe = "";
 		}
 	
 

@@ -250,12 +250,14 @@ function Show_form($errors=[]){
 			$a = 0;
 			}
 
-	$metodo = array (	'' => 'SELECCIONE EL METODO PARA FICHAR',
+	$metodo = array (	'' => 'SELECCIONE EL METODO',
 						/*
 						'index.php?pin=' => 'METODO CONFIRM',
 						*/
-						'indexqr.php?pin=' => 'METODO CONF',
-						'indexqr.php?pin=' => 'METODO AUTO');														
+						'indexqr.php?pin=' => 'METODO AUTO',
+						'ejemplo1.php?pin=' => 'METODO EJEMPLO 1',
+						'ejemplo2.php?pin=' => 'METODO EJEMPLO 2',
+						'ejemplo3.php?pin=' => 'METODO EJEMPLO 3',);														
 
 print("<div style='text-align: center'>
 
@@ -279,10 +281,10 @@ print ("</select>
 			</td>
 		</tr>
 		<tr>
-			<td align='right'>
+			<td style='text-align:right !important;'>
        			QR FOR USER:
 	   		</td>
-			<td align='left'>
+			<td style='text-align:left !important;'>
 
 			<select name='usercod'>
 			<option value=''>SELECCIONE UN USUARIO</option><!-- --> ");
@@ -313,16 +315,15 @@ print ("</select>
 			</td>
 		</tr>
 		<tr>
-			<td colspan='2' align='center' class='BorderSup'>
+			<td colspan='2' class='BorderSup'>
        			CALIDAD Y DEFINICION DEL QR
 	   		</td>
 		</tr>
 		<tr>
-			<td align='right'>
+			<td style='text-align:right !important;'>
 		ECC:
 			</td>
-			<td align='left'>
-			");
+			<td style='text-align:left !important;'>");
 	
 	echo '<select name="level">
 			<option value="L"'.(($errorCorrectionLevel=='L')?' selected':'').'>L - smallest</option>
@@ -334,10 +335,10 @@ print ("</select>
 	print("<td>
 		</tr>
 		<tr>
-			<td align='right' class='BorderInf'>
+			<td style='text-align:right !important;' class='BorderInf'>
         SIZE:
 			</td>
-			<td align='left' class='BorderInf'>
+			<td style='text-align:left !important;' class='BorderInf'>
 			<select name='size'>");
 
 	for($i=1;$i<=10;$i++){
@@ -351,15 +352,15 @@ print ("</select>
 			</tr>
 			<tr>
 
-			<td align='right' class='BorderInf'>
+			<td style='text-align:right !important;' class='BorderInf'>
 				NAME FOR IMAGE:
 			</td>
-			<td align='left' class='BorderInf'>
+			<td style='text-align:left !important;' class='BorderInf'>
 				<input name='imgname' size=32 maxlength=14 value='".$defaults['imgname']."' placeholder='OPCIONAL' />
 			</td>
 		</tr>
 		<tr>
-			<td colspan=2 align='center' class='BorderInf'>
+			<td colspan=2 class='BorderInf'>
 					<input type='submit' value='GENERATE QR CODE FOR USER' class='botonverde' />
 					<input type='hidden' name='oculto' value=1 />
 				</form>

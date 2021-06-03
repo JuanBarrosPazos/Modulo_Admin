@@ -119,7 +119,7 @@ function show_form($errors=''){
 	global $titulo;
 	$titulo = "GESTION USUARIOS";
 	global $boton;
-	$boton = "USUARIOS VER TODOS";
+	$boton = "VER TODOS";
 
 	require 'Inc_Show_Form_01.php';
 	
