@@ -38,7 +38,7 @@
 								</form>";
 					}
 
-	print ("<div class=\"juancentra\" style=\"\">
+	print ("<div class=\"juancentra\">
 			<!--".$twhile.": ".mysqli_num_rows($qb).".-->".$refrescaimg);
                                     
 	while($rowb = mysqli_fetch_assoc($qb)){

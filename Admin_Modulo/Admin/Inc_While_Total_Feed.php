@@ -19,43 +19,8 @@
 										</tr>
 									</table>");
 
-				} else { 	print ("<table align='center'>
-									<tr>
-										<th colspan=7 class='BorderInf'>
-					".$twhile.": ".mysqli_num_rows($qb).".
-										</th>
-									</tr>
-									
-									<tr>
-										<th class='BorderInfDch'>
-											Nivel
-										</th>
-										
-										<th class='BorderInfDch'>
-											Referencia
-										</th>
-										
-										<th class='BorderInfDch'>
-											Nombre
-										</th>
-										
-										<th class='BorderInfDch'>
-											Apellidos
-										</th>
-										
-										<th class='BorderInfDch'>
-											
-										</th>
-										
-										<th class='BorderInfDch'>
-											Usuario
-										</th>
-										
-										<th class='BorderInfDch'>
-											Password
-										</th>
-										
-                                    </tr>");
+		} else { print ("<div class=\"juancentra\">
+					".$twhile.": ".mysqli_num_rows($qb).".");
                                     
 	while($rowb = mysqli_fetch_assoc($qb)){
     
@@ -64,42 +29,16 @@
 	global $formulariohi;
 	global $formulariofi;
 
-	print (	"<tr align='center'>
-
-            <!-- AQUÍ VA LA CABECERA DEL FORMULARIO -->
-
-
-				<td class='BorderInfDch'>
-					".$rowb['Nivel']."
-				</td>
-							
-				<td class='BorderInfDch'>
-					".$rowb['ref']."
-				</td>
-							
-				<td class='BorderInfDch'>
-					".$rowb['Nombre']."
-				</td>
-							
-				<td class='BorderInfDch'>
-					".$rowb['Apellidos']."
-				</td>
-						
-				<td class='BorderInfDch'>
-	<img src='../Users/".$rowb['ref']."/img_admin/".$rowb['myimg']."' height='40px' width='30px' />
-				</td>
-												
-													
-				<td class='BorderInfDch'>
-					".$rowb['Usuario']."
-				</td>
-						
-				<td class='BorderInfDch'>
-					".$rowb['Pass']."
-				</td>
-						
-			</tr>
-			<tr>
+	print (	"<hr><div class='whiletotalaimg'>
+	<img src='../Users/".$rowb['ref']."/img_admin/".$rowb['myimg']."' style=\"height:34px; width:auto;\" />
+				</div>
+				<div class='whiletotala'>NOMBRE<br>".$rowb['Nombre']."</div>
+				<div class='whiletotala'>APELLIDO<br>".$rowb['Apellidos']."</div>
+				<br>
+				<div class='whiletotala'>NIVEL<br>".$rowb['Nivel']."</div>
+				<div class='whiletotala'>REF USER<br>".$rowb['ref']."</div>
+				<div class='whiletotala'>USER<br>".$rowb['Usuario']."</div>
+				<div class='whiletotala'>PASSWORD<br>".$rowb['Pass']."</div><br>
 					
         <!-- AQUÍ VA LA BOTONERA -->
 	
@@ -115,11 +54,11 @@
 
 		require 'rowbtotal.php';
 
-		print($formulariofi."</tr>");
+		print($formulariofi);
 
 	 }  // FIN DEL WHILE
 
-	    print("</table>");
+	    print("</div>");
 			
 			} 
 

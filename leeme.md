@@ -1,6 +1,6 @@
 
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V36
+# Admin_Modulo_V37
 
 ## http://programasgratisytutoriales.blogspot.com.es/
 ## http://juanbarrospazos.blogspot.com.es/
@@ -27,8 +27,8 @@
 - Copiamos config/index_Play_System.php en el directorio raiz y le cambiamos el nombre por index.php
 ---
 ---
-## 2021/06/03
-### Admin_Modulo_V36.zip
+## 2021/06/05
+### Admin_Modulo_V37.zip
 - Ajustes generales de código.
 ---
 ---

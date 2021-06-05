@@ -492,17 +492,23 @@ img {
 	margin: 0.4em 3px 1px 3px;
 }
 
-.whiletotala, .whiletotalaimg {
-	display:inline-block; 
-	vertical-align: top !important;
-	width: 100px;
-	max-width: auto;
+.whiletotala {
 	padding: 1px 4px 1px 4px; 
 	margin: 0.4em 3px 1px 3px;
 	/* border: #93D7BF solid 1px; */
 }
 
+.whiletotala, .whiletotalaimg {
+	display:inline-block; 
+	vertical-align: top !important;
+	width: 100px;
+	max-width: auto;
+	/* border: #93D7BF solid 1px; */
+}
+
 .whiletotalaimg  {
+	margin-top: 0px !important;
+	padding: 0px !important;
 	max-width: max-content !important;
 		}
 
