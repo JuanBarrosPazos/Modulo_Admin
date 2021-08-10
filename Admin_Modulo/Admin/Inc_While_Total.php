@@ -9,13 +9,12 @@
 	} else {
 			
 		if(mysqli_num_rows($qb)== 0){
-				print ("<table style=\"text-align:center; border:0px;\">
-							<tr>
-								<td>
-									<font color='#FF0000'>NO HAY DATOS</font>
-								</td>
-							</tr>
-						</table>");
+			print ("<table style=\"text-align:center; border:0px;\">
+						<tr><td>
+							".$inicioadmincrear.$inciobajas."<hr>
+							<font color='#FF0000'>NO HAY DATOS</font>
+						</td></tr>
+					</table>");
 		} else { global $page;
 				 if ($page >= 1){ } 
 				 else { $page = 1;}
@@ -39,7 +38,7 @@
 					}
 
 	print ("<div class=\"juancentra\">
-			<!--".$twhile.": ".mysqli_num_rows($qb).".-->".$refrescaimg);
+		<!--".$twhile.": ".mysqli_num_rows($qb).".-->".$inicioadmincrear.$inciobajas."<hr>".$refrescaimg);
                                     
 	while($rowb = mysqli_fetch_assoc($qb)){
     

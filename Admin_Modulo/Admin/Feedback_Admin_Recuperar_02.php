@@ -57,15 +57,14 @@ function process_form(){
 			require 'table_data_resum.php';
 			require 'table_data_resum_feed.php';
 				
-			print("	<tr>
-						<form name='closewindow' action='Feedback_Ver.php'>
-						<td colspan=3 align='right' class='BorderSup'>
-							<input type='submit' value='GESTION BAJAS VOLVER' class='botonverde' />
-							<input type='hidden' name='volver' value=1 />
-						</td>
-						</form>
-					</tr>
-				</table>");
+	require 'Admin_Botonera.php';
+
+	print("	<tr>
+				<td colspan=3 align='right' class='BorderSup'>
+					".$inicioadmin.$inciobajas."
+				</td>
+			</tr>
+		</table>");
 
 	} else {print("<font color='#FF0000'>
 						* ESTOS DATOS NO SON VALIDOS, MODIFIQUE ESTA ENTRADA: </font>

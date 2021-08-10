@@ -147,6 +147,7 @@ function ver_todo(){
 	global $twhile;
 	$twhile = "TODOS USUARIOS BAJAS CONSULTAR";
 
+	require 'Admin_Botonera.php';
 	require 'Inc_While_Form_Feed.php';
 	global $ruta;
 	$ruta = "";

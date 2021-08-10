@@ -46,7 +46,7 @@ $ordenar = array (	'`id` ASC' => 'ID Ascen',
 
 if (($_SESSION['Nivel'] == 'admin')){ 
 
-print(" <table align='center' style=\"margin-top:-20px\">
+print(" <table align='center' style=\"margin-top:12px\">
             <tr>
                 <th colspan=3 class='BorderInf'>".$titulo."</th>
             </tr>

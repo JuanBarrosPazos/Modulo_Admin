@@ -1,5 +1,7 @@
 <?php
 
+	require 'Admin_Botonera.php';
+
 	if (isset($modifadmin)){ 
 		global $title;
 		$title = "<img src='../Users/".$_SESSION['refcl']."/img_admin/".$_POST['myimg']."' height='44px' width='33px' />
@@ -26,6 +28,9 @@
 		$title3 = "REGISTRARME CON ESTOS DATOS";
 		global $title4;
 		$title4 = "oculto";
+		global $closewin;
+		$closewin = "<tr><td colspan=3 style='text-align:center;' class='BorderInf'>
+						".$inciobajas.$inicioadmin."</td></tr>";
 	 }
 
 	print("<table style=\"margin-top:6px\">
@@ -268,7 +273,7 @@
 			} else { }	
 
 	print("	<tr>
-				<td colspan='2' style='text-align:right !important;' class='BorderSup'>
+				<td colspan='2' style='text-align:right !important;' class='BorderSup BorderInf'>
 					<input type='submit' value='".$title3."' class='botonverde' />
 					<input type='hidden' name='".$title4."' value=1 />
 				</td>

@@ -41,12 +41,11 @@ function process_form(){
 			$rutaimg = "src='../Users/".$_POST['ref']."/img_admin/".$_POST['myimg']."'";
 			require 'table_data_resum.php';
 
+	require 'Admin_Botonera.php';
+
 	print("	<tr>
-				<td colspan=3 align='right' class='BorderSup'>
-					<form name='closewindow' action='Admin_Ver.php'>
-						<input type='submit' value='INICIO GESTION USUARIOS' class='botonverde' />
-						<input type='hidden' name='volver' value=1 />
-					</form>
+				<td colspan=3 class='BorderSup'>
+				".$inicioadmin.$inciobajas."
 				</td>
 			</tr>
 		</table>");	
