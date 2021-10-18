@@ -97,11 +97,15 @@ if(isset($array_cero)){
 } else { }
 
 if(isset($array_nive_doc)){
-    	$Nivel = array ('' => 'NIVEL USUARIO',
-                        'admin' => 'ADMINISTRADOR',
-                        'plus' => 'USER PLUS',
-                        'user'  => 'USER',
-                        'close'  => 'CLOSE', );														
+
+		if(isset($config2)){ $Nivel = array ('' => 'NIVEL USUARIO',
+											 'admin' => 'ADMINISTRADOR',);
+		} else { $Nivel = array ('' => 'NIVEL USUARIO',
+								 'admin' => 'ADMINISTRADOR',
+								 'plus' => 'USER PLUS',
+								 'user' => 'USER',
+								 'close' => 'CLOSE', );														
+ 					}
 
   $doctype = array ('DNI' => 'DNI/NIF Espa&ntilde;oles',
 						'NIE' => 'NIE/NIF Extranjeros',

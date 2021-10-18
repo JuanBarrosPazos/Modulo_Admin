@@ -77,10 +77,6 @@ if (($_SESSION['Nivel'] == 'admin') || ($_SESSION['Nivel'] == 'plus')){
 
 </div>
 
-<!-- Inicio footer -->
-<div id="footer"><?php print($head_footer);?></div>
-<!-- Fin footer -->
-
 </body>
 
 					<!-- *************************** -->

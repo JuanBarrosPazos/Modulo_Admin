@@ -1,6 +1,8 @@
 <?php
 
-	require 'Inclu/error_hidden.php';
+	//require 'Inclu/error_hidden.php';
+	global $index;
+	$index = 1;
 	require 'Inclu/Admin_head.php';
 	require 'Inclu/my_bbdd_clave.php';
 
@@ -9,11 +11,11 @@
 				 ////////////////////				  ///////////////////
 
 	if(isset($_POST['limpia'])){
-						deltables();
 						deldirua();
 						deldirub();
 						deldiruc();
 						rewrite();
+						deltables();
 						config_one();
 			 			show_form();
 		}
@@ -267,8 +269,8 @@ function deldirub(){
 										rmdir ($carpeta4);
 										} else {}
 									}
-	} // SE CUMPLE EL QUERY
-} // FIN FUNCTION
+		} // SE CUMPLE EL QUERY
+	} // FIN FUNCTION
 
 function deldiruc(){
 
@@ -280,7 +282,7 @@ function deldiruc(){
 												{if (is_file($dir5.$file5))
 													{unlink($dir5.$file5);}
 												}
-										rmdir ($carpeta5);
+										//rmdir ($carpeta5);
 										} else {}
 } // FIN FUNCTION
 
@@ -403,7 +405,7 @@ function process_form(){
 	fclose($config);
 
 	global $tablepf;
-	$tablepf = "<table align='center'>
+	$tablepf = "<table>
 				<tr>
 					<td colspan='2' align='center'>
 							SE HA CREADO EL ARCHIVO DE CONEXIONES.
@@ -413,32 +415,32 @@ function process_form(){
 				</tr>
 
 				<tr>
-					<td>VARIABLE HOST ADRESS</td>
-					<td>\$db_host = ".$host.";</td>		
+					<td style='text-align:right !important;'>VARIABLE HOST ADRESS</td>
+					<td style='text-align:left !important;'>\$db_host = ".$host.";</td>		
 				</tr>								
 
 				<tr>
-					<td>VARIABLE USER NAME</td>
-					<td>\$db_user = ".$user.";</td>		
+					<td style='text-align:right !important;'>VARIABLE USER NAME</td>
+					<td style='text-align:left !important;'>\$db_user = ".$user.";</td>		
 				</tr>	
 												
 				<tr>
-					<td>VARIABLE PASSWORD</td>
-					<td>\$db_pass = ".$pass.";</td>		
+					<td style='text-align:right !important;'>VARIABLE PASSWORD</td>
+					<td style='text-align:left !important;'>\$db_pass = ".$pass.";</td>		
 				</tr>	
 												
 				<tr>
-					<td>VARIABLE BBDD NAME</td>
-					<td>\$db_name = ".$name.";</td>		
+					<td style='text-align:right !important;'>VARIABLE BBDD NAME</td>
+					<td style='text-align:left !important;'>\$db_name = ".$name.";</td>		
 				</tr>
 
 				<tr>
-					<td>CLAVE TABLES BBDD</td>
-					<td>\$clave = ".$clave.";</td>		
+					<td style='text-align:right !important;'>CLAVE TABLES BBDD</td>
+					<td style='text-align:left !important;'>\$clave = ".$clave.";</td>		
 				</tr>
 
 				<tr>
-		   			<td colspan=2 align='center'>
+		   			<td colspan=2 align='center' class='BorderSup'>
 						<a href='config/config2.php'>
 		   					CREE EL USUARIO ADMINISTRADOR
 						</a>

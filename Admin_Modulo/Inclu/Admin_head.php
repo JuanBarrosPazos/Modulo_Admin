@@ -27,10 +27,16 @@
 		DOWNLOAD THIS APP FREE AND MORE IN:<br/>
 		<a href=\"http://juanbarrospazos.blogspot.com.es/\" target=\"_blank\" >	
 		http://juanbarrospazos.blogspot.com.es/</a></div></div>";
-	} else { global $rutameta;
-			 $rutameta = "../";
-			 global $rutarequir;
-			 $rutarequir = "../Inclu/";
+	} else { 
+			 if(isset($index)){	global $rutarequir;
+								$rutarequir = "Inclu/"; 
+								global $rutameta;
+								$rutameta = "";
+							}
+			 else { global $rutarequir;
+					$rutarequir = "../Inclu/"; 
+					global $rutameta;
+					$rutameta = "../";}
 			 global $meta2;
 			 $meta2 = "";
 			 global $winini;

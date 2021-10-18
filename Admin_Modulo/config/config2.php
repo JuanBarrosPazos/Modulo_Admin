@@ -195,7 +195,7 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 								
 				global $rutaimg;
 				$rutaimg = "src='".$carpetaimg."/".$new_name."'";
-				require 'table_data_resum.php';
+				require '../Admin/table_data_resum.php';
 				
 	print("	<tr>
 				<td colspan=3 align='right' class='BorderSup'>
@@ -369,12 +369,18 @@ function show_form($errors=[]){
 				</table>");
 			}
 			
-			global $array_nive_doc;
+	/*******************************/
+
+		global $config2;
+		$config2 = 1;
+
+	/*******************************/
+	global $array_nive_doc;
 			$array_nive_doc = 1;
 			require '../Admin/admin_array_total.php';
 	
 	/*******************************/
-	
+			
 		global $imgform;
 		$imgform = "config2";
 		require '../Admin/table_crea_admin.php';

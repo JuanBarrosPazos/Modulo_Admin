@@ -468,7 +468,7 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 
 	}
 		
-				} 		/* FIN CONDICIONAL PARA TODOS LOS NIE/NIF CON LETRA DE CONTROL */
+			} 	/* FIN CONDICIONAL PARA TODOS LOS NIE/NIF CON LETRA DE CONTROL */
 				
 				
 		/* CONDICIONAL PARA TODOS LOS NIF CON NUMERO DE CONTROL */

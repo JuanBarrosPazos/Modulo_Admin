@@ -106,9 +106,6 @@ session_start();
 
 </div>
 
-<!-- Inicio footer -->
-<div id="footer"><?php print($head_footer);?></div>
-<!-- Fin footer -->
 
 </body>
 

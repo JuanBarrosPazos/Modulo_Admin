@@ -446,7 +446,7 @@ print(" <table align='center' style=\"border:0px;margin_bottom:6px;margin-top:15
 						<tr>
 							<td align='center'>
 								<a href='http://juanbarrospazos.blogspot.com.es/' target='_blank'>
-								".$head_footer."
+								&copy; Juan Barr&oacute;s Pazos 2021.
 								</a>
 							</td>
 						</tr>

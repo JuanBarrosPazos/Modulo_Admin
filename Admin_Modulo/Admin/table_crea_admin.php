@@ -28,9 +28,11 @@
 		$title3 = "REGISTRARME CON ESTOS DATOS";
 		global $title4;
 		$title4 = "oculto";
-		global $closewin;
-		$closewin = "<tr><td colspan=3 style='text-align:center;' class='BorderInf'>
-						".$inciobajas.$inicioadmin."</td></tr>";
+		if(isset($config2)){ global $closewin;
+							 $closewin = ""; }
+		else { 	global $closewin;
+				$closewin = "<tr><td colspan=3 style='text-align:center;' class='BorderInf'>".$inciobajas.$inicioadmin."</td></tr>";
+					}
 	 }
 
 	print("<table style=\"margin-top:6px\">
@@ -38,7 +40,7 @@
 					<th colspan=2 class='BorderInf'>".$title."</th>
 				</tr>".$closewin."
 				
-		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]'>
+		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]' enctype='multipart/form-data'>
 
 			<input name='id' type='hidden' value='".$defaults['id']."' />				
 			<input name='myimg' type='hidden' value='".$_POST['myimg']."' />					

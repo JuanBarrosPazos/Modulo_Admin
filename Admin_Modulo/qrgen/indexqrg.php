@@ -17,14 +17,16 @@
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 	
+	// SI HAY MAS DE DOS ARCHIVOS EN temp/ BORRO EL CONTENIDO DEL DIRECTORIO
 	global $num;
 	$num = count(glob("temp/{*}",GLOB_BRACE));
 	if($num > 1){ deletemp(); } else { }
 
+	// SI HAY MAS ARCHIVOS DE LOS PERMITIDOS SE BORRA EL DIRECTORIO
 	global $num2;
 	$num2 = count(glob("qrimg/{*}",GLOB_BRACE));
 	if($num2 >= ($_SESSION['nuser']*2+6)){ deleqrimg(); } else { }
-	//print($_SESSION['nuser']);
+	// NUMERO DE EMPLEADOS print($_SESSION['nuser']);
 
 	if(isset($_POST['oculto'])){
 		if($form_errors = validate_form()){ qrsize();
@@ -294,6 +296,7 @@ global $tablau;
 $tablau = $_SESSION['clave']."admin";
 $tablau = "`".$tablau."`";
 
+// CONSTRUYO EL SELECT DE USUARIOS
 $sqlu =  "SELECT * FROM $tablau ORDER BY `ref` ASC ";
 $qu = mysqli_query($db, $sqlu);
 if(!$qu){
@@ -301,15 +304,11 @@ if(!$qu){
 } else {
 			
 	while($rowu = mysqli_fetch_assoc($qu)){
-				
-				print ("<option value='".$rowu['dni']."' ");
-				
-				if($rowu['dni'] == $defaults['usercod']){
-									print ("selected = 'selected'");
-																	}
-					print ("> ".$rowu['Nombre']." ".$rowu['Apellidos']." </option>");
+			print ("<option value='".$rowu['dni']."' ");
+			if($rowu['dni'] == $defaults['usercod']){print ("selected = 'selected'");}
+			print ("> ".$rowu['Nombre']." ".$rowu['Apellidos']." </option>");
 		}
-}  
+	}  
 
 print ("</select>
 			</td>
