@@ -42,8 +42,8 @@
 				
 		<form name='form_datos' method='post' action='$_SERVER[PHP_SELF]' enctype='multipart/form-data'>
 
-			<input name='id' type='hidden' value='".$defaults['id']."' />				
-			<input name='myimg' type='hidden' value='".$_POST['myimg']."' />					
+			<input name='id' type='hidden' value='".@$defaults['id']."' />				
+			<input name='myimg' type='hidden' value='".@$_POST['myimg']."' />					
 						
 				<tr>
 					<td style='text-align:right !important; width:140px;' >	
@@ -83,7 +83,7 @@
 					<td style='text-align:left !important;'>");
 	
 	// INICIO SI ES USER O PLUS SE LIMITA EL FORMULARIO 
-	if(($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
+	if((@$_SESSION['Nivel'] == 'user') || (@$_SESSION['Nivel'] == 'plus')){ 
 
 		print("	<input type='hidden' name='doc' value='".$defaults['doc']."' />".$defaults['doc']);
 
@@ -110,7 +110,7 @@
 					<td style='text-align:left !important;'>");
 
 		// INICIO SI ES USER O PLUS SE LIMITA EL FORMULARIO 
-		if(($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){
+		if((@$_SESSION['Nivel'] == 'user') || (@$_SESSION['Nivel'] == 'plus')){
 
 		print("<input type='hidden' name='dni' value='".$defaults['dni']."' />".$defaults['dni']);
 
@@ -132,7 +132,7 @@
 					<td style='text-align:left !important;'>");
 
 		// INICIO SI ES USER O PLUS SE LIMITA EL FORMULARIO 
-		if(($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){
+		if((@$_SESSION['Nivel'] == 'user') || (@$_SESSION['Nivel'] == 'plus')){
 
 		print("<input type='hidden' name='ldni' value='".$defaults['ldni']."' />".$defaults['ldni']);
 
@@ -151,7 +151,7 @@
 						Mail:
 					</td>
 					<td style='text-align:left !important;'>
-		<input type='text' name='Email' size=42 maxlength=50 value='".$defaults['Email']."' />
+		<input type='text' name='Email' size=42 maxlength=50 value='".$defaults['Email']."' placeholder='SOLO LETRAS MINUSCULAS'/>
 					</td>
 				</tr>	
 				
@@ -163,7 +163,7 @@
 					<td style='text-align:left !important;'>");
 
 	// INICIO SI ES USER O PLUS SE LIMITA EL FORMULARIO 
-	if(($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
+	if((@$_SESSION['Nivel'] == 'user') || (@$_SESSION['Nivel'] == 'plus')){ 
 
 		print("<input type='hidden' name='Nivel' value='".$defaults['Nivel']."' />".$defaults['Nivel']);
 
@@ -188,7 +188,7 @@
 					<td style='text-align:left !important;'>");
 
 	// INICIO SI ES USER O PLUS SE LIMITA EL FORMULARIO 
-	if(($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){
+	if((@$_SESSION['Nivel'] == 'user') || (@$_SESSION['Nivel'] == 'plus')){
 
 	print("	<input type='hidden' name='Usuario' value='".$defaults['Usuario']."' />".$defaults['Usuario']."
 				</td></tr>
@@ -214,7 +214,7 @@
 
 	// INICIO SI ES USER O PLUS SE LIMITA EL FORMULARIO 
 
-	if(($_SESSION['Nivel'] == 'user') || ($_SESSION['Nivel'] == 'plus')){ 
+	if((@$_SESSION['Nivel'] == 'user') || (@$_SESSION['Nivel'] == 'plus')){ 
 
 		print("<input type='hidden' name='Password' value='".$defaults['Password']."' />".$defaults['Password']."
 				</td></tr>

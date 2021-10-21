@@ -546,7 +546,7 @@ function validate_form(){
 	$password = $_POST['Password'] ;
 	global $hash;
 	global $row;
-	$hash = $row['Password'];
+	$hash = @$row['Password'];
 	//echo $row['Password']."<br>";
 	//echo $hash;
 
@@ -674,7 +674,7 @@ function desbloqueo(){
 	
 	// VERIFICO IP BLOQUEO DE LA IP
 	if(($cx >= 1)&&($rowx['error'] > $timex)){ $_SESSION['showf'] = 69;}
-	elseif((($cx >= 1)&&($rowx['error'] <= $timex))||((strlen(trim($rowx['error'] >= 3)))&&($rowx['error'] <= $timex))){ 
+	elseif((($cx >= 1)&&(@$rowx['error'] <= $timex))||((strlen(trim(@$rowx['error'] >= 3)))&&(@$rowx['error'] <= $timex))){ 
 	// DESBLOQUEO TODAS LAS IPs IGUALES A LA MIA
 	$desb = "UPDATE `$db_name`.$table_name_b SET `error` = 'des', `acceso` = 'des' WHERE $table_name_b.`ipn` = '{$geoplugin->ip}' ";
 	$_SESSION['showf'] = 0;	
@@ -682,8 +682,8 @@ function desbloqueo(){
 	} elseif($cx < 1) { $_SESSION['showf'] = 0; }	
 	
 	global $blocker;
-	$blocker = $rowx['error'];
-	if(strlen(trim($rowx['error'])) < 4){ $rowx['error'] = "0".$rowx['error'];}
+	$blocker = @$rowx['error'];
+	if(strlen(trim(@$rowx['error'])) < 4){ @$rowx['error'] = "0".@$rowx['error'];}
 	$dbloqh = substr($rowx['error'],0,2);
 	$dbloqm = substr($rowx['error'],2,2);
 	$_SESSION['desbloqh'] = $dbloqh.":".$dbloqm.":00";

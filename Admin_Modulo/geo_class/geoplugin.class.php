@@ -93,24 +93,24 @@ zh-CN
 		
 		//set the geoPlugin vars
 		$this->ip = $ip;
-		$this->city = $data['geoplugin_city'];
-		$this->region = $data['geoplugin_region'];
-		$this->regionCode = $data['geoplugin_regionCode'];
-		$this->regionName = $data['geoplugin_regionName'];
-		$this->dmaCode = $data['geoplugin_dmaCode'];
-		$this->countryCode = $data['geoplugin_countryCode'];
-		$this->countryName = $data['geoplugin_countryName'];
-		$this->inEU = $data['geoplugin_inEU'];
+		$this->city = @$data['geoplugin_city'];
+		$this->region = @$data['geoplugin_region'];
+		$this->regionCode = @$data['geoplugin_regionCode'];
+		$this->regionName = @$data['geoplugin_regionName'];
+		$this->dmaCode = @$data['geoplugin_dmaCode'];
+		$this->countryCode = @$data['geoplugin_countryCode'];
+		$this->countryName = @$data['geoplugin_countryName'];
+		$this->inEU = @$data['geoplugin_inEU'];
 		$this->euVATrate = isset($data['euVATrate']);
-		$this->continentCode = $data['geoplugin_continentCode'];
-		$this->continentName = $data['geoplugin_continentName'];
-		$this->latitude = $data['geoplugin_latitude'];
-		$this->longitude = $data['geoplugin_longitude'];
-		$this->locationAccuracyRadius = $data['geoplugin_locationAccuracyRadius'];
-		$this->timezone = $data['geoplugin_timezone'];
-		$this->currencyCode = $data['geoplugin_currencyCode'];
-		$this->currencySymbol = $data['geoplugin_currencySymbol'];
-		$this->currencyConverter = $data['geoplugin_currencyConverter'];
+		$this->continentCode = @$data['geoplugin_continentCode'];
+		$this->continentName = @$data['geoplugin_continentName'];
+		$this->latitude = @$data['geoplugin_latitude'];
+		$this->longitude = @$data['geoplugin_longitude'];
+		$this->locationAccuracyRadius = @$data['geoplugin_locationAccuracyRadius'];
+		$this->timezone = @$data['geoplugin_timezone'];
+		$this->currencyCode = @$data['geoplugin_currencyCode'];
+		$this->currencySymbol = @$data['geoplugin_currencySymbol'];
+		$this->currencyConverter = @$data['geoplugin_currencyConverter'];
 		
 	}
 	

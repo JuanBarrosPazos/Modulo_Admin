@@ -258,12 +258,12 @@ function show_form($errors=[]){
 	if ($errors){
 		print("	<table align='center'>
 					<tr>
-						<th style='text-align:center>
+						<th style='text-align:center'>
 							<font color='#FF0000'>* SOLUCIONE ESTOS ERRORES:</font><br/>
 						</th>
 					</tr>
 					<tr>
-						<td style='text-align:left'>");
+						<td style='text-align:left !important'>");
 			
 		for($a=0; $c=count($errors), $a<$c; $a++){
 			print("<font color='#FF0000'>**</font>  ".$errors [$a]."<br/>");

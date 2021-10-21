@@ -1,6 +1,6 @@
 <?php
 
-if ($_SESSION['Nivel'] == 'admin') { 
+if (@$_SESSION['Nivel'] == 'admin') { 
 
     global $inicioadmin;
     $inicioadmin ="<form name='boton' action='Admin_Ver.php' method='post' style='display: inline-block;' >

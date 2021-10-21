@@ -20,7 +20,10 @@
 // error_reporting(-1);
 
 // NO PASA NINGUN ERROR;
+
+/* DESACTIVADO TEMPORALMENTE */
  error_reporting (0);
+
 
 // Lo mismo que error_reporting(E_ALL);
 // ini_set('error_reporting', E_ALL);

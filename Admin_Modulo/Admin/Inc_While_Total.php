@@ -38,7 +38,7 @@
 					}
 
 	print ("<div class=\"juancentra\">
-		<!--".$twhile.": ".mysqli_num_rows($qb).".-->".$inicioadmincrear.$inciobajas."<hr>".$refrescaimg);
+		<!--".$twhile.": ".mysqli_num_rows($qb).".-->".@$inicioadmincrear.@$inciobajas."<hr>".$refrescaimg);
                                     
 	while($rowb = mysqli_fetch_assoc($qb)){
     

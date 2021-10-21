@@ -221,7 +221,7 @@ fclose($log);
 				<font color='#FF0000'>
 			* Estos datos no son validos, modifique esta entrada: </font></br> ".mysqli_error($db))."
 				</br>";
-				show_form ();
+				show_form();
 				
 					}
 		}
@@ -359,7 +359,7 @@ function show_form($errors=[]){
 						</th>
 					</tr>
 					<tr>
-					<td style='text-align:left'>");
+					<td style='text-align:left !important'>");
 		
 		for($a=0; $c=count(@$errors), $a<$c; $a++){
 			print("<font color='#FF0000'>**</font>  ".$errors [$a]."<br/>");

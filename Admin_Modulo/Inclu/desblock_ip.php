@@ -30,13 +30,12 @@
 										</td>
 									</tr>
 								</table>
-				<embed src='../audi/ip_confirm_unlock.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
-				</embed>
-					");
+	<embed src='../audi/ip_confirm_unlock.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
+	</embed>");
 											
-					process_form();
+		process_form();
 											}
-					}	/* Fin del if $_POST['oculto']*/
+	}	/* Fin del if $_POST['oculto']*/
 										
 			elseif(isset($_POST['oculto2'])){	desbloqueo();}
 			else {show_form();}
@@ -61,14 +60,14 @@ $sql =  "SELECT * FROM `$db_name`.$table_name_a WHERE `Email` = '$_POST[Email]' 
  	
 	$q = mysqli_query($db, $sql);
 	$row = mysqli_fetch_assoc($q);
-	$_SESSION['L_Email'] = $row['Email'];
-	$_SESSION['L_dni'] = $row['dni'];
-	$_SESSION['L_ldni'] = $row['ldni'];
+	@$_SESSION['L_Email'] = $row['Email'];
+	@$_SESSION['L_dni'] = $row['dni'];
+	@$_SESSION['L_ldni'] = $row['ldni'];
 
-	 $errors = array();
+	@$errors = array();
 		
-	if (($row['Nivel'] == 'close')||($row['Nivel'] == 'user')){
-		$errors [] = "ACCESO RESTRINGIDO POR EL WEB MASTER";
+	if ((@$row['Nivel'] == 'close')||(@$row['Nivel'] == 'user')){
+		@$errors [] = "ACCESO RESTRINGIDO POR EL WEB MASTER";
 		}
 	 
 	 /* Validamos el campo mail. */

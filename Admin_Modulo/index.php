@@ -576,7 +576,7 @@ function show_form($errors=[]){
 		print("</td>
 				</tr>
 				</table>");
-					}
+		} else { }
 					
 	global $link;
 	if($_SESSION['inst'] == "inst"){ print ("<table align='center'>
