@@ -1,5 +1,6 @@
 # REPOSITORIO .ZIP EN MEGA.NZ:
 ## https://mega.nz/folder/Kx9RSYRY#a9IBgcdegZwcUyya5Qeb1g
+
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
 # Admin_Modulo_V37
 
@@ -23,13 +24,22 @@
 - Lector de qr code de usuarios.
 - 
 # IMPORTANTE:
+- MODIFICACIONES INDEX.PHP EN PRODUCCIÓN
 - Las modificaciones en el archivo config/index_Play_System.php se han de reflejar en index.php.
 - Borramos o renombramos index.php en el directorio raiz.
 - Copiamos config/index_Play_System.php en el directorio raiz y le cambiamos el nombre por index.php
 ---
+- INSTALACIÓN LIMPIA:
+- Desde config/index_Init_System.php 
+- Copiamos config/index_Init_System.php en el directorio raiz y le cambiamos el nombre por index.php
+- Si existe una instalación anterior nos dará la opción de conservarla o realizar una instalación limpia.
+- Si se selecciona la instalación limpia se eliminan las tablas en la bbdd y archivos de usuarios en el sevidor.
+- A continuación nos presentará la pantalla para generar las nuevas conexiones y tablas.
+- Directamente desde desde config/index_Init_System.php 
 ---
-## 2021/06/05
-### Admin_Modulo_V37.zip
+---
+## 2021/10/21
+### Admin_Modulo_V41_Ok.zip
 - Ajustes generales de código.
 ---
 ---
