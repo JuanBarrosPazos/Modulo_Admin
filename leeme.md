@@ -1,9 +1,10 @@
-# REPOSITORIO .ZIP EN MEGA.NZ:
-## https://mega.nz/folder/Kx9RSYRY#a9IBgcdegZwcUyya5Qeb1g
-
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V37
+# Admin_Modulo_V41
 
+## REPOSITORIO .ZIP EN MEGA.NZ:
+## https://mega.nz/folder/Kx9RSYRY#a9IBgcdegZwcUyya5Qeb1g
+---
+---
 ## http://programasgratisytutoriales.blogspot.com.es/
 ## http://juanbarrospazos.blogspot.com.es/
 
@@ -23,6 +24,8 @@
 - Generador de qr code usuarios.
 - Lector de qr code de usuarios.
 - 
+---
+---
 # IMPORTANTE:
 - MODIFICACIONES INDEX.PHP EN PRODUCCIÓN
 - Las modificaciones en el archivo config/index_Play_System.php se han de reflejar en index.php.
