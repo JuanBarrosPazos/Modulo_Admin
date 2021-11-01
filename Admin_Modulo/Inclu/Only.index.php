@@ -15,8 +15,8 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 	global $userid;
 	global $uservisita;
 
-	if($countq < 1){}
-		else{
+	if($countq < 1){ }
+	elseif(password_verify($_POST['Password'], $row['Password'])){
 	$_SESSION['id'] = $row['id'];
 	$_SESSION['ref'] = $row['ref'];
 	$_SESSION['Nivel'] = $row['Nivel'];
@@ -41,8 +41,20 @@ if((isset($_POST['Usuario'])&&(isset($_POST['Password'])))){
 	global $onlyindex;
 	$onlyindex = 1;
 
-		}
-}
+			// VERIFICO EL HASH DEL PASSWORD RETORNA BOOLEAN
+			// password_verify(PRIMER ARGUMENTO EL PASSWORD, SEGUNDO EL HASH){}else{}
+				/* 	
+					if(password_verify($_POST['Password'], $row['Password'])){
+						//echo "* EL PASSWORD ES VÁLIDO";
+					} else {
+						//echo "* EL PASSWORD NO ES CORRECTO";
+					}
+				*/		
+			// FIN VERIFICACIÓN HASH BOOLEAN.
+
+		}// FIN ELSEIF password_verify BOOLEAN OK
+		else { } // SI NO password_verify
+}// FIN IF ISSET
 
 /* Creado por Juan Barros Pazos 2021 */
 

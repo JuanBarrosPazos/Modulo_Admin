@@ -77,7 +77,7 @@ function info(){
 	
 	function desconex(){
 
-			print("<table style=\"margin:8.0em auto 8.0em auto;\">
+		print("<table style=\"margin:8.0em auto 8.0em auto;\">
 						<form name='salir' action='$_SERVER[PHP_SELF]' method='post'>
 							<tr>
 								<td valign='bottom' align='center'>
@@ -86,7 +86,9 @@ function info(){
 							</tr>								
 									<input type='hidden' name='salir' value=1 />
 						</form>	
-					</table>");
+					</table>
+		<embed src='../audi/sesion_close_confirm.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' >
+		</embed>");
 	
 			} 
 			

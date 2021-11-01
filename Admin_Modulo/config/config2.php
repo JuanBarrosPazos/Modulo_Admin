@@ -167,10 +167,12 @@ if (preg_match('/^(\w{1})*(\s\w{1})/',$_POST['Apellidos'],$ref4)){	$rf4 = $ref4[
 	$nombre = $_POST['Nombre'];
 	$apellido = $_POST['Apellidos'];
 
+	// ENCRIPTO EL PASSWOR ANTES DE GUARDARLO EN LA BBDD
 	global $password;
 	$password = $_POST['Password'] ;
 	global $passwordhash;
-	$passwordhash = password_hash($password, PASSWORD_DEFAULT, array ( "cost"=>10));
+	$passwordhash = password_hash($password, PASSWORD_DEFAULT, array ("cost"=>10));
+	//$passwordhash = password_hash($password, PASSWORD_DEFAULT, ['cost'=>10]);
 
 	global $db_name;
 
