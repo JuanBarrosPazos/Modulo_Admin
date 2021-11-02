@@ -32,10 +32,18 @@ session_start();
 
 				process_pinqr(); 
 				
-		} else { require $ruta.'Inclu/table_permisos.php';
-	      		 require $rutacam.'redir.php';
-					}
-	
+		} elseif (($rowu['Nivel'] == 'close')) {
+											print("<table style=\"margin-top:20px; margin-buttom:20px;\">
+														<tr><td style='text-align:center'>
+															<font color='#FF0000'>
+																** USUARIO BLOQUEADO POR EL WEBMASTER **
+															</font><br/>
+														</td></tr> 
+													</table>");
+											require $rutacam.'redir.php';
+							} else { require $ruta.'Inclu/table_permisos.php';
+									 require $rutacam.'redir.php';
+										}
 	
 	} else { require $ruta.'Inclu/table_permisos.php';
 			 require $rutacam.'redir.php';

@@ -583,7 +583,7 @@ function show_form($errors=[]){
 														".$link."
 											</table>");		
 	}else{
-	print("<table align='center' style=\"margin-top:10px\">
+	print("<table align='center' style=\"margin-top:10px;\">
 					<tr>
 					<td style='color:red' align='center'>
 					INTRODUZCA LOS DATOS DE CONEXI&Oacute;N A LA BBDD.
@@ -593,7 +593,7 @@ function show_form($errors=[]){
 				</tr>
 			</table>
 			
-			<table align='center' style=\"margin-top:10px\">
+			<table align='center' style=\"margin-top:10px;\">
 				<tr>
 					<th colspan=2 class='BorderInf'>
 							INIT CONFIG DATA

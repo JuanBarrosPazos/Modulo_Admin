@@ -534,7 +534,7 @@ function validate_form(){
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
 	global $sqlp;
-	$sqlp =  "SELECT * FROM `$db_name`.$table_name_a WHERE `Usuario` = '$_POST[Usuario]' LIMIT 1";
+	$sqlp =  "SELECT * FROM `$db_name`.$table_name_a WHERE `Usuario` = '$_POST[Usuario]' AND `Pass` = '$_POST[Password]' LIMIT 1";
 	global $qp;
 	$qp = mysqli_query($db, $sqlp);
 	global $rn;
@@ -563,18 +563,18 @@ function validate_form(){
 			}
 
 		elseif($count < 1){
-			//$errors [] = "Nombre incorrecto.";
+			//$errors [] = "Nombre / password incorrecto";
 			$errors [] = "USER ACCES ERROR";
 			}
-
+		// VERIFICO EL HASH
 		elseif(!password_verify($_POST['Password'], $hash)){
 			if(trim($_POST['Password'] != $rn['Pass'])){
 				//$errors [] = "Password incorrecto.";
 				$errors [] = "USER ACCES ERROR";
 				} else {}
 			}
-		
-		elseif ($rn['Nivel'] == 'close'){
+		// VERIFICO NIVEL CLOSE
+		if ($rn['Nivel'] == 'close'){
 			$errors [] = "ACCESO RESTRINGIDO POR EL WEB MASTER";
 			}
 	

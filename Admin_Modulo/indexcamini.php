@@ -44,9 +44,9 @@ session_start();
 <!-- *************************** -->		<!-- *************************** -->
 					<!-- *************************** -->
 	
- <div id="Caja2Admin" style="text-align: center">
+ <div id="Caja2Admin" style="text-align: center;">
 	  
-   	<div style="margin-top:4px; margin-bottom: 4px; text-align:center">
+   	<div style="margin-top:4px; margin-bottom: 4px; text-align:center;">
 		<a href="index.php">CANCELAR Y VOLVER AL INICIO.</a>
 	</div>
 	
