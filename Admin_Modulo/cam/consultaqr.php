@@ -9,7 +9,7 @@
     global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
 
-    $sqlu =  "SELECT * FROM `$db_name`.$table_name_a WHERE $table_name_a.`dni` = '$_GET[pin]' ";
+    $sqlu =  "SELECT * FROM `$db_name`.$table_name_a WHERE $table_name_a.`ref` = '$_GET[pin]' ";
     $qpu = mysqli_query($db, $sqlu);
     global $contu;
     $contu = mysqli_num_rows($qpu);

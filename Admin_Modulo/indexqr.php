@@ -21,8 +21,10 @@ session_start();
 	$ruta = "";
 	global $rutacam;
 	$rutacam = "cam/";
+	//DEFINE LA RUTA DE REDIR() Y DE CANCEL
 	global $docname;
-	$docname = "index.php";
+	//$docname = "index.php"; // AL INDEX.PHP
+	$docname = "indexcamini.php"; // AL INDEX CAMARA SCANNER
 
  if(isset($_GET['pin'])){
 

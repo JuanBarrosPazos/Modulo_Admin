@@ -1,7 +1,8 @@
 <?php
 
     global $ruta;
-    
+	global $docname;
+
     global $rutaimg;
     $rutaimg = "src='".$ruta."Users/".$rowu['ref']."/img_admin/".$rowu['myimg']."'";
 
@@ -78,7 +79,7 @@
 
                 <tr>
                     <td colspan=3 class='BorderSup' style='text-align: right !important;'>
-                        <form name='closewindow' action='".$ruta."index.php' />
+                        <form name='closewindow' action='".$ruta.$docname."' />
                             <input type='submit' value='CANCELAR Y VOLVER' class='botonnaranja' />
                             <input type='hidden' name='cancel' value=1 />
                         </form>

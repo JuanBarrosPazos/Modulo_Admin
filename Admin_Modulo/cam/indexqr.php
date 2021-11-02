@@ -18,8 +18,10 @@ session_start();
 	$ruta = "../";
 	global $rutacam;
 	$rutacam = "";
+	//DEFINE LA RUTA DE REDIR() Y DE CANCEL
 	global $docname;
-	$docname = "Admin/Admin_Ver.php";
+	$docname = "cam/indexcam.php"; // AL INDEX CAMARA SCANNER
+	//$docname = "Admin/Admin_Ver.php";// AL RESUMEN DE USUARIOS REGISTRADOS
 
  if(isset($_GET['pin'])){
 

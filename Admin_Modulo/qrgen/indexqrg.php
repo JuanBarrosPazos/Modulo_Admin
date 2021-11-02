@@ -304,8 +304,8 @@ if(!$qu){
 } else {
 			
 	while($rowu = mysqli_fetch_assoc($qu)){
-			print ("<option value='".$rowu['dni']."' ");
-			if($rowu['dni'] == $defaults['usercod']){print ("selected = 'selected'");}
+			print ("<option value='".$rowu['ref']."' ");
+			if($rowu['ref'] == $defaults['usercod']){print ("selected = 'selected'");}
 			print ("> ".$rowu['Nombre']." ".$rowu['Apellidos']." </option>");
 		}
 	}  

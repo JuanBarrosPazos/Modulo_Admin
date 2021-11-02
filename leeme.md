@@ -41,9 +41,10 @@
 - Directamente desde desde config/index_Init_System.php 
 ---
 ---
-## 2021/10/21
-### Admin_Modulo_V41_Ok.zip
-- Ajustes generales de código.
+## 2021/11/02
+### Admin_Modulo_V44_Ok.zip
+- Ajustes en la creación del qr.
+- Y redireccionamiento automático en los archivos dependientes de la lectura y procesado del mismo.
 ---
 ---
 ## 2021/05/23
