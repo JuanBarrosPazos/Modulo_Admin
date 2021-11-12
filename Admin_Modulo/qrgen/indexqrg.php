@@ -349,15 +349,19 @@ print ("</select>
 	print ("</select>
 				</td>
 			</tr>
-			<tr>
 
-			<td style='text-align:right !important;' class='BorderInf'>
-				NAME FOR IMAGE:
-			</td>
-			<td style='text-align:left !important;' class='BorderInf'>
-				<input name='imgname' size=32 maxlength=14 value='".$defaults['imgname']."' placeholder='OPCIONAL' />
-			</td>
-		</tr>
+			<!--
+			<tr>
+				<td style='text-align:right !important;' class='BorderInf'>
+					NAME FOR IMAGE:
+				</td>
+				<td style='text-align:left !important;' class='BorderInf'>
+					<input type='text' name='imgname' size=32 maxlength=14 value='".$defaults['imgname']."' placeholder='OPCIONAL' />
+				</td>
+			</tr>
+			-->
+					<input type='hidden' name='imgname' value='".$defaults['imgname']."' />
+
 		<tr>
 			<td colspan=2 class='BorderInf'>
 					<input type='submit' value='GENERATE QR CODE FOR USER' class='botonverde' />
@@ -482,11 +486,16 @@ while($archivo = readdir($directorio)){
 				 ////////////////////				  ///////////////////
 					
 function delete(){
+	
 	global $a;
 	$a = 1;
-	unlink($_POST['ruta']);
-	print("<embed src='../audi/deleteqr.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' ></embed>");
-}
+		$num3=count(glob("qrimg/{*}",GLOB_BRACE));
+		if($num3 > 0){
+		unlink($_POST['ruta']);
+		global $num3;
+		print("<embed src='../audi/delete_file.mp3' autostart='true' loop='false' width='0' height='0' hidden='true' ></embed>");
+		} else { }
+	}
 	
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
