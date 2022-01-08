@@ -1,19 +1,21 @@
 <?php
 
 	require 'Inclu/error_hidden.php';
+	global $index;
+	$index = 1;
 	require 'Inclu/Admin_head.php';
-	require 'Inclu/my_bbdd_clave.php';
+	//require 'Inclu/my_bbdd_clave.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
 				 ////////////////////				  ///////////////////
 
 	if(isset($_POST['limpia'])){
-						deltables();
 						deldirua();
 						deldirub();
 						deldiruc();
 						rewrite();
+						deltables();
 						config_one();
 			 			show_form();
 		}
@@ -21,6 +23,7 @@
 	elseif(isset($_POST['config'])){$_SESSION['inst'] = "noinst";						
 		if($form_errors = validate_form()){show_form($form_errors);} 
 		else {	process_form();
+				require 'Inclu/my_bbdd_clave.php';
 				require 'Conections/conection.php';
 				$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 		
@@ -43,21 +46,25 @@
 				 ////////////////////				  ///////////////////
 
 function inittot(){
-	include 'Conections/conection.php';
+	require 'Inclu/my_bbdd_clave.php';
+	@require 'Conections/conection.php';
+	global $db;
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 	if (!$db){ //print ("Es imposible conectar con la bbdd ".$db_name."</br>".mysqli_connect_error());
 				$_SESSION['inst'] = "noinst";
 				global $inst;
 				$inst = '';
 	}else{
+		//echo "HA CONECTADO CON LA BBDD<br>";
 	global $inst;
 	$inst = 1;
 
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
-
+		//echo $table_name_a."<br>";
 	global $sqltadm;
 	$sqltadm = "SELECT * FROM `$db_name`.$table_name_a ";
+
 	if(($inst == 1)&&(@mysqli_num_rows(mysqli_query($db, $sqltadm)) < 1)){
 		$_SESSION['inst'] = "inst";
 		global $link;
@@ -193,6 +200,7 @@ function config_one(){
 
 function deldirua(){
 
+	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
 	
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
@@ -244,7 +252,8 @@ function deldirub(){
 								rmdir ($carpetat);
 								} else {}
 
-	require 'Conections/conection.php';
+		require 'Inclu/my_bbdd_clave.php';
+		require 'Conections/conection.php';
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 
 	global $table_name_a;
@@ -267,8 +276,8 @@ function deldirub(){
 										rmdir ($carpeta4);
 										} else {}
 									}
-	} // SE CUMPLE EL QUERY
-} // FIN FUNCTION
+		} // SE CUMPLE EL QUERY
+	} // FIN FUNCTION
 
 function deldiruc(){
 
@@ -280,19 +289,18 @@ function deldiruc(){
 												{if (is_file($dir5.$file5))
 													{unlink($dir5.$file5);}
 												}
-										rmdir ($carpeta5);
+										//rmdir ($carpeta5);
 										} else {}
 } // FIN FUNCTION
 
 
 function deltables(){
 
+	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 
 	/*************		BORRAMOS TODAS LAS TABLAS DE USUARIOS Y SISTEMA		***************/
-
-	require 'Inclu/my_bbdd_clave.php';
 
 	/* Se busca las tablas en la base de datos */
 	/* REFERENCIA DEL USUARIO O $_SESSION['iniref'] = $_POST['ref'] */
@@ -365,7 +373,7 @@ function rewrite(){
 function validate_form(){
 	
 	require 'config/validate_Init_System.php';
-
+	
 	return $errors;
 
 		} 
@@ -403,7 +411,7 @@ function process_form(){
 	fclose($config);
 
 	global $tablepf;
-	$tablepf = "<table align='center'>
+	$tablepf = "<table>
 				<tr>
 					<td colspan='2' align='center'>
 							SE HA CREADO EL ARCHIVO DE CONEXIONES.
@@ -413,52 +421,32 @@ function process_form(){
 				</tr>
 
 				<tr>
-					<td>
-							VARIABLE HOST ADRESS
-					</td>
-					<td>
-							\$db_host = ".$host.";
-					</td>		
+					<td style='text-align:right !important;'>VARIABLE HOST ADRESS</td>
+					<td style='text-align:left !important;'>\$db_host = ".$host.";</td>		
 				</tr>								
 
 				<tr>
-					<td>
-							VARIABLE USER NAME
-					</td>
-					<td>
-							\$db_user = ".$user.";
-					</td>		
+					<td style='text-align:right !important;'>VARIABLE USER NAME</td>
+					<td style='text-align:left !important;'>\$db_user = ".$user.";</td>		
 				</tr>	
 												
 				<tr>
-					<td>
-							VARIABLE PASSWORD
-					</td>
-					<td>
-							\$db_pass = ".$pass.";
-					</td>		
+					<td style='text-align:right !important;'>VARIABLE PASSWORD</td>
+					<td style='text-align:left !important;'>\$db_pass = ".$pass.";</td>		
 				</tr>	
 												
 				<tr>
-					<td>
-							VARIABLE BBDD NAME
-					</td>
-					<td>
-							\$db_name = ".$name.";
-					</td>		
+					<td style='text-align:right !important;'>VARIABLE BBDD NAME</td>
+					<td style='text-align:left !important;'>\$db_name = ".$name.";</td>		
 				</tr>
 
 				<tr>
-					<td>
-							CLAVE TABLES BBDD
-					</td>
-					<td>
-							\$clave = ".$clave.";
-					</td>		
+					<td style='text-align:right !important;'>CLAVE TABLES BBDD</td>
+					<td style='text-align:left !important;'>\$clave = ".$clave.";</td>		
 				</tr>
 
 				<tr>
-		   			<td colspan=2 align='center'>
+		   			<td colspan=2 align='center' class='BorderSup'>
 						<a href='config/config2.php'>
 		   					CREE EL USUARIO ADMINISTRADOR
 						</a>
@@ -516,7 +504,6 @@ function process_form(){
 	} else {}
 
 		require 'config/Inc_Crea_Tablas.php';
-
 	}	
 
 				   ////////////////////				   ////////////////////
@@ -588,21 +575,21 @@ function show_form($errors=[]){
 					</tr>
 					<tr>
 						<td style='text-align:left'>");
-			
+		
 		for($a=0; $c=count($errors), $a<$c; $a++){
 			print("<font color='#FF0000'>**</font>  ".$errors [$a]."<br/>");
 			}
 		print("</td>
 				</tr>
 				</table>");
-					}
+		} else { }
 					
 	global $link;
 	if($_SESSION['inst'] == "inst"){ print ("<table align='center'>
 														".$link."
 											</table>");		
 	}else{
-	print("<table align='center' style=\"margin-top:10px\">
+	print("<table align='center' style=\"margin-top:10px;\">
 					<tr>
 					<td style='color:red' align='center'>
 					INTRODUZCA LOS DATOS DE CONEXI&Oacute;N A LA BBDD.
@@ -612,7 +599,7 @@ function show_form($errors=[]){
 				</tr>
 			</table>
 			
-			<table align='center' style=\"margin-top:10px\">
+			<table align='center' style=\"margin-top:10px;\">
 				<tr>
 					<th colspan=2 class='BorderInf'>
 							INIT CONFIG DATA

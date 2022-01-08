@@ -98,8 +98,8 @@ if(isset($array_cero)){
 
 if(isset($array_nive_doc)){
 
-		if(isset($config2)){ $Nivel = array ('' => 'NIVEL USUARIO',
-											 'admin' => 'ADMINISTRADOR',);
+		if(isset($config2)){ $Nivel = array ('' => 'SELECCIONE',
+											 'admin' => 'WEBMASTER',);
 		} else { $Nivel = array ('' => 'NIVEL USUARIO',
 								 'admin' => 'ADMINISTRADOR',
 								 'plus' => 'USER PLUS',

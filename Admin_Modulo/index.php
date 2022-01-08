@@ -1,10 +1,10 @@
 <?php
 
-	//require 'Inclu/error_hidden.php';
+	require 'Inclu/error_hidden.php';
 	global $index;
 	$index = 1;
 	require 'Inclu/Admin_head.php';
-	require 'Inclu/my_bbdd_clave.php';
+	//require 'Inclu/my_bbdd_clave.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////
@@ -23,6 +23,7 @@
 	elseif(isset($_POST['config'])){$_SESSION['inst'] = "noinst";						
 		if($form_errors = validate_form()){show_form($form_errors);} 
 		else {	process_form();
+				require 'Inclu/my_bbdd_clave.php';
 				require 'Conections/conection.php';
 				$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 		
@@ -45,21 +46,25 @@
 				 ////////////////////				  ///////////////////
 
 function inittot(){
-	@include 'Conections/conection.php';
+	require 'Inclu/my_bbdd_clave.php';
+	@require 'Conections/conection.php';
+	global $db;
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 	if (!$db){ //print ("Es imposible conectar con la bbdd ".$db_name."</br>".mysqli_connect_error());
 				$_SESSION['inst'] = "noinst";
 				global $inst;
 				$inst = '';
 	}else{
+		//echo "HA CONECTADO CON LA BBDD<br>";
 	global $inst;
 	$inst = 1;
 
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
-
+		//echo $table_name_a."<br>";
 	global $sqltadm;
 	$sqltadm = "SELECT * FROM `$db_name`.$table_name_a ";
+
 	if(($inst == 1)&&(@mysqli_num_rows(mysqli_query($db, $sqltadm)) < 1)){
 		$_SESSION['inst'] = "inst";
 		global $link;
@@ -195,6 +200,7 @@ function config_one(){
 
 function deldirua(){
 
+	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
 	
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
@@ -246,7 +252,8 @@ function deldirub(){
 								rmdir ($carpetat);
 								} else {}
 
-	require 'Conections/conection.php';
+		require 'Inclu/my_bbdd_clave.php';
+		require 'Conections/conection.php';
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 
 	global $table_name_a;
@@ -289,6 +296,7 @@ function deldiruc(){
 
 function deltables(){
 
+	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
 	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 
