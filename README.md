@@ -1,5 +1,5 @@
 # MÓDULO CRUD DE ADMINISTRADORES Y USUARIOS.
-# Admin_Modulo_V41
+# Admin_Modulo_V46
 
 ## REPOSITORIO .ZIP EN MEGA.NZ CON TUTORIAL DE LA APLICACION:
 ## https://mega.nz/folder/Kx9RSYRY#a9IBgcdegZwcUyya5Qeb1g
@@ -39,6 +39,11 @@
 - Si se selecciona la instalación limpia se eliminan las tablas en la bbdd y archivos de usuarios en el sevidor.
 - A continuación nos presentará la pantalla para generar las nuevas conexiones y tablas.
 - Directamente desde desde config/index_Init_System.php 
+---
+---
+## 2022/01/08
+### Admin_Modulo_V46.zip
+- Solucionados problemas de carga asíncrona de funciones en el instalador.
 ---
 ---
 ## 2021/11/02
