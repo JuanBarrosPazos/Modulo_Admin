@@ -1,6 +1,6 @@
 <?php
 
-	require 'Inclu/error_hidden.php';
+	//require 'Inclu/error_hidden.php';
 	global $index;
 	$index = 1;
 	require 'Inclu/Admin_head.php';
@@ -14,9 +14,9 @@
 						deldirua();
 						deldirub();
 						deldiruc();
-						rewrite();
 						deltables();
 						config_one();
+						rewrite();
 			 			show_form();
 		}
 
@@ -25,7 +25,7 @@
 		else {	process_form();
 				require 'Inclu/my_bbdd_clave.php';
 				require 'Conections/conection.php';
-				$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+				require 'Conections/conect.php';
 		
 				if (!$db){ 	global $dbconecterror;
 							$dbconecterror = $db_name." * ".mysqli_connect_error().PHP_EOL;
@@ -47,9 +47,8 @@
 
 function inittot(){
 	require 'Inclu/my_bbdd_clave.php';
-	@require 'Conections/conection.php';
-	global $db;
-	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+	require 'Conections/conection.php';
+	require 'Conections/conect.php';
 	if (!$db){ //print ("Es imposible conectar con la bbdd ".$db_name."</br>".mysqli_connect_error());
 				$_SESSION['inst'] = "noinst";
 				global $inst;
@@ -202,8 +201,7 @@ function deldirua(){
 
 	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
-	
-	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+	require 'Conections/conect.php';
 
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
@@ -254,7 +252,7 @@ function deldirub(){
 
 		require 'Inclu/my_bbdd_clave.php';
 		require 'Conections/conection.php';
-	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+		require 'Conections/conect.php';
 
 	global $table_name_a;
 	$table_name_a = "`".$_SESSION['clave']."admin`";
@@ -298,9 +296,11 @@ function deltables(){
 
 	require 'Inclu/my_bbdd_clave.php';
 	require 'Conections/conection.php';
-	$db = @mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+	require 'Conections/conect.php';
 
 	/*************		BORRAMOS TODAS LAS TABLAS DE USUARIOS Y SISTEMA		***************/
+
+	require 'Inclu/my_bbdd_clave.php';
 
 	/* Se busca las tablas en la base de datos */
 	/* REFERENCIA DEL USUARIO O $_SESSION['iniref'] = $_POST['ref'] */
