@@ -4,7 +4,7 @@
 	global $index;
 	$index = 1;
 	require 'Inclu/Admin_head.php';
-	//require 'Inclu/my_bbdd_clave.php';
+	require 'Inclu/my_bbdd_clave.php';
 
 				   ////////////////////				   ////////////////////
 ////////////////////				////////////////////				////////////////////

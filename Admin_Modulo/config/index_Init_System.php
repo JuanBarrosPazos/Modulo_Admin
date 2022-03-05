@@ -1,6 +1,6 @@
 <?php
 
-	//require 'Inclu/error_hidden.php';
+	require 'Inclu/error_hidden.php';
 	global $index;
 	$index = 1;
 	require 'Inclu/Admin_head.php';

@@ -5,7 +5,7 @@ session_start();
 	global $playini;
 	$playini = 1;
 
-	//require 'Inclu/error_hidden.php';
+	require 'Inclu/error_hidden.php';
 	require 'Inclu/Admin_head.php';
 	require 'Inclu/mydni.php';
 
